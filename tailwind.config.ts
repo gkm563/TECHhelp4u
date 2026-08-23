@@ -55,6 +55,7 @@ const config: Config = {
         "marquee-reverse": "marqueeReverse 30s linear infinite",
         "scanline": "scanline 6s linear infinite",
         "float": "float 6s ease-in-out infinite",
+        "shimmer": "shimmer 2s infinite linear",
       },
       keyframes: {
         glowPulse: {
@@ -76,6 +77,10 @@ const config: Config = {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
+        },
+        shimmer: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
         },
       },
       backgroundImage: {
