@@ -89,7 +89,11 @@ export function EcosystemExplorer() {
   const [selectedDomain, setSelectedDomain] = useState(DOMAINS[0]);
 
   return (
-    <section className="py-24 relative overflow-hidden bg-navy-850/40">
+    <section className="py-24 relative overflow-hidden bg-navy-900/50">
+      {/* Background ambient chromatic refraction */}
+      <div className="absolute top-1/3 right-10 w-96 h-96 bg-cyan/10 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-electric-violet/10 blur-[130px] rounded-full pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="THE DOMAIN MATRIX"
@@ -99,7 +103,7 @@ export function EcosystemExplorer() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Domain Tabs List */}
+          {/* Domain Frosted Glass Tabs List */}
           <div className="lg:col-span-5 flex flex-col gap-2.5">
             {DOMAINS.map((domain) => {
               const Icon = domain.icon;
@@ -109,18 +113,18 @@ export function EcosystemExplorer() {
                 <button
                   key={domain.id}
                   onClick={() => setSelectedDomain(domain)}
-                  className={`w-full flex items-center justify-between p-4 rounded-2xl border text-left transition-all duration-200 ${
+                  className={`w-full flex items-center justify-between p-4 rounded-3xl border text-left transition-all duration-300 backdrop-blur-xl ${
                     isSelected
-                      ? "bg-navy-800 border-cyan shadow-[0_0_20px_rgba(0,229,255,0.15)] translate-x-1"
-                      : "bg-navy-900/80 border-slate-800 hover:border-slate-700 hover:bg-navy-850 text-slate-300"
+                      ? "bg-navy-850/90 border-cyan shadow-[0_0_25px_rgba(0,229,255,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.2)] translate-x-1"
+                      : "bg-white/[0.03] border-white/[0.07] hover:border-white/[0.2] hover:bg-white/[0.06] text-slate-300 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
                   }`}
                 >
                   <div className="flex items-center gap-3.5">
                     <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-colors ${
+                      className={`w-10 h-10 rounded-2xl flex items-center justify-center border transition-all ${
                         isSelected
-                          ? "bg-cyan/10 border-cyan/40 text-cyan"
-                          : "bg-navy-800 border-slate-700 text-slate-400"
+                          ? "bg-cyan/15 border-cyan/50 text-cyan shadow-[0_0_15px_rgba(0,229,255,0.3)]"
+                          : "bg-white/[0.05] border-white/[0.08] text-slate-400"
                       }`}
                     >
                       <Icon className="w-5 h-5" />
@@ -149,7 +153,7 @@ export function EcosystemExplorer() {
             })}
           </div>
 
-          {/* Detailed Domain Showcase Card */}
+          {/* Detailed Domain Showcase Frosted Glass Card */}
           <div className="lg:col-span-7">
             <AnimatePresence mode="wait">
               <motion.div
@@ -158,9 +162,10 @@ export function EcosystemExplorer() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="h-full rounded-3xl bg-navy-900 border border-slate-800 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-xl"
+                className="h-full rounded-3xl bg-navy-950/60 border border-white/[0.1] p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_20px_50px_-10px_rgba(0,0,0,0.6)]"
               >
-                <div className="absolute top-0 right-0 w-80 h-80 bg-cyan/5 blur-[100px] rounded-full pointer-events-none" />
+                {/* Specular top glare line */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
 
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-6">
@@ -173,7 +178,7 @@ export function EcosystemExplorer() {
                   </div>
 
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan">
+                    <div className="w-14 h-14 rounded-2xl bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan backdrop-blur-md shadow-[0_0_20px_rgba(0,229,255,0.2)]">
                       <selectedDomain.icon className="w-7 h-7" />
                     </div>
                     <div>
@@ -186,20 +191,20 @@ export function EcosystemExplorer() {
                     </div>
                   </div>
 
-                  <p className="text-slate-300 text-base leading-relaxed mt-4">
+                  <p className="text-slate-300 text-base leading-relaxed mt-4 font-normal">
                     {selectedDomain.description}
                   </p>
 
                   {/* Related Initiatives */}
                   <div className="mt-8">
-                    <h5 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3">
+                    <h5 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3 font-semibold">
                       Connected Initiatives & Events
                     </h5>
                     <div className="flex flex-wrap gap-2">
                       {selectedDomain.initiatives.map((item) => (
                         <span
                           key={item}
-                          className="px-3 py-1.5 rounded-xl bg-navy-800 border border-slate-700 text-xs font-medium text-slate-200"
+                          className="px-3 py-1.5 rounded-xl bg-white/[0.04] backdrop-blur-md border border-white/[0.08] text-xs font-medium text-slate-200 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                         >
                           {item}
                         </span>
@@ -209,14 +214,14 @@ export function EcosystemExplorer() {
 
                   {/* Core Technologies */}
                   <div className="mt-6">
-                    <h5 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3">
+                    <h5 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3 font-semibold">
                       Core Technology Stack
                     </h5>
                     <div className="flex flex-wrap gap-2">
                       {selectedDomain.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-2.5 py-1 rounded-lg bg-cyan/5 border border-cyan/20 text-xs font-mono text-cyan"
+                          className="px-2.5 py-1 rounded-lg bg-cyan/10 border border-cyan/20 text-xs font-mono text-cyan shadow-[0_0_10px_rgba(0,229,255,0.1)]"
                         >
                           {t}
                         </span>
@@ -225,13 +230,13 @@ export function EcosystemExplorer() {
                   </div>
                 </div>
 
-                <div className="mt-10 pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
+                <div className="mt-10 pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
                   <span className="text-xs font-mono text-slate-400">
                     Want to lead a workshop in this track?
                   </span>
                   <Button
                     href="/contact"
-                    variant="outline"
+                    variant="glass"
                     size="sm"
                     rightIcon={<ArrowUpRight className="w-3.5 h-3.5" />}
                   >

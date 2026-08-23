@@ -59,7 +59,11 @@ const STAGES = [
 
 export function StorytellingNarrative() {
   return (
-    <section className="py-24 relative overflow-hidden bg-navy-900">
+    <section className="py-24 relative overflow-hidden bg-navy-900/80">
+      {/* Ambient background refraction orbs */}
+      <div className="absolute top-1/2 left-10 w-96 h-96 bg-cyan/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-electric-violet/5 blur-[140px] rounded-full pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="THE BUILDER JOURNEY"
@@ -68,7 +72,7 @@ export function StorytellingNarrative() {
           description="Most student clubs stop at certificates and theoretical slides. TECHhelp4U is engineered as a progressive launchpad guiding every curious mind from raw curiosity to production excellence."
         />
 
-        {/* Editorial Flow Grid */}
+        {/* Editorial Glass Flow Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {STAGES.map((stage, idx) => {
             const Icon = stage.icon;
@@ -79,13 +83,22 @@ export function StorytellingNarrative() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className="group relative rounded-3xl bg-navy-850/80 border border-slate-800 p-8 backdrop-blur-md hover:border-cyan/40 hover:bg-navy-800 transition-all duration-300 flex flex-col justify-between"
+                className="group relative rounded-3xl bg-navy-950/40 backdrop-blur-xl border border-white/[0.08] p-8 hover:border-white/[0.2] hover:bg-white/[0.05] transition-all duration-300 flex flex-col justify-between shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(0,229,255,0.15)] hover:-translate-y-1.5 overflow-hidden"
               >
+                {/* Specular top glare line */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.15] to-transparent pointer-events-none" />
+
+                {/* Ambient internal color glow */}
+                <div
+                  className="absolute -right-12 -top-12 w-32 h-32 blur-[60px] rounded-full pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity"
+                  style={{ backgroundColor: stage.color }}
+                />
+
                 {/* Header */}
-                <div>
+                <div className="relative z-10">
                   <div className="flex items-center justify-between mb-6">
                     <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center border group-hover:scale-110 transition-transform"
+                      className="w-12 h-12 rounded-2xl flex items-center justify-center border backdrop-blur-md group-hover:scale-110 transition-transform shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)]"
                       style={{
                         backgroundColor: `${stage.color}15`,
                         borderColor: `${stage.color}40`,
@@ -93,7 +106,7 @@ export function StorytellingNarrative() {
                     >
                       <Icon className="w-6 h-6" style={{ color: stage.color }} />
                     </div>
-                    <span className="font-mono text-2xl font-bold text-slate-700 group-hover:text-slate-500 transition-colors">
+                    <span className="font-mono text-2xl font-bold text-slate-700 group-hover:text-slate-400 transition-colors">
                       {stage.step}
                     </span>
                   </div>
@@ -110,13 +123,13 @@ export function StorytellingNarrative() {
                     </h3>
                   </div>
 
-                  <p className="text-sm text-slate-400 leading-relaxed">
+                  <p className="text-sm text-slate-300 leading-relaxed font-normal">
                     {stage.desc}
                   </p>
                 </div>
 
                 {/* Bottom line indicator */}
-                <div className="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                <div className="mt-8 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-slate-400 relative z-10">
                   <span>STAGE {stage.step} / 06</span>
                   <span className="group-hover:text-cyan transition-colors">
                     PROGRESSION →

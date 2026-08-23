@@ -15,8 +15,12 @@ export default function TeamPage() {
   const others = teamData.filter((m) => m.tier !== "leadership");
 
   return (
-    <div className="pt-32 pb-24 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+      {/* Ambient background refraction glows */}
+      <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-cyan/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-electric-violet/10 blur-[140px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="cyan" dot size="md" className="mb-4">
@@ -33,7 +37,7 @@ export default function TeamPage() {
         {/* Leadership Tier */}
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-cyan" />
+            <span className="w-2 h-2 rounded-full bg-cyan animate-pulse shadow-[0_0_8px_rgba(0,229,255,0.6)]" />
             <h2 className="text-xs font-mono uppercase tracking-widest text-slate-400">
               Executive Leadership & Founding Team
             </h2>
@@ -43,11 +47,14 @@ export default function TeamPage() {
             {leadership.map((member) => (
               <div
                 key={member.id}
-                className="rounded-3xl bg-navy-850/90 border border-slate-800 p-8 sm:p-10 backdrop-blur-xl hover:border-cyan/40 transition-all duration-300 flex flex-col justify-between group"
+                className="rounded-3xl bg-navy-950/50 border border-white/[0.08] p-8 sm:p-10 backdrop-blur-2xl hover:border-cyan/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_20px_45px_-10px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_45px_-10px_rgba(0,229,255,0.15)] hover:-translate-y-1.5 relative overflow-hidden"
               >
-                <div>
+                {/* Specular top glare line */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+
+                <div className="relative z-10">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-cyan/10 border border-cyan/40 flex items-center justify-center font-bold text-cyan text-lg">
+                    <div className="w-16 h-16 rounded-2xl bg-cyan/10 border border-cyan/40 flex items-center justify-center font-bold text-cyan text-lg backdrop-blur-md shadow-[0_0_20px_rgba(0,229,255,0.25)]">
                       {member.name.substring(0, 2).toUpperCase()}
                     </div>
                     <Badge variant="cyan" dot size="sm">
@@ -62,7 +69,7 @@ export default function TeamPage() {
                     {member.department}
                   </span>
 
-                  <p className="mt-4 text-sm text-slate-300 leading-relaxed">
+                  <p className="mt-4 text-sm text-slate-300 leading-relaxed font-normal">
                     {member.bio}
                   </p>
 
@@ -71,7 +78,7 @@ export default function TeamPage() {
                     {member.skills.map((s) => (
                       <span
                         key={s}
-                        className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-navy-900 border border-slate-700 text-slate-300"
+                        className="text-[11px] font-mono px-2.5 py-1 rounded-xl bg-white/[0.04] backdrop-blur-md border border-white/[0.07] text-slate-300"
                       >
                         {s}
                       </span>
@@ -79,8 +86,8 @@ export default function TeamPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between">
-                  <span className="text-xs font-mono text-slate-500">
+                <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center justify-between relative z-10">
+                  <span className="text-xs font-mono text-slate-400">
                     TECHhelp4U Leadership
                   </span>
                   <div className="flex items-center gap-3">
@@ -89,7 +96,7 @@ export default function TeamPage() {
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-slate-400 hover:text-cyan transition-colors"
+                        className="p-2 rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-400 hover:text-cyan hover:border-cyan/30 transition-all"
                         aria-label={`${member.name} LinkedIn`}
                       >
                         <Linkedin className="w-4 h-4" />
@@ -100,7 +107,7 @@ export default function TeamPage() {
                         href={member.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-slate-400 hover:text-cyan transition-colors"
+                        className="p-2 rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-400 hover:text-cyan hover:border-cyan/30 transition-all"
                         aria-label={`${member.name} GitHub`}
                       >
                         <Github className="w-4 h-4" />
@@ -116,7 +123,7 @@ export default function TeamPage() {
         {/* Advisory & Ambassador Network Tier */}
         <div>
           <div className="flex items-center gap-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-electric-violet" />
+            <span className="w-2 h-2 rounded-full bg-electric-violet animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.6)]" />
             <h2 className="text-xs font-mono uppercase tracking-widest text-slate-400">
               Technical Mentors & Campus Coordinator Network
             </h2>
@@ -126,9 +133,10 @@ export default function TeamPage() {
             {others.map((member) => (
               <div
                 key={member.id}
-                className="rounded-3xl bg-navy-850/80 border border-slate-800 p-8 backdrop-blur-md hover:border-cyan/40 transition-all duration-300 flex flex-col justify-between"
+                className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-8 backdrop-blur-2xl hover:border-cyan/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(0,229,255,0.15)] hover:-translate-y-1 relative overflow-hidden"
               >
-                <div>
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.15] to-transparent pointer-events-none" />
+                <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
                     <Badge variant="violet" size="sm">
                       {member.role}
@@ -142,7 +150,7 @@ export default function TeamPage() {
                     {member.department}
                   </span>
 
-                  <p className="mt-3 text-sm text-slate-400 leading-relaxed">
+                  <p className="mt-3 text-sm text-slate-300 leading-relaxed font-normal">
                     {member.bio}
                   </p>
 
@@ -150,7 +158,7 @@ export default function TeamPage() {
                     {member.skills.map((s) => (
                       <span
                         key={s}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-navy-900 border border-slate-800 text-slate-300"
+                        className="text-[10px] font-mono px-2.5 py-0.5 rounded-lg bg-white/[0.04] backdrop-blur-md border border-white/[0.06] text-slate-300"
                       >
                         {s}
                       </span>
@@ -158,8 +166,8 @@ export default function TeamPage() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-                  <span className="text-xs font-mono text-slate-500">
+                <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between relative z-10">
+                  <span className="text-xs font-mono text-slate-400">
                     Network Board
                   </span>
                   <a

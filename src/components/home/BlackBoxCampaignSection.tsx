@@ -49,21 +49,21 @@ export function BlackBoxCampaignSection() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-navy-900 border-y border-slate-800/80">
+    <section className="py-24 relative overflow-hidden bg-navy-900/60 border-y border-white/[0.08]">
       {/* Background terminal glow and grid */}
       <div className="absolute inset-0 bg-cyber-grid opacity-25 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-cyan/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-cyan/15 blur-[160px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Terminal Header Container */}
-        <div className="rounded-3xl bg-navy-850/95 border-2 border-cyan/40 backdrop-blur-2xl p-6 sm:p-10 lg:p-12 shadow-[0_0_50px_rgba(0,229,255,0.15)] relative overflow-hidden">
+        {/* Terminal Frosted Glass Header Container */}
+        <div className="rounded-3xl bg-navy-950/75 border border-cyan/30 backdrop-blur-3xl p-6 sm:p-10 lg:p-12 shadow-[inset_0_1px_2px_0_rgba(0,229,255,0.25),0_25px_60px_-15px_rgba(0,0,0,0.8)] relative overflow-hidden">
           {/* Subtle top scanline */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan to-transparent animate-pulse" />
 
           {/* Protocol Top bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-8">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.08] pb-6 mb-8">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-cyan/10 border border-cyan/40 flex items-center justify-center text-cyan">
+              <div className="w-10 h-10 rounded-2xl bg-cyan/10 border border-cyan/40 flex items-center justify-center text-cyan backdrop-blur-md shadow-[0_0_15px_rgba(0,229,255,0.25)]">
                 <Terminal className="w-5 h-5" />
               </div>
               <div>
@@ -91,8 +91,8 @@ export function BlackBoxCampaignSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-navy-800 border border-slate-700 text-xs font-mono text-amber-400 mb-4">
-                <Flame className="w-3.5 h-3.5 text-amber-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.04] backdrop-blur-md border border-amber-400/30 text-xs font-mono text-amber-400 mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+                <Flame className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
                 FLAGSHIP 2026 TECHNICAL CAMPAIGN
               </div>
 
@@ -106,7 +106,7 @@ export function BlackBoxCampaignSection() {
               </p>
 
               {/* Quick Specs */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-800/80 font-mono text-xs">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-white/[0.08] font-mono text-xs">
                 <div>
                   <span className="text-slate-500 uppercase block">FORMAT</span>
                   <span className="text-slate-200 font-semibold">2-Round Hybrid</span>
@@ -135,7 +135,7 @@ export function BlackBoxCampaignSection() {
                 <Button
                   href="https://unstop.com"
                   isExternal
-                  variant="outline"
+                  variant="glass"
                   size="lg"
                   leftIcon={<ShieldCheck className="w-4 h-4 text-cyan" />}
                 >
@@ -144,26 +144,29 @@ export function BlackBoxCampaignSection() {
               </div>
             </div>
 
-            {/* Right Protocol Visualizer Box */}
-            <div className="lg:col-span-5 bg-navy-900/90 border border-slate-700/80 rounded-2xl p-6 font-mono text-xs shadow-inner">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 text-slate-400">
+            {/* Right Protocol Visualizer Glass Box */}
+            <div className="lg:col-span-5 bg-navy-900/50 border border-white/[0.1] rounded-3xl p-6 font-mono text-xs backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_15px_30px_-10px_rgba(0,0,0,0.5)]">
+              <div className="flex items-center justify-between border-b border-white/[0.08] pb-3 mb-4 text-slate-400">
                 <span>PROTOCOL_PIPELINE_EXECUTION</span>
-                <span className="text-emerald-400">ACTIVE</span>
+                <span className="text-emerald-400 font-bold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  ACTIVE
+                </span>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3.5">
                 {pipelineSteps.map((step, idx) => (
                   <div
                     key={step.phase}
-                    className="flex items-start gap-3 p-3 rounded-xl bg-navy-850/60 border border-slate-800 hover:border-cyan/40 transition-colors"
+                    className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/[0.06] hover:border-cyan/40 hover:bg-white/[0.06] transition-all duration-200"
                   >
-                    <div className="w-6 h-6 rounded-lg bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan font-bold text-[10px] shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-lg bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan font-bold text-[10px] shrink-0 mt-0.5 shadow-[0_0_8px_rgba(0,229,255,0.2)]">
                       0{idx + 1}
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
                         <span className="text-cyan font-bold">{step.phase}</span>
-                        <span className="text-[10px] text-slate-500">[{step.mode}]</span>
+                        <span className="text-[10px] text-slate-400">[{step.mode}]</span>
                       </div>
                       <h4 className="text-slate-200 font-semibold text-xs mt-0.5">
                         {step.title}
@@ -176,9 +179,9 @@ export function BlackBoxCampaignSection() {
                 ))}
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex items-center justify-between">
+              <div className="mt-4 pt-3 border-t border-white/[0.08] text-[11px] text-slate-400 flex items-center justify-between">
                 <span>INCUBATION VIA HIDEVS & AI HOUSE</span>
-                <span className="text-cyan">₹90K+ IN POOL</span>
+                <span className="text-cyan font-bold">₹90K+ IN POOL</span>
               </div>
             </div>
           </div>

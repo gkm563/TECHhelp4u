@@ -9,17 +9,17 @@ export function TrustMarquee() {
   const verifiedPartners = partnersData.filter((p) => p.featured);
 
   return (
-    <section className="py-12 border-y border-slate-800/80 bg-navy-900/60 overflow-hidden relative">
+    <section className="py-12 border-y border-white/[0.08] bg-navy-950/40 backdrop-blur-xl overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-cyan" />
+          <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
           <span className="text-xs font-mono uppercase tracking-widest text-slate-400">
             Trusted Ecosystem Collaborations & Platform Partners
           </span>
         </div>
         <Link
           href="/collaborations"
-          className="text-xs font-mono text-cyan hover:underline flex items-center gap-1"
+          className="text-xs font-mono text-cyan hover:underline flex items-center gap-1 font-semibold"
         >
           View Partner Network <ArrowUpRight className="w-3.5 h-3.5" />
         </Link>
@@ -31,16 +31,16 @@ export function TrustMarquee() {
           {verifiedPartners.concat(verifiedPartners).map((partner, index) => (
             <div
               key={`${partner.id}-${index}`}
-              className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-navy-850/80 border border-slate-800/90 hover:border-cyan/40 hover:bg-navy-800 transition-colors shrink-0 group"
+              className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] hover:border-cyan/50 hover:bg-white/[0.08] transition-all duration-300 shrink-0 group shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(0,229,255,0.2)]"
             >
-              <div className="w-8 h-8 rounded-lg bg-navy-750 flex items-center justify-center font-bold text-xs text-cyan border border-slate-700">
+              <div className="w-8 h-8 rounded-xl bg-white/[0.06] backdrop-blur-md flex items-center justify-center font-bold text-xs text-cyan border border-white/[0.1]">
                 {partner.name.substring(0, 2).toUpperCase()}
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-semibold text-slate-200 group-hover:text-cyan transition-colors">
+                <span className="text-sm font-semibold text-slate-200 group-hover:text-cyan transition-colors font-display">
                   {partner.name}
                 </span>
-                <span className="text-[10px] font-mono text-slate-500">
+                <span className="text-[10px] font-mono text-slate-400">
                   {partner.collaborationType}
                 </span>
               </div>

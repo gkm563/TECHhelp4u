@@ -84,8 +84,12 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pt-32 pb-24 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+      {/* Ambient background refraction orbs */}
+      <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-cyan/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-electric-violet/10 blur-[140px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <Badge variant="cyan" dot size="md" className="mb-4">
@@ -100,12 +104,14 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Founder Message Section */}
-        <div className="rounded-3xl bg-navy-850/90 border border-slate-800 p-8 sm:p-12 mb-20 backdrop-blur-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan/5 blur-[120px] rounded-full pointer-events-none" />
+        {/* Founder Message Frosted Glass Section */}
+        <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-8 sm:p-12 mb-20 backdrop-blur-2xl relative overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_20px_50px_-10px_rgba(0,0,0,0.6)]">
+          {/* Specular top glare line */}
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan/10 blur-[120px] rounded-full pointer-events-none" />
           
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-            <div className="w-16 h-16 rounded-2xl bg-cyan/10 border border-cyan/40 flex items-center justify-center text-cyan shrink-0">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start relative z-10">
+            <div className="w-16 h-16 rounded-2xl bg-cyan/10 border border-cyan/40 flex items-center justify-center text-cyan shrink-0 backdrop-blur-md shadow-[0_0_20px_rgba(0,229,255,0.25)]">
               <Terminal className="w-8 h-8" />
             </div>
 
@@ -125,14 +131,14 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-6 border-t border-slate-800/80 flex items-center justify-between">
+              <div className="mt-6 pt-6 border-t border-white/[0.08] flex items-center justify-between">
                 <div>
                   <h4 className="text-base font-bold text-foreground">Vedansh Goyal</h4>
                   <p className="text-xs font-mono text-slate-400">Founder & Community Lead, TECHhelp4U</p>
                 </div>
                 <Link
                   href="/team"
-                  className="text-xs font-mono text-cyan hover:underline flex items-center gap-1"
+                  className="text-xs font-mono text-cyan hover:underline flex items-center gap-1 font-semibold"
                 >
                   Meet Leadership Team <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
@@ -141,10 +147,11 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Mission & Vision Grid */}
+        {/* Mission & Vision Glass Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          <div className="rounded-3xl bg-navy-850/70 border border-slate-800 p-8 backdrop-blur-md">
-            <div className="w-12 h-12 rounded-2xl bg-cyan/10 border border-cyan/40 flex items-center justify-center text-cyan mb-6">
+          <div className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-8 backdrop-blur-xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/30 to-transparent pointer-events-none" />
+            <div className="w-12 h-12 rounded-2xl bg-cyan/10 border border-cyan/40 flex items-center justify-center text-cyan mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(0,229,255,0.2)]">
               <Target className="w-6 h-6" />
             </div>
             <h3 className="text-2xl font-bold text-foreground font-display mb-3">Our Mission</h3>
@@ -153,8 +160,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-navy-850/70 border border-slate-800 p-8 backdrop-blur-md">
-            <div className="w-12 h-12 rounded-2xl bg-electric-violet/10 border border-electric-violet/40 flex items-center justify-center text-electric-violet mb-6">
+          <div className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-8 backdrop-blur-xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-electric-violet/30 to-transparent pointer-events-none" />
+            <div className="w-12 h-12 rounded-2xl bg-electric-violet/10 border border-electric-violet/40 flex items-center justify-center text-electric-violet mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(139,92,246,0.2)]">
               <Eye className="w-6 h-6" />
             </div>
             <h3 className="text-2xl font-bold text-foreground font-display mb-3">Our Vision</h3>
@@ -179,10 +187,12 @@ export default function AboutPage() {
               return (
                 <div
                   key={v.title}
-                  className="rounded-3xl bg-navy-850/80 border border-slate-800 p-7 backdrop-blur-md hover:border-cyan/40 transition-colors"
+                  className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-7 backdrop-blur-xl hover:border-cyan/40 hover:bg-white/[0.04] transition-all duration-300 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)] hover:shadow-[0_15px_35px_-10px_rgba(0,229,255,0.15)] hover:-translate-y-1 relative overflow-hidden group"
                 >
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.1] to-transparent pointer-events-none" />
+                  
                   <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center border mb-6"
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center border mb-6 backdrop-blur-md transition-transform group-hover:scale-110 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)]"
                     style={{
                       backgroundColor: `${v.color}15`,
                       borderColor: `${v.color}40`,
@@ -193,7 +203,7 @@ export default function AboutPage() {
                   <h4 className="text-lg font-bold text-foreground font-display mb-2">
                     {v.title}
                   </h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs text-slate-300 leading-relaxed font-normal">
                     {v.desc}
                   </p>
                 </div>
@@ -202,8 +212,10 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* 5-Year Expansion Roadmap */}
-        <div className="rounded-3xl bg-navy-850/80 border border-slate-800 p-8 sm:p-12">
+        {/* 5-Year Expansion Roadmap Glass Container */}
+        <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-8 sm:p-12 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_20px_50px_-10px_rgba(0,0,0,0.6)] relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+
           <div className="max-w-2xl mb-10">
             <Badge variant="cyan" dot size="sm" className="mb-3">
               EXPANSION PLAYBOOK
@@ -216,30 +228,30 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="space-y-6">
-            {roadmapMilestones.map((m, idx) => (
+          <div className="space-y-4">
+            {roadmapMilestones.map((m) => (
               <div
                 key={m.year}
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl bg-navy-900 border border-slate-800 hover:border-cyan/30 transition-colors gap-4"
+                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.07] hover:border-cyan/40 hover:bg-white/[0.06] transition-all duration-200 gap-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
               >
                 <div className="flex items-start sm:items-center gap-4">
-                  <span className="font-mono text-sm font-bold text-cyan bg-cyan/10 px-3 py-1 rounded-lg border border-cyan/20 shrink-0">
+                  <span className="font-mono text-sm font-bold text-cyan bg-cyan/10 px-3 py-1.5 rounded-xl border border-cyan/25 shrink-0 shadow-[0_0_10px_rgba(0,229,255,0.15)]">
                     {m.year}
                   </span>
                   <div>
                     <h4 className="text-base font-bold text-foreground font-display">
                       {m.title}
                     </h4>
-                    <p className="text-xs text-slate-400 mt-1 max-w-xl">
+                    <p className="text-xs text-slate-300 mt-1 max-w-xl">
                       {m.desc}
                     </p>
                   </div>
                 </div>
                 <span
-                  className={`text-[11px] font-mono px-2.5 py-1 rounded-full border self-start sm:self-auto shrink-0 ${
+                  className={`text-[11px] font-mono px-3 py-1 rounded-full border self-start sm:self-auto shrink-0 ${
                     m.status === "CURRENT FOCUS"
-                      ? "text-cyan bg-cyan/10 border-cyan/40 animate-pulse"
-                      : "text-slate-500 bg-slate-900 border-slate-800"
+                      ? "text-cyan bg-cyan/10 border-cyan/40 animate-pulse shadow-[0_0_12px_rgba(0,229,255,0.2)]"
+                      : "text-slate-400 bg-white/[0.02] border-white/[0.08]"
                   }`}
                 >
                   {m.status}

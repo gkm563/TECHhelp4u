@@ -9,11 +9,14 @@ import { socialLinks } from "@/data/navigation";
 
 export function CommunityCTA() {
   return (
-    <section className="py-24 relative overflow-hidden bg-navy-850/40">
+    <section className="py-24 relative overflow-hidden bg-navy-950/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="rounded-3xl bg-gradient-to-b from-navy-850 to-navy-900 border border-cyan/40 p-8 sm:p-14 lg:p-16 text-center relative overflow-hidden shadow-[0_0_60px_rgba(0,229,255,0.15)]">
-          {/* Ambient center glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-cyan/10 blur-[130px] rounded-full pointer-events-none" />
+        <div className="rounded-3xl bg-navy-950/70 border border-white/[0.12] p-8 sm:p-14 lg:p-16 text-center relative overflow-hidden backdrop-blur-3xl shadow-[inset_0_1px_2px_0_rgba(255,255,255,0.2),0_25px_60px_-15px_rgba(0,0,0,0.8),0_0_50px_rgba(0,229,255,0.1)]">
+          {/* Specular top glare line */}
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/50 to-transparent pointer-events-none" />
+
+          {/* Ambient center multi-layer glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-cyan/15 via-electric-violet/15 to-transparent blur-[140px] rounded-full pointer-events-none" />
 
           <div className="relative z-10 max-w-3xl mx-auto">
             <Badge variant="cyan" dot size="md" className="mb-6">
@@ -40,7 +43,7 @@ export function CommunityCTA() {
               </Button>
               <Button
                 href="/contact"
-                variant="outline"
+                variant="glass"
                 size="lg"
                 data-cursor="PARTNER"
               >
@@ -48,9 +51,9 @@ export function CommunityCTA() {
               </Button>
             </div>
 
-            {/* Social Channels Strip */}
-            <div className="mt-12 pt-8 border-t border-slate-800/80">
-              <span className="text-xs font-mono uppercase tracking-widest text-slate-500 block mb-4">
+            {/* Social Channels Strip with frosted glass chips */}
+            <div className="mt-12 pt-8 border-t border-white/[0.08]">
+              <span className="text-xs font-mono uppercase tracking-widest text-slate-400 block mb-4">
                 Official Community Gateways
               </span>
               <div className="flex flex-wrap items-center justify-center gap-3">
@@ -60,10 +63,10 @@ export function CommunityCTA() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3.5 py-1.5 rounded-xl bg-navy-800/80 border border-slate-700/80 hover:border-cyan/40 hover:text-cyan text-xs font-mono text-slate-300 transition-colors inline-flex items-center gap-1.5"
+                    className="px-4 py-2 rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] hover:border-cyan/50 hover:bg-white/[0.08] hover:text-cyan text-xs font-mono text-slate-300 transition-all duration-200 inline-flex items-center gap-2 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]"
                   >
                     <span>{item.name}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-60" />
+                    <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
                   </a>
                 ))}
               </div>

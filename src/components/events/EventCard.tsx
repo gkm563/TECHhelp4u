@@ -22,14 +22,17 @@ export function EventCard({ event, featured = false }: EventCardProps) {
 
   return (
     <div
-      className={`group relative rounded-3xl bg-navy-850/80 border border-slate-800 p-6 sm:p-7 backdrop-blur-md transition-all duration-300 flex flex-col justify-between overflow-hidden hover:border-cyan/40 hover:bg-navy-800 ${
-        featured ? "lg:col-span-2 bg-gradient-to-br from-navy-850 to-navy-900 border-cyan/30" : ""
+      className={`group relative rounded-3xl bg-navy-950/45 border border-white/[0.08] p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] hover:border-cyan/40 hover:bg-white/[0.04] hover:shadow-[inset_0_1px_2px_0_rgba(0,229,255,0.25),0_20px_45px_-10px_rgba(0,229,255,0.18)] hover:-translate-y-1.5 ${
+        featured ? "lg:col-span-2 bg-navy-900/60 border-cyan/30" : ""
       }`}
     >
-      {/* Glow on hover */}
-      <div className="absolute -right-20 -top-20 w-48 h-48 bg-cyan/5 group-hover:bg-cyan/10 blur-[80px] rounded-full pointer-events-none transition-colors" />
+      {/* Specular top glare line */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.15] to-transparent pointer-events-none" />
 
-      <div>
+      {/* Internal ambient chromatic glow on hover */}
+      <div className="absolute -right-20 -top-20 w-48 h-48 bg-cyan/10 blur-[80px] rounded-full pointer-events-none transition-opacity opacity-0 group-hover:opacity-100 duration-500" />
+
+      <div className="relative z-10">
         {/* Top Badges */}
         <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
           <div className="flex items-center gap-2">
@@ -56,12 +59,12 @@ export function EventCard({ event, featured = false }: EventCardProps) {
         <p className="mt-2 text-xs font-mono text-cyan/90 line-clamp-1">
           {event.tagline}
         </p>
-        <p className="mt-3 text-sm text-slate-400 line-clamp-2 leading-relaxed">
+        <p className="mt-3 text-sm text-slate-300 line-clamp-2 leading-relaxed font-normal">
           {event.description}
         </p>
 
-        {/* Metadata Details */}
-        <div className="mt-5 space-y-2 text-xs font-mono text-slate-400 border-t border-slate-800/80 pt-4">
+        {/* Metadata Details with subtle glass separator */}
+        <div className="mt-5 space-y-2 text-xs font-mono text-slate-400 border-t border-white/[0.06] pt-4">
           <div className="flex items-center gap-2">
             <Calendar className="w-3.5 h-3.5 text-cyan shrink-0" />
             <span>{formatDate(event.date)}</span>
@@ -79,12 +82,12 @@ export function EventCard({ event, featured = false }: EventCardProps) {
           )}
         </div>
 
-        {/* Tech Tags */}
+        {/* Tech Glass Chips */}
         <div className="mt-5 flex flex-wrap gap-1.5">
           {event.technologies.slice(0, 4).map((tech) => (
             <span
               key={tech}
-              className="text-[10px] font-mono px-2 py-0.5 rounded bg-navy-800 border border-slate-700/80 text-slate-300"
+              className="text-[10px] font-mono px-2 py-0.5 rounded-lg bg-white/[0.04] backdrop-blur-md border border-white/[0.07] text-slate-300 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
             >
               {tech}
             </span>
@@ -98,7 +101,7 @@ export function EventCard({ event, featured = false }: EventCardProps) {
       </div>
 
       {/* Bottom Actions */}
-      <div className="mt-7 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+      <div className="mt-7 pt-4 border-t border-white/[0.06] flex items-center justify-between gap-3 relative z-10">
         <Link
           href={`/events/${event.slug}`}
           className="text-xs font-mono text-cyan hover:underline flex items-center gap-1 font-semibold"

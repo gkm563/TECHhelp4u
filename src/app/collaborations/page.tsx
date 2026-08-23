@@ -33,8 +33,12 @@ export default function CollaborationsPage() {
   });
 
   return (
-    <div className="pt-32 pb-24 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+      {/* Ambient background refraction glows */}
+      <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-cyan/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-electric-violet/10 blur-[140px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="cyan" dot size="md" className="mb-4">
@@ -49,16 +53,16 @@ export default function CollaborationsPage() {
           </p>
         </div>
 
-        {/* Category Pills */}
+        {/* Frosted Glass Category Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all ${
+              className={`px-4 py-2 rounded-2xl text-xs font-mono font-medium transition-all backdrop-blur-xl ${
                 selectedCategory === cat.id
-                  ? "bg-cyan text-navy-900 font-bold shadow-[0_0_15px_rgba(0,229,255,0.3)]"
-                  : "bg-navy-850 border border-slate-800 text-slate-300 hover:border-slate-700 hover:bg-navy-800"
+                  ? "bg-cyan text-navy-900 font-bold shadow-[0_0_20px_rgba(0,229,255,0.4)] border border-cyan"
+                  : "bg-white/[0.04] border border-white/[0.08] text-slate-300 hover:border-white/[0.2] hover:bg-white/[0.08]"
               }`}
             >
               {cat.label}
@@ -66,16 +70,19 @@ export default function CollaborationsPage() {
           ))}
         </div>
 
-        {/* Partners Grid */}
+        {/* Partners Frosted Glass Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {filteredPartners.map((partner) => (
             <div
               key={partner.id}
-              className="rounded-3xl bg-navy-850/80 border border-slate-800 p-7 backdrop-blur-md hover:border-cyan/40 hover:bg-navy-800 transition-all duration-300 flex flex-col justify-between group"
+              className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-7 backdrop-blur-2xl hover:border-cyan/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(0,229,255,0.15)] hover:-translate-y-1.5 relative overflow-hidden"
             >
-              <div>
+              {/* Specular top glare line */}
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.15] to-transparent pointer-events-none" />
+
+              <div className="relative z-10">
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-navy-750 border border-slate-700 flex items-center justify-center font-bold text-cyan text-sm group-hover:border-cyan/40 transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-white/[0.05] border border-white/[0.1] backdrop-blur-md flex items-center justify-center font-bold text-cyan text-sm group-hover:border-cyan/40 group-hover:shadow-[0_0_15px_rgba(0,229,255,0.2)] transition-all shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)]">
                     {partner.name.substring(0, 2).toUpperCase()}
                   </div>
                   <Badge variant="neutral" size="sm">
@@ -90,20 +97,20 @@ export default function CollaborationsPage() {
                   {partner.collaborationType}
                 </span>
 
-                <p className="mt-3 text-sm text-slate-400 leading-relaxed">
+                <p className="mt-3 text-sm text-slate-300 leading-relaxed font-normal">
                   {partner.description}
                 </p>
 
                 {partner.jointEvents && partner.jointEvents.length > 0 && (
-                  <div className="mt-4 pt-4 border-t border-slate-800/80">
-                    <span className="text-[11px] font-mono text-slate-500 uppercase block mb-1.5">
+                  <div className="mt-4 pt-4 border-t border-white/[0.06]">
+                    <span className="text-[11px] font-mono text-slate-400 uppercase block mb-1.5 font-semibold">
                       Joint Initiatives
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {partner.jointEvents.map((e) => (
                         <span
                           key={e}
-                          className="text-[10px] font-mono px-2 py-0.5 rounded bg-navy-900 border border-slate-800 text-slate-300"
+                          className="text-[10px] font-mono px-2.5 py-0.5 rounded-lg bg-white/[0.03] backdrop-blur-md border border-white/[0.06] text-slate-300"
                         >
                           {e}
                         </span>
@@ -113,8 +120,8 @@ export default function CollaborationsPage() {
                 )}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                <span className="text-xs font-mono text-slate-500">
+              <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between relative z-10">
+                <span className="text-xs font-mono text-slate-400">
                   Verified Partner
                 </span>
                 <a
@@ -131,13 +138,14 @@ export default function CollaborationsPage() {
         </div>
 
         {/* Partnership CTA Banner */}
-        <div className="rounded-3xl bg-navy-850 border border-slate-800 p-8 sm:p-12 text-center relative overflow-hidden">
-          <div className="max-w-2xl mx-auto">
-            <Handshake className="w-10 h-10 text-cyan mx-auto mb-4" />
+        <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-8 sm:p-12 text-center relative overflow-hidden backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_20px_50px_-10px_rgba(0,0,0,0.6)]">
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+          <div className="max-w-2xl mx-auto relative z-10">
+            <Handshake className="w-10 h-10 text-cyan mx-auto mb-4 drop-shadow-[0_0_15px_rgba(0,229,255,0.4)]" />
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-display">
               Want to Partner or Sponsor an Event?
             </h2>
-            <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+            <p className="mt-3 text-sm text-slate-300 leading-relaxed font-normal">
               We collaborate with Web3 protocols, AI platforms, tech scale-ups, and student communities for workshops, hackathons, and regional campus outreach.
             </p>
             <div className="mt-8 flex justify-center gap-4">
