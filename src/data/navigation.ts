@@ -18,10 +18,10 @@ export const navItems: NavItem[] = [
 ];
 
 export const socialLinks = [
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/107663920/", icon: "Linkedin" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/techhelp4u/", icon: "Linkedin" },
+  { name: "Twitter (X)", href: "https://x.com/TECH_help4U", icon: "Twitter" },
+  { name: "Instagram", href: "https://www.instagram.com/techhelp4u/", icon: "Instagram" },
   { name: "Commudle", href: "https://commudle.com/communities/techhelp4u", icon: "Globe" },
-  { name: "Devfolio", href: "https://devfolio.co", icon: "Code" },
   { name: "Unstop", href: "https://unstop.com", icon: "Trophy" },
-  { name: "GitHub", href: "https://github.com/techhelp4u", icon: "Github" },
-  { name: "Discord", href: "https://discord.gg", icon: "MessageSquare" }
+  { name: "GitHub", href: "https://github.com/techhelp4u", icon: "Github" }
 ];

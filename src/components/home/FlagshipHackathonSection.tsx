@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/ui/Button";
 import { Badge } from "@/ui/Badge";
-import { SpotlightCard } from "@/ui/SpotlightCard";
 import { 
   Trophy, 
   Code2, 
@@ -26,31 +25,31 @@ export function FlagshipHackathonSection() {
   const hackathonStages = [
     {
       stage: "STAGE 01",
-      title: "Team Registration & Idea Submission",
-      desc: "Register your team on Unstop, choose your track (AI, Full-Stack, Open Innovation), and submit your initial problem statement and solution abstract.",
-      timing: "Registration Phase",
-      perk: "Access to prep workshops & Discord mentor office hours",
+      title: "Architecture Blueprint & Skill Assessment",
+      desc: "Register your team on Unstop, submit your 6-slide system architecture blueprint, and complete the technical skill assessment powered by HiDevs.",
+      timing: "Filtration Round (Online)",
+      perk: "Access to mentor office hours & Discord prep channels",
     },
     {
       stage: "STAGE 02",
-      title: "36-Hour Continuous Build Marathon",
-      desc: "Kickoff keynote, live hacking sprints, mentor checkpoints, and code reviews from industry engineers and community alumni.",
-      timing: "Main Hackathon Days",
-      perk: "Free swags, meals for offline builders, and cloud credits",
+      title: "12-Hour Intensive Build Arena @ MITS Gwalior",
+      desc: "Top shortlisted squads compete live on-ground at the Center for Computer Science & Technology, MITS Gwalior — pure execution, live debugging, and system sprints.",
+      timing: "Grand Finale",
+      perk: "Direct mentorship from Web3 and AI industry engineers",
     },
     {
       stage: "STAGE 03",
       title: "Live Product Demos & Jury Evaluation",
-      desc: "Present your working MVP in front of judges, founders, and community leads. Evaluated on innovation, code quality, and UX.",
-      timing: "Demo Day",
-      perk: "₹1,00,000+ Prize Pool, Official LORs & Merit Certificates",
+      desc: "Present working MVPs to judges from SITA, Propvivo, Nasdaq, and Gwalior DAO. Evaluated on system design, innovation, and real-world utility.",
+      timing: "Demo Day & Results",
+      perk: "₹2,00,000 Total Prize Pool, Winner Trophies & Merit LORs",
     },
     {
       stage: "STAGE 04",
-      title: "Incubation & Open-Source Mentorship",
-      desc: "Winning squads receive direct support from TECHhelp4U, HiDevs incubator, and partner networks to deploy and grow their projects.",
+      title: "6–12 Month Incubation & Acceleration",
+      desc: "Winning teams (Shield Clan, Gradient Gang, Code Sena, NyaySetu) receive ongoing post-event mentorship, cloud compute, and startup acceleration.",
       timing: "Post-Hackathon Support",
-      perk: "Internship referrals, cloud compute, and startup grants",
+      perk: "Direct placement connect, cloud credits & accelerator access",
     },
   ];
 
@@ -73,20 +72,20 @@ export function FlagshipHackathonSection() {
               </div>
               <div>
                 <span className="text-xs font-mono uppercase tracking-widest text-cyan font-bold block">
-                  ANNUAL FLAGSHIP INITIATIVE
+                  FLAGSHIP NATIONAL HACKATHON
                 </span>
                 <span className="text-sm font-bold text-foreground font-display">
-                  TECHhack 2026 • Central India Hackathon
+                  The Black-Box Protocol • Stage 01: System Escalation
                 </span>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/30 font-semibold">
-                ₹1,00,000+ TOTAL PRIZE POOL
+              <span className="text-xs font-mono text-amber-400 bg-amber-400/10 px-3.5 py-1 rounded-full border border-amber-400/30 font-bold">
+                ₹2,00,000 PRIZE POOL
               </span>
               <Badge variant="cyan" size="sm">
-                AI • WEB • OPEN SOURCE
+                AI × WEB3 CONVERGENCE
               </Badge>
             </div>
           </div>
@@ -97,51 +96,50 @@ export function FlagshipHackathonSection() {
             <div className="lg:col-span-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/[0.04] backdrop-blur-md border border-amber-400/30 text-xs font-mono text-amber-400 mb-4">
                 <Flame className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
-                CENTRAL INDIA&apos;S BIGGEST STUDENT HACKATHON
+                MITS GWALIOR • HOSTED WITH HIDEVS & UNSTOP
               </div>
 
               <h2 className="text-3xl sm:text-5xl font-extrabold text-foreground font-display tracking-tight leading-[1.15]">
-                TECHhack 2026:{" "}
-                <span className="text-gradient-cyan">Build, Ship & Win</span>
+                The Black-Box Protocol:{" "}
+                <span className="text-gradient-cyan">System Escalation</span>
               </h2>
 
               <p className="mt-4 text-base text-slate-300 leading-relaxed font-normal">
-                Join hundreds of student developers, designers, and innovators for a 36-hour continuous build sprint. Turn your classroom knowledge into production-grade projects with direct guidance from industry mentors.
+                A 9-city national hackathon series empowering student innovators. 500+ builders competed in AI, Web3, and Data Science — judged by senior industry mentors and backed by long-term 6–12 month incubation.
               </p>
 
               {/* Quick Details Strip */}
               <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-white/[0.08] font-mono text-xs">
                 <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-slate-400 block text-[10px]">DURATION</span>
-                  <span className="text-slate-200 font-bold">36 Hours</span>
+                  <span className="text-slate-400 block text-[10px]">VENUE</span>
+                  <span className="text-slate-200 font-bold">MITS Gwalior</span>
                 </div>
                 <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-slate-400 block text-[10px]">PARTICIPATION</span>
-                  <span className="text-slate-200 font-bold">100% Free</span>
+                  <span className="text-slate-400 block text-[10px]">PRIZE POOL</span>
+                  <span className="text-amber-400 font-bold">₹2,00,000</span>
                 </div>
                 <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-slate-400 block text-[10px]">MENTORS</span>
-                  <span className="text-cyan font-bold">1-on-1 Guidance</span>
+                  <span className="text-slate-400 block text-[10px]">PARTNERS</span>
+                  <span className="text-cyan font-bold">Unstop & HiDevs</span>
                 </div>
               </div>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 mt-8">
                 <Button
-                  href="/events/techhack-2026"
+                  href="/events/system-escalation"
                   variant="cyan-glow"
                   size="lg"
                   rightIcon={<ArrowUpRight className="w-4 h-4" />}
                 >
-                  View Hackathon Details
+                  View Event & Winners
                 </Button>
                 <Button
-                  href="https://unstop.com"
-                  isExternal
+                  href="/events"
                   variant="glass"
                   size="lg"
                 >
-                  Register on Unstop
+                  Explore All Hackathons
                 </Button>
               </div>
             </div>
@@ -151,10 +149,10 @@ export function FlagshipHackathonSection() {
               <div className="flex items-center justify-between border-b border-white/[0.08] pb-3 mb-4 text-slate-400">
                 <span className="flex items-center gap-1.5 text-xs text-slate-200 font-bold">
                   <Calendar className="w-3.5 h-3.5 text-cyan" />
-                  HACKATHON ROADMAP
+                  INCUBATION ROADMAP
                 </span>
                 <span className="text-cyan font-bold">
-                  PHASE 01 REGISTRATIONS
+                  9-CITY NATIONAL SERIES
                 </span>
               </div>
 
@@ -206,7 +204,7 @@ export function FlagshipHackathonSection() {
               </AnimatePresence>
 
               <div className="mt-4 pt-3 border-t border-white/[0.08] text-[11px] text-slate-400 flex items-center justify-between">
-                <span>SUPPORTED BY UNSTOP & DEVFOLIO</span>
+                <span>POWERED BY UNSTOP × HIDEVS × GWALIOR DAO</span>
                 <span className="text-cyan font-bold">500+ BUILDERS</span>
               </div>
             </div>
