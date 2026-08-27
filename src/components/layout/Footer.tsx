@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Code2, ArrowUpRight, Phone, MapPin, Mail } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, Phone, MapPin, Mail } from "lucide-react";
 import { navItems, socialLinks } from "@/data/navigation";
 
 export function Footer() {
@@ -17,12 +18,23 @@ export function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-2 flex flex-col items-start">
             <Link href="/" className="flex items-center gap-3 mb-4 group">
-              <div className="w-10 h-10 rounded-2xl bg-white/[0.05] border border-white/[0.12] flex items-center justify-center relative overflow-hidden group-hover:border-cyan/50 transition-all duration-300 backdrop-blur-md shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_15px_rgba(0,229,255,0.3)]">
-                <Code2 className="w-5 h-5 text-cyan" />
+              <div className="w-11 h-11 rounded-2xl bg-navy-950/80 border border-white/[0.15] flex items-center justify-center relative overflow-hidden group-hover:border-cyan/50 transition-all duration-300 backdrop-blur-md shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_0_15px_rgba(0,229,255,0.2)] group-hover:shadow-[0_0_20px_rgba(0,229,255,0.4)]">
+                <Image
+                  src="/logo.png"
+                  alt="TECHhelp4U Official Logo"
+                  width={44}
+                  height={44}
+                  className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                />
               </div>
-              <span className="font-display font-bold text-xl tracking-tight text-foreground">
-                TECH<span className="text-cyan font-mono">help4U</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="font-display font-bold text-xl tracking-tight text-foreground flex items-center gap-1">
+                  TECH<span className="text-cyan font-mono">help4U</span>
+                </span>
+                <span className="text-[9px] font-mono uppercase tracking-widest text-slate-400">
+                  Where Passion Meets Possibility
+                </span>
+              </div>
             </Link>
             <p className="text-slate-300 text-sm leading-relaxed max-w-sm mb-4 font-normal">
               A student-driven tech community built by students, for students. Bridging the gap between learning and real-world application through hands-on opportunities in technology, innovation, and personal development.
