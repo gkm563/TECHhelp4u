@@ -15,7 +15,8 @@ import {
   BookOpen, 
   Code2, 
   HeartHandshake,
-  CheckCircle2
+  CheckCircle2,
+  Globe
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -38,10 +39,10 @@ export function Hero() {
           <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/[0.05] backdrop-blur-2xl border border-white/[0.12] text-xs font-mono text-cyan shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.18),0_10px_30px_-5px_rgba(0,229,255,0.2)]">
             <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
             <span className="font-bold tracking-wide uppercase">
-              Built by Students, For Students
+              Where Passion Meets Possibility
             </span>
             <span className="text-slate-600">|</span>
-            <span className="text-slate-200">Student Tech Community</span>
+            <span className="text-slate-200">10,000+ Active Learners</span>
           </div>
         </motion.div>
 
@@ -59,7 +60,7 @@ export function Hero() {
             </span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">
-            TECHhelp4U is a student-driven tech community offering accessible, hands-on opportunities in technology, innovation, and personal development. Whether you&apos;re a curious beginner, a skilled coder, or passionate about tech education — this is your platform to learn, share, and grow.
+            TECHhelp4U is a student-driven technology community built by students, for students. A launchpad for student innovators offering hands-on workshops, multi-city hackathons, startup collaborations, and a peer-to-peer developer ecosystem across 100+ partner communities.
           </p>
         </motion.div>
 
@@ -76,23 +77,24 @@ export function Hero() {
             size="lg"
             rightIcon={<ArrowUpRight className="w-4 h-4" />}
           >
-            Explore Workshops & Hackathons
+            Explore Events & Hackathons
+          </Button>
+          <Button
+            href="https://linktr.ee/techhelpu"
+            isExternal
+            variant="glass"
+            size="lg"
+            leftIcon={<Globe className="w-4 h-4 text-cyan" />}
+          >
+            Linktree Official Hub
           </Button>
           <Button
             href="/community"
-            variant="glass"
-            size="lg"
-            leftIcon={<GraduationCap className="w-4 h-4 text-cyan" />}
-          >
-            Campus Ambassador (CAP 2026)
-          </Button>
-          <Button
-            href="/contact"
             variant="outline"
             size="lg"
-            leftIcon={<HeartHandshake className="w-4 h-4 text-slate-300" />}
+            leftIcon={<GraduationCap className="w-4 h-4 text-slate-300" />}
           >
-            Partner With Us
+            Campus Ambassador (CAP)
           </Button>
         </motion.div>
 
@@ -113,11 +115,11 @@ export function Hero() {
                 Skill-Building Workshops
               </h3>
               <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                Practical webinars and hands-on coding sessions covering Web Dev, AI, Open Source, and modern engineering tools.
+                Interactive masterclasses and hands-on exposure to cutting-edge tech like LLMs, RAG, Web3, and cloud systems.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-cyan flex items-center justify-between">
-              <span>Hands-on Labs</span>
+              <span>Hands-on Sessions</span>
               <span>100% Free →</span>
             </div>
           </SpotlightCard>
@@ -129,14 +131,14 @@ export function Hero() {
                 <Trophy className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-foreground font-display">
-                Hackathons & Mini Projects
+                Hackathons & Sprints
               </h3>
               <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                Fostering creativity through 36-hour hackathons, mini builds, portfolio projects, and exciting cash prizes.
+                National hackathons like System Escalation and Skill Climax with ₹2,00,000+ prize pools to build working MVPs.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-electric-violet flex items-center justify-between">
-              <span>TECHhack & Sprints</span>
+              <span>National Series</span>
               <span>Compete & Win →</span>
             </div>
           </SpotlightCard>
@@ -148,14 +150,14 @@ export function Hero() {
                 <HeartHandshake className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-foreground font-display">
-                Collaborations with Experts
+                Startup Collaborations
               </h3>
               <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                Partnering with startup founders, tech platforms like Devfolio & Unstop, and seasoned engineers for real mentorship.
+                Collaborating with tech startups, incubators like HiDevs, and industry experts for real-world project experience.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-cyan flex items-center justify-between">
-              <span>Startup Ecosystem</span>
+              <span>Incubation Pipeline</span>
               <span>Mentorship →</span>
             </div>
           </SpotlightCard>
@@ -167,15 +169,15 @@ export function Hero() {
                 <Users className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-foreground font-display">
-                Peer-to-Peer Support
+                Peer-to-Peer Network
               </h3>
               <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                A growing, welcoming student support network across 50+ college chapters to collaborate, ask questions, and grow together.
+                10,000+ active learners across 100+ partner communities networking, sharing code, and growing together.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-emerald-400 flex items-center justify-between">
-              <span>Discord & WhatsApp</span>
-              <span>Join Squad →</span>
+              <span>WhatsApp & Discord</span>
+              <span>Join Network →</span>
             </div>
           </SpotlightCard>
         </motion.div>

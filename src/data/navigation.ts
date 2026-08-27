@@ -19,9 +19,12 @@ export const navItems: NavItem[] = [
 
 export const socialLinks = [
   { name: "LinkedIn", href: "https://www.linkedin.com/company/techhelp4u/", icon: "Linkedin" },
+  { name: "Linktree", href: "https://linktr.ee/techhelpu", icon: "Link" },
+  { name: "Commudle", href: "https://www.commudle.com/communities/techhelp4u", icon: "Globe" },
+  { name: "Luma", href: "https://luma.com/2phtd15g", icon: "Calendar" },
+  { name: "Unstop", href: "https://unstop.com/hackathons/skill-climax-v10-central-india-largest-hackathon-techhelp4u-1599053", icon: "Trophy" },
+  { name: "YouTube", href: "https://www.youtube.com/channel/UCwy0Y4Do0ZNEzBhCvGJfpYw/videos", icon: "Youtube" },
   { name: "Twitter (X)", href: "https://x.com/TECH_help4U", icon: "Twitter" },
   { name: "Instagram", href: "https://www.instagram.com/techhelp4u/", icon: "Instagram" },
-  { name: "Commudle", href: "https://commudle.com/communities/techhelp4u", icon: "Globe" },
-  { name: "Unstop", href: "https://unstop.com", icon: "Trophy" },
   { name: "GitHub", href: "https://github.com/techhelp4u", icon: "Github" }
 ];

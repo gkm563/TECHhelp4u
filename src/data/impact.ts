@@ -2,35 +2,35 @@ import { ImpactMetric } from "@/types";
 
 export const impactMetrics: ImpactMetric[] = [
   {
-    id: "students-engaged",
-    label: "Students & Builders Reached",
-    value: 5000,
+    id: "active-learners",
+    label: "Active Student Learners",
+    value: 10000,
     suffix: "+",
-    description: "Learners engaged across hackathons, workshops, webinars, and hands-on bootcamps.",
+    description: "Learners empowered through hands-on workshops, hackathons, Discord forums, and WhatsApp communities.",
     isVerified: true
   },
   {
-    id: "partner-colleges",
-    label: "Target Partner Campuses",
-    value: 50,
+    id: "partner-communities",
+    label: "Partner Tech Communities",
+    value: 100,
     suffix: "+",
-    description: "Colleges integrated into the 2026 Campus Ambassador Program expansion.",
+    description: "Academic reach through collegiate developer clubs, tech societies, and national partner DAOs.",
     isVerified: true
   },
   {
-    id: "ecosystem-partners",
-    label: "Industry & Ecosystem Partners",
-    value: 10,
-    suffix: "+",
-    description: "Verified partnerships including HiDevs, Shardeum, AI House, Y-SoC, and Unstop.",
+    id: "prize-pool",
+    label: "Hackathon Prizes Distributed",
+    value: 200000,
+    suffix: "₹+",
+    description: "Awarded across The Black-Box Protocol System Escalation and Skill Climax hackathon series.",
     isVerified: true
   },
   {
-    id: "events-organized",
-    label: "Events & Sprints Hosted",
+    id: "events-hosted",
+    label: "Hands-on Events & Sprints",
     value: 25,
     suffix: "+",
-    description: "Flagship hybrid hackathons, blockchain tours, AI masterclasses, and college sessions.",
+    description: "Flagship multi-city hackathons, AI masterclasses with Nasdaq specialists, and campus workshops.",
     isVerified: true
   }
 ];

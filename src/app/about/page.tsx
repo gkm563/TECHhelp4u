@@ -18,41 +18,52 @@ import {
   Phone, 
   Calendar, 
   Building2,
-  HelpCircle
+  Globe,
+  Youtube,
+  ExternalLink
 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About TECHhelp4U | Student-Driven Tech Community",
-  description: "Learn about TECHhelp4U, founded in 2025 in Bhopal, MP. Built by students, for students to bridge the gap between learning and real-world application.",
+  description: "Learn about TECHhelp4U, founded in 2025 in Bhopal, MP. Built by students, for students to bridge the gap between learning and real-world application for 10,000+ learners.",
 };
 
 export default function AboutPage() {
   const pillars = [
     {
       title: "Skill-Building Workshops & Webinars",
-      desc: "Accessible, hands-on masterclasses in full-stack development, Python, AI APIs, Git, and modern engineering tools to prepare students for real-world projects.",
+      desc: "Interactive sessions providing hands-on exposure to cutting-edge technologies including LLMs, RAG, Web3, full-stack development, and cloud computing.",
       icon: BookOpen,
       color: "#00E5FF",
     },
     {
-      title: "Hackathons & Mini Projects",
-      desc: "Fostering creativity, problem-solving, and teamwork through 36-hour hackathons, mini builds, and project-based learning with prize rewards.",
+      title: "Hackathons & Competitions",
+      desc: "Flagship events like Skill Climax V1.0 and The Black-Box Protocol: System Escalation allow builders to present ideas, code MVPs, and innovate under mentorship.",
       icon: Trophy,
       color: "#8B5CF6",
     },
     {
-      title: "Collaborations with Startups & Experts",
-      desc: "Connecting students directly with working software engineers, startup founders, and ecosystem platforms for genuine 1-on-1 mentorship.",
+      title: "Project Collaborations with Startups",
+      desc: "Students work directly with startups, incubators like HiDevs, and tech experts on mini-projects, gaining verified real-world engineering experience.",
       icon: HeartHandshake,
       color: "#10B981",
     },
     {
-      title: "Peer-to-Peer Support System",
-      desc: "A warm, inclusive community where learners at all levels can ask questions, collaborate on code, find hackathon teammates, and grow together.",
+      title: "Peer-to-Peer Community Support",
+      desc: "A collaborative ecosystem with discussion forums, WhatsApp communities, and Discord hubs to network, share code, and solve technical challenges together.",
       icon: Users,
       color: "#F59E0B",
     },
+  ];
+
+  const officialSources = [
+    { name: "Linktree Central Hub", url: "https://linktr.ee/techhelpu", label: "linktr.ee/techhelpu" },
+    { name: "Commudle Community", url: "https://www.commudle.com/communities/techhelp4u", label: "commudle.com/techhelp4u" },
+    { name: "Unstop Hackathon Platform", url: "https://unstop.com/hackathons/skill-climax-v10-central-india-largest-hackathon-techhelp4u-1599053", label: "unstop.com/skill-climax-v10" },
+    { name: "Luma Community Gateway", url: "https://luma.com/2phtd15g", label: "luma.com/2phtd15g" },
+    { name: "GitHub Organization", url: "https://github.com/techhelp4u", label: "github.com/techhelp4u" },
+    { name: "Official YouTube Channel", url: "https://www.youtube.com/channel/UCwy0Y4Do0ZNEzBhCvGJfpYw/videos", label: "youtube.com/@techhelp4u" }
   ];
 
   return (
@@ -65,13 +76,13 @@ export default function AboutPage() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="cyan" dot size="md" className="mb-4">
-            ABOUT TECHHELP4U
+            WHERE PASSION MEETS POSSIBILITY
           </Badge>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-foreground font-display tracking-tight leading-tight">
-            Built by Students, <span className="text-gradient-cyan">For Students</span>
+            A Student-Driven <span className="text-gradient-cyan">Tech Community</span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-            TECHhelp4U is a student-driven tech community founded in 2025. Our mission is to bridge the gap between learning and real-world application by offering accessible, hands-on opportunities in technology, innovation, and personal development.
+            TECHhelp4U is designed to bridge the gap between academic learning and real-world application, offering hands-on opportunities, events, and collaborations for tech enthusiasts.
           </p>
         </div>
 
@@ -79,9 +90,14 @@ export default function AboutPage() {
         <div className="rounded-3xl bg-navy-950/60 border border-white/[0.08] p-6 sm:p-8 mb-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_20px_45px_-10px_rgba(0,0,0,0.6)] relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
           <div className="flex flex-col items-center">
-            <Calendar className="w-5 h-5 text-cyan mb-2" />
-            <span className="text-2xl sm:text-3xl font-extrabold text-foreground font-display">2025</span>
-            <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Founded In</span>
+            <Users className="w-5 h-5 text-cyan mb-2" />
+            <span className="text-2xl sm:text-3xl font-extrabold text-foreground font-display">10,000+</span>
+            <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Active Learners</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <Building2 className="w-5 h-5 text-cyan mb-2" />
+            <span className="text-2xl sm:text-3xl font-extrabold text-foreground font-display">100+</span>
+            <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Partner Communities</span>
           </div>
           <div className="flex flex-col items-center">
             <MapPin className="w-5 h-5 text-cyan mb-2" />
@@ -89,14 +105,9 @@ export default function AboutPage() {
             <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Headquarters</span>
           </div>
           <div className="flex flex-col items-center">
-            <Users className="w-5 h-5 text-cyan mb-2" />
-            <span className="text-2xl sm:text-3xl font-extrabold text-foreground font-display">11–50</span>
-            <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Team & Coordinators</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <Building2 className="w-5 h-5 text-cyan mb-2" />
-            <span className="text-lg sm:text-xl font-bold text-foreground font-display">Tech & Internet</span>
-            <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Industry Domain</span>
+            <Calendar className="w-5 h-5 text-cyan mb-2" />
+            <span className="text-2xl sm:text-3xl font-extrabold text-foreground font-display">2025</span>
+            <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Founded In</span>
           </div>
         </div>
 
@@ -104,32 +115,30 @@ export default function AboutPage() {
         <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-8 sm:p-12 mb-20 backdrop-blur-2xl relative overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_20px_50px_-10px_rgba(0,0,0,0.6)]">
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
           
-          <div className="max-w-4xl mx-auto">
-            <Badge variant="cyan" size="sm" className="mb-4">OUR PURPOSE & VISION</Badge>
+          <div className="max-w-4xl mx-auto space-y-6">
+            <Badge variant="cyan" size="sm">COMMUNITY ENGAGEMENT & PURPOSE</Badge>
             <h2 className="text-2xl sm:text-4xl font-bold text-foreground font-display leading-snug">
-              &ldquo;Whether you&apos;re a curious beginner, a skilled coder, or someone passionate about tech education — TECHhelp4U is your platform to learn, share, and grow.&rdquo;
+              &ldquo;TECHhelp4U is more than just an online community — it is a launchpad for student innovators that blends learning, creation, and collaboration.&rdquo;
             </h2>
-            <div className="mt-6 space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+            <div className="space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
               <p>
-                We believe that standard college curricula often leave a gap when it comes to hands-on software development, open-source collaboration, and modern industry workflows. Students often struggle to find practical guidance, hackathon teammates, or a safe place to ask technical questions without judgment.
+                Headquartered in Bhopal, India, the platform acts as a central hub for students and young developers to engage in practical tech experiences, collaborate with working engineers, and build portfolio-grade skills.
               </p>
               <p>
-                TECHhelp4U was built to solve exactly that. We organize hands-on masterclasses, multi-track hackathons, campus ambassador chapters, and direct startup mentorship sessions across universities in India.
+                The community emphasizes hands-on learning and active participation through programs like <strong className="text-foreground">The Black-Box Protocol</strong>, which integrates multi-city hackathons, technical workshops, and mentoring opportunities to convert high-potential student ideas into developer-led startups.
               </p>
               <p className="text-cyan font-medium pt-2">
-                🔗 We&apos;re open to partnerships, speakers, sponsors, and changemakers. Join us in building a stronger, smarter student tech ecosystem.
+                🔗 We’re open to partnerships, speakers, sponsors, and changemakers. Join us in building a stronger, smarter student tech ecosystem.
               </p>
             </div>
 
             <div className="mt-8 pt-8 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <Link
-                  href="/team"
-                  className="text-xs font-mono text-cyan hover:underline flex items-center gap-1 font-bold"
-                >
-                  Meet Leadership Team (Vedansh, Monika & Core Team) <ArrowUpRight className="w-4 h-4" />
-                </Link>
-              </div>
+              <Link
+                href="/team"
+                className="text-xs font-mono text-cyan hover:underline flex items-center gap-1 font-bold"
+              >
+                Meet Leadership Team (Vedansh, Monika, Gautam, Khushi) <ArrowUpRight className="w-4 h-4" />
+              </Link>
               <Button href="/contact" variant="cyan-glow" size="sm">
                 Get in Touch
               </Button>
@@ -140,10 +149,10 @@ export default function AboutPage() {
         {/* 4 Core Pillars */}
         <div className="mb-20">
           <SectionHeading
-            badge="HOW WE EMPOWER LEARNERS"
-            title="Our Four Core"
-            highlightText="Community Pillars"
-            description="Designed to support students at every stage of their developer journey."
+            badge="KEY ACTIVITIES & OPPORTUNITIES"
+            title="How We Empower"
+            highlightText="Student Builders"
+            description="Providing structured, accessible pathways from beginner curiosity to production software."
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -175,12 +184,46 @@ export default function AboutPage() {
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-slate-400 flex items-center justify-between">
-                    <span>Active Program</span>
+                    <span>Community Initiative</span>
                     <span className="text-cyan font-bold">100% Free</span>
                   </div>
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        {/* Verified Platforms & Online Hubs Grid */}
+        <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-8 sm:p-12 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_20px_50px_-10px_rgba(0,0,0,0.6)] relative overflow-hidden mb-16">
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+
+          <Badge variant="cyan" size="sm" className="mb-3">
+            VERIFIED DIGITAL PRESENCE
+          </Badge>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-display mb-6">
+            Official Community Portals
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {officialSources.map((source) => (
+              <a
+                key={source.name}
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-cyan/40 hover:bg-white/[0.06] transition-all flex items-center justify-between group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]"
+              >
+                <div>
+                  <span className="text-sm font-bold text-slate-200 block group-hover:text-cyan transition-colors">
+                    {source.name}
+                  </span>
+                  <span className="text-xs font-mono text-slate-400 block mt-0.5">
+                    {source.label}
+                  </span>
+                </div>
+                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-cyan group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            ))}
           </div>
         </div>
 
@@ -207,7 +250,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
                   <Phone className="w-4 h-4 text-cyan shrink-0" />
-                  <span>+91 9238253996</span>
+                  <span>+91 9238253996 / +91 9301768404</span>
                 </div>
               </div>
             </div>
@@ -218,7 +261,7 @@ export default function AboutPage() {
                 Join as a Partner or Sponsor
               </h3>
               <p className="text-xs text-slate-300 mt-2 max-w-sm">
-                Collaborate with our student builder ecosystem for hackathon grants, speaker invitations, and campus outreach.
+                Collaborate with our 10,000+ student builder ecosystem for hackathon grants, speaker invitations, and campus outreach.
               </p>
               <div className="mt-6 flex gap-3">
                 <Button href="/contact" variant="cyan-glow" size="sm">
