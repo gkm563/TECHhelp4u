@@ -6,10 +6,10 @@ import { Badge } from "@/ui/Badge";
 import { Button } from "@/ui/Button";
 import { EventCard } from "@/components/events/EventCard";
 import { EventCardSkeleton } from "@/ui/Skeleton";
-import { FloatingOrb, FloatingTelemetryChip } from "@/components/motion/FloatingElements";
+import { FloatingOrb } from "@/components/motion/FloatingElements";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { eventsData } from "@/data/events";
-import { Search, Filter, Calendar, Sparkles, Terminal, Radio } from "lucide-react";
+import { Search, Filter, Calendar, Sparkles, Compass } from "lucide-react";
 
 export default function EventsPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,7 +23,6 @@ export default function EventsPage() {
     { id: "hackathon", label: "Hackathons" },
     { id: "workshop", label: "Workshops" },
     { id: "collaboration", label: "Collaborations" },
-    { id: "webinar", label: "Webinars" },
   ];
 
   const modes = [
@@ -35,7 +34,7 @@ export default function EventsPage() {
 
   const statuses = [
     { id: "all", label: "All Statuses" },
-    { id: "upcoming", label: "Upcoming / Active" },
+    { id: "upcoming", label: "Upcoming" },
     { id: "concluded", label: "Concluded" },
   ];
 
@@ -86,27 +85,18 @@ export default function EventsPage() {
       <FloatingOrb color="cyan" size="xl" className="top-20 left-1/4" />
       <FloatingOrb color="violet" size="lg" className="bottom-20 right-10" />
 
-      {/* Floating Telemetry Badge */}
-      <div className="hidden lg:block absolute top-36 right-16 z-10 pointer-events-none">
-        <FloatingTelemetryChip
-          icon={Radio}
-          text="EVENTS_REGISTRY::SYNC_ACTIVE"
-          color="cyan"
-        />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Header */}
         <ScrollReveal direction="up" duration={0.6}>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Badge variant="cyan" dot size="md" className="mb-4">
-              EVENT ARCHIVE & HACKATHONS
+              COMMUNITY EVENTS & HACKATHONS
             </Badge>
             <h1 className="text-4xl sm:text-6xl font-extrabold text-foreground font-display tracking-tight">
-              Explore Events & <span className="text-gradient-cyan">Sprints</span>
+              Learn, Build & <span className="text-gradient-cyan">Compete</span>
             </h1>
             <p className="mt-4 text-lg text-slate-300 leading-relaxed font-normal">
-              From hands-on workshops to multi-stage hackathon universes, every TECHhelp4U event is engineered to help you master systems, ship code, and build your network.
+              Explore our upcoming hackathons, hands-on coding masterclasses, open-source sprints, and campus workshop series across India.
             </p>
           </div>
         </ScrollReveal>
@@ -122,7 +112,7 @@ export default function EventsPage() {
               <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="text"
-                placeholder="Search by event title, technology (e.g. Python, Solidity, AI), or location..."
+                placeholder="Search by event title, technology (e.g. Next.js, Python, Solidity), or city..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
                 className="w-full bg-navy-950/50 backdrop-blur-xl border border-white/[0.08] rounded-2xl pl-12 pr-4 py-3.5 text-sm text-foreground placeholder:text-slate-500 focus:outline-none focus:border-cyan focus:bg-navy-900/60 focus:shadow-[0_0_20px_rgba(0,229,255,0.2)] transition-all shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.4)]"
@@ -229,7 +219,7 @@ export default function EventsPage() {
           </div>
         ) : (
           <div className="text-center py-20 rounded-3xl bg-navy-950/40 border border-white/[0.08] p-8 backdrop-blur-xl shadow-inner">
-            <Terminal className="w-12 h-12 text-slate-500 mx-auto mb-4" />
+            <Compass className="w-12 h-12 text-slate-500 mx-auto mb-4" />
             <h3 className="text-lg font-bold text-foreground font-display">
               No matching events found
             </h3>

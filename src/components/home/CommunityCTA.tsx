@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/ui/Button";
 import { Badge } from "@/ui/Badge";
-import { ArrowUpRight, Sparkles, Terminal, Users, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Sparkles, Users, MessageSquare } from "lucide-react";
 import { socialLinks } from "@/data/navigation";
 
 export function CommunityCTA() {
@@ -20,15 +20,15 @@ export function CommunityCTA() {
 
           <div className="relative z-10 max-w-3xl mx-auto">
             <Badge variant="cyan" dot size="md" className="mb-6">
-              JOIN THE REVOLUTION
+              JOIN OUR DEVELOPER COMMUNITY
             </Badge>
 
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-foreground font-display tracking-tight leading-tight">
-              Your Next Build <span className="text-gradient-cyan">Starts Here.</span>
+              Your Next Project <span className="text-gradient-cyan">Starts Here.</span>
             </h2>
 
             <p className="mt-6 text-base sm:text-xl text-slate-300 font-normal leading-relaxed">
-              Join an active student-driven ecosystem where ideas become working systems, projects become portfolio proof, and collaborations turn into nationwide leadership.
+              Connect with passionate student developers, find hackathon teammates, learn in hands-on workshops, and build a resume-defining portfolio.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
@@ -37,24 +37,22 @@ export function CommunityCTA() {
                 variant="cyan-glow"
                 size="lg"
                 rightIcon={<ArrowUpRight className="w-4 h-4" />}
-                data-cursor="APPLY"
               >
                 Join Community & CAP 2026
               </Button>
               <Button
-                href="/contact"
+                href="/events"
                 variant="glass"
                 size="lg"
-                data-cursor="PARTNER"
               >
-                Become a Partner
+                Explore Upcoming Hackathons
               </Button>
             </div>
 
-            {/* Social Channels Strip with frosted glass chips */}
+            {/* Social Channels Strip */}
             <div className="mt-12 pt-8 border-t border-white/[0.08]">
               <span className="text-xs font-mono uppercase tracking-widest text-slate-400 block mb-4">
-                Official Community Gateways
+                Connect on Official Community Platforms
               </span>
               <div className="flex flex-wrap items-center justify-center gap-3">
                 {socialLinks.map((item) => (

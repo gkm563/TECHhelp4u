@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/ui/Button";
-import { Terminal, Home, ArrowLeft } from "lucide-react";
+import { Home, Compass } from "lucide-react";
 
 export default function NotFound() {
   return (
@@ -14,19 +14,19 @@ export default function NotFound() {
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
 
         <div className="w-16 h-16 rounded-2xl bg-cyan/10 border border-cyan/40 flex items-center justify-center text-cyan mx-auto mb-6 backdrop-blur-md shadow-[0_0_20px_rgba(0,229,255,0.25)]">
-          <Terminal className="w-8 h-8" />
+          <Compass className="w-8 h-8" />
         </div>
 
         <span className="text-xs font-mono uppercase tracking-widest text-cyan font-bold block mb-2">
-          ERROR_CODE::404_NODE_NOT_FOUND
+          PAGE NOT FOUND • 404
         </span>
 
         <h1 className="text-3xl font-extrabold text-foreground font-display mb-3">
-          Node Does Not Exist
+          Looks Like You&apos;re Lost
         </h1>
 
         <p className="text-sm text-slate-300 leading-relaxed mb-8 font-normal">
-          The requested route or system node could not be resolved in the TECHhelp4U topology. It may have been relocated or deprecated.
+          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

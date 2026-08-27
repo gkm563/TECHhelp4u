@@ -110,6 +110,7 @@ export type TeamTier =
   | "technical" 
   | "operations" 
   | "community" 
+  | "creative" 
   | "ambassador_lead";
 
 export interface TeamMember {

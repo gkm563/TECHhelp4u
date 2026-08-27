@@ -5,7 +5,7 @@ import { SectionHeading } from "@/ui/SectionHeading";
 import { Badge } from "@/ui/Badge";
 import { SpotlightCard } from "@/ui/SpotlightCard";
 import { motion } from "framer-motion";
-import { BookOpen, Hammer, Users2, Trophy, Rocket, TrendingUp, ArrowRight } from "lucide-react";
+import { BookOpen, Hammer, Users2, Trophy, Rocket, GraduationCap, ArrowRight } from "lucide-react";
 
 const STAGES = [
   {
@@ -13,48 +13,48 @@ const STAGES = [
     label: "LEARN",
     icon: BookOpen,
     color: "#00E5FF",
-    title: "Master Core Systems",
-    desc: "Cut through superficial video tutorials. Master Git, EVM internals, RAG architecture, and Linux through hands-on labs.",
+    title: "Master Real-World Tech",
+    desc: "Move beyond theory and rote learning. Master Git, React, Next.js, Python, and cloud services through hands-on weekend workshops.",
   },
   {
     step: "02",
     label: "BUILD",
     icon: Hammer,
     color: "#8B5CF6",
-    title: "Engineer Prototypes",
-    desc: "Transform abstract theory into testnet smart contracts, AI agent swarms, and scalable full-stack web applications.",
+    title: "Ship Live Projects",
+    desc: "Build functional web apps, AI tools, and portfolio-worthy software. Every workshop ends with a live project URL you can show recruiters.",
   },
   {
     step: "03",
     label: "COLLABORATE",
     icon: Users2,
     color: "#10B981",
-    title: "Join Builder Squads",
-    desc: "Connect with like-minded developers, cross-campus peers, and open-source maintainers across India.",
+    title: "Find Your Squad",
+    desc: "Team up with passionate student developers, designers, and peers from colleges across India on Discord and WhatsApp.",
   },
   {
     step: "04",
     label: "COMPETE",
     icon: Trophy,
     color: "#F59E0B",
-    title: "Battle-Test in Sprints",
-    desc: "Compete in high-stakes hackathons like Skill Climax and The Black-Box Protocol under tight deadlines.",
+    title: "Win in Hackathons",
+    desc: "Battle-test your skills in 36-hour hackathons like TECHhack and Skill Climax, with real-time feedback from working software engineers.",
   },
   {
     step: "05",
-    label: "SHIP",
+    label: "CONTRIBUTE",
     icon: Rocket,
     color: "#EC4899",
-    title: "Deploy into Production",
-    desc: "Deploy real MVPs, open-source repositories, and live demo products evaluated by industry CTOs.",
+    title: "Open Source Sprints",
+    desc: "Get your first pull requests merged into public open-source codebases during community drives like Open Sphere with Y-SoC.",
   },
   {
     step: "06",
-    label: "GROW",
-    icon: TrendingUp,
+    label: "LEAD",
+    icon: GraduationCap,
     color: "#38BDF8",
-    title: "Lead & Accelerate",
-    desc: "Advance into Campus Leads, earn LORs, gain venture incubation with HiDevs, and unlock career referrals.",
+    title: "Lead on Your Campus",
+    desc: "Become a Campus Ambassador (CAP 2026), host local hackathon chapters, earn official letters of recommendation, and fast-track your career.",
   },
 ];
 
@@ -67,10 +67,10 @@ export function StorytellingNarrative() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
-          badge="THE BUILDER JOURNEY"
-          title="More Than a Community."
-          highlightText="An Engineering Ecosystem."
-          description="Most student clubs stop at certificates and theoretical slides. TECHhelp4U is engineered as a progressive launchpad guiding every curious mind from raw curiosity to production excellence."
+          badge="THE STUDENT JOURNEY"
+          title="From Curious Learner to"
+          highlightText="Confident Builder"
+          description="Most college clubs stop at certificates and theoretical slides. TECHhelp4U is a step-by-step launchpad guiding students from their first lines of code to winning hackathons and leading campus chapters."
         />
 
         {/* Editorial Glass Flow Grid with Spotlight Tracking */}
@@ -131,9 +131,9 @@ export function StorytellingNarrative() {
 
                   {/* Bottom line indicator */}
                   <div className="mt-8 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-slate-400">
-                    <span>STAGE {stage.step} / 06</span>
+                    <span>STEP {stage.step} OF 06</span>
                     <span className="group-hover:text-cyan transition-colors flex items-center gap-1 font-bold">
-                      PROGRESSION <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      GROWTH <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
                 </SpotlightCard>

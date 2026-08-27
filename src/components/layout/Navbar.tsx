@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navItems } from "@/data/navigation";
 import { Button } from "@/ui/Button";
-import { Menu, X, ArrowUpRight, Sparkles, Terminal } from "lucide-react";
+import { Menu, X, ArrowUpRight, Code2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -63,7 +63,7 @@ export function Navbar() {
           >
             <div className="w-10 h-10 rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/[0.12] flex items-center justify-center relative overflow-hidden group-hover:border-cyan/50 transition-all duration-300 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_20px_rgba(0,229,255,0.3)]">
               <div className="absolute inset-0 bg-cyan/10 group-hover:bg-cyan/20 transition-colors" />
-              <Terminal className="w-5 h-5 text-cyan relative z-10 transition-transform group-hover:scale-110" />
+              <Code2 className="w-5 h-5 text-cyan relative z-10 transition-transform group-hover:scale-110" />
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold text-lg tracking-tight text-foreground flex items-center gap-1">
@@ -71,14 +71,14 @@ export function Navbar() {
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
               </span>
               <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400">
-                Ecosystem
+                Community
               </span>
             </div>
           </Link>
 
           {/* Desktop Frosted Glass Navigation Pill */}
           <nav className="hidden lg:flex items-center gap-1 bg-white/[0.04] backdrop-blur-2xl px-4 py-1.5 rounded-full border border-white/[0.09] shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_10px_25px_-5px_rgba(0,0,0,0.5)]">
-            {navItems.slice(0, 7).map((item) => {
+            {navItems.slice(0, 8).map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
@@ -126,7 +126,6 @@ export function Navbar() {
               variant="cyan-glow"
               size="sm"
               rightIcon={<ArrowUpRight className="w-3.5 h-3.5" />}
-              data-cursor="JOIN"
             >
               Join Community
             </Button>

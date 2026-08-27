@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Terminal, ArrowUpRight, Heart, Sparkles } from "lucide-react";
+import { Code2, ArrowUpRight, Heart, Sparkles, Users } from "lucide-react";
 import { navItems, socialLinks } from "@/data/navigation";
 
 export function Footer() {
@@ -18,7 +18,7 @@ export function Footer() {
           <div className="lg:col-span-2 flex flex-col items-start">
             <Link href="/" className="flex items-center gap-3 mb-4 group">
               <div className="w-10 h-10 rounded-2xl bg-white/[0.05] border border-white/[0.12] flex items-center justify-center relative overflow-hidden group-hover:border-cyan/50 transition-all duration-300 backdrop-blur-md shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_15px_rgba(0,229,255,0.3)]">
-                <Terminal className="w-5 h-5 text-cyan" />
+                <Code2 className="w-5 h-5 text-cyan" />
               </div>
               <span className="font-display font-bold text-xl tracking-tight text-foreground">
                 TECH<span className="text-cyan font-mono">help4U</span>
@@ -36,18 +36,18 @@ export function Footer() {
           {/* Column 1: Ecosystem */}
           <div>
             <h3 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-4 font-semibold">
-              Ecosystem
+              Events & Tracks
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/events" className="text-slate-300 hover:text-cyan transition-colors">
-                  Events & Hackathons
+                  All Events & Hackathons
                 </Link>
               </li>
               <li>
-                <Link href="/events/system-escalation" className="text-slate-300 hover:text-cyan transition-colors flex items-center gap-1">
-                  The Black-Box Protocol
-                  <span className="text-[10px] text-cyan font-mono bg-cyan/10 px-1.5 py-0.2 rounded-full border border-cyan/20">Stage 01</span>
+                <Link href="/events/techhack-2026" className="text-slate-300 hover:text-cyan transition-colors flex items-center gap-1">
+                  TECHhack 2026
+                  <span className="text-[10px] text-cyan font-mono bg-cyan/10 px-1.5 py-0.2 rounded-full border border-cyan/20">Flagship</span>
                 </Link>
               </li>
               <li>
@@ -57,12 +57,12 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/community" className="text-slate-300 hover:text-cyan transition-colors">
-                  Campus Ambassador Program
+                  Campus Ambassador (CAP)
                 </Link>
               </li>
               <li>
                 <Link href="/resources" className="text-slate-300 hover:text-cyan transition-colors">
-                  Developer Roadmaps
+                  Developer Resources
                 </Link>
               </li>
             </ul>
@@ -80,13 +80,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/collaborations" className="text-slate-300 hover:text-cyan transition-colors">
-                  Partners & Collaborations
+                <Link href="/team" className="text-slate-300 hover:text-cyan transition-colors font-medium">
+                  Meet the Team
                 </Link>
               </li>
               <li>
-                <Link href="/team" className="text-slate-300 hover:text-cyan transition-colors">
-                  Leadership & Core Team
+                <Link href="/collaborations" className="text-slate-300 hover:text-cyan transition-colors">
+                  Partners & Alliances
                 </Link>
               </li>
               <li>
@@ -96,7 +96,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-slate-300 hover:text-cyan transition-colors">
-                  Partner With Us
+                  Contact Us
                 </Link>
               </li>
             </ul>
@@ -129,7 +129,7 @@ export function Footer() {
         <div className="pt-8 mt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono">
           <p>© {new Date().getFullYear()} TECHhelp4U Community. All rights reserved.</p>
           <div className="flex items-center gap-2 text-slate-400">
-            <span>Designed & Engineered for Builders</span>
+            <span>Built by Students for Students</span>
             <span>•</span>
             <span>Gwalior, India</span>
           </div>

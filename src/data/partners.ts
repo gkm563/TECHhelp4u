@@ -2,58 +2,14 @@ import { Partner } from "@/types";
 
 export const partnersData: Partner[] = [
   {
-    id: "hidevs",
-    name: "HiDevs Community",
-    category: "technology",
-    logo: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80",
-    description: "A premier technology and AI talent community founded by Deepak Chawla, partnering with TECHhelp4U on The Black-Box Protocol and developer incubation.",
-    collaborationType: "Strategic Incubation & Mentorship Partner",
-    website: "https://hidevs.community",
-    jointEvents: ["The Black-Box Protocol: Stage 01"],
-    featured: true
-  },
-  {
-    id: "shardeum",
-    name: "Shardeum",
-    category: "technology",
-    logo: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=400&q=80",
-    description: "An EVM-based, linearly scalable layer-1 blockchain providing dynamic state sharding for decentralized applications.",
-    collaborationType: "Blockchain & Web3 Ecosystem Partner",
-    website: "https://shardeum.org",
-    jointEvents: ["Proof of Community Tour & Web3 Workshop"],
-    featured: true
-  },
-  {
-    id: "ai-house",
-    name: "AI House",
-    category: "technology",
-    logo: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80",
-    description: "Global AI research and builder network supporting student creators with high-performance compute and agent incubation.",
-    collaborationType: "Compute & AI Ecosystem Partner",
-    website: "https://aihouse.org",
-    jointEvents: ["The Black-Box Protocol: Stage 01"],
-    featured: true
-  },
-  {
-    id: "ysoc",
-    name: "Youth Season of Code (Y-SoC)",
-    category: "community",
-    logo: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80",
-    description: "Open-source youth program bridging the gap between college curricula and professional production codebases.",
-    collaborationType: "Open Source Community Partner",
-    website: "https://ysoc.in",
-    jointEvents: ["Open Sphere 2026"],
-    featured: true
-  },
-  {
-    id: "gwalior-dao",
-    name: "Gwalior DAO",
-    category: "community",
-    logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80",
-    description: "Regional decentralized community driving Web3 awareness, tech meetups, and developer adoption in Central India.",
-    collaborationType: "Regional Community & Co-Host",
-    website: "https://gwaliordao.xyz",
-    jointEvents: ["The Black-Box Protocol: Stage 01", "Central India Web3 Meetups"],
+    id: "devfolio",
+    name: "Devfolio",
+    category: "platform",
+    logo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80",
+    description: "India's largest community of developers and hackathon ecosystem powering student builder discovery.",
+    collaborationType: "Official Hackathon Platform Partner",
+    website: "https://devfolio.co",
+    jointEvents: ["Skill Climax V1.0", "TECHhack 2026"],
     featured: true
   },
   {
@@ -64,18 +20,7 @@ export const partnersData: Partner[] = [
     description: "India's leading platform for student competitions, hackathons, and corporate opportunity access.",
     collaborationType: "Platform & Registration Partner",
     website: "https://unstop.com",
-    jointEvents: ["The Black-Box Protocol Hackathon Series"],
-    featured: true
-  },
-  {
-    id: "devfolio",
-    name: "Devfolio",
-    category: "platform",
-    logo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80",
-    description: "India's largest community of developers and hackathon hosting ecosystem powering builder discovery.",
-    collaborationType: "Official Hackathon Platform Partner",
-    website: "https://devfolio.co",
-    jointEvents: ["Skill Climax V1.0"],
+    jointEvents: ["TECHhack 2026 Annual Hackathon"],
     featured: true
   },
   {
@@ -87,6 +32,39 @@ export const partnersData: Partner[] = [
     collaborationType: "Official Community Hub Partner",
     website: "https://commudle.com/communities/techhelp4u",
     jointEvents: ["TECHhelp4U Live Community Hub"],
+    featured: true
+  },
+  {
+    id: "hidevs",
+    name: "HiDevs Community",
+    category: "technology",
+    logo: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80",
+    description: "A premier technology and developer talent community founded by Deepak Chawla, partnering with TECHhelp4U on hackathon mentorship.",
+    collaborationType: "Strategic Mentorship & Incubation Partner",
+    website: "https://hidevs.community",
+    jointEvents: ["TECHhack 2026 Mentorship Track"],
+    featured: true
+  },
+  {
+    id: "shardeum",
+    name: "Shardeum",
+    category: "technology",
+    logo: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=400&q=80",
+    description: "An EVM-based, auto-scaling layer-1 blockchain providing dynamic state sharding for decentralized applications.",
+    collaborationType: "Blockchain & Web3 Ecosystem Partner",
+    website: "https://shardeum.org",
+    jointEvents: ["Proof of Community Tour & Web3 Workshop"],
+    featured: true
+  },
+  {
+    id: "ysoc",
+    name: "Youth Season of Code (Y-SoC)",
+    category: "community",
+    logo: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80",
+    description: "Open-source youth initiative bridging the gap between college curricula and professional production codebases.",
+    collaborationType: "Open Source Community Partner",
+    website: "https://ysoc.in",
+    jointEvents: ["Open Sphere 2026"],
     featured: true
   },
   {

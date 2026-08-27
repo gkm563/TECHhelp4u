@@ -24,21 +24,27 @@ export const metadata: Metadata = {
     "TECHhelp4U community",
     "TECHhelp4U events",
     "TECHhelp4U hackathon",
+    "TECHhack 2026",
     "Skill Climax",
-    "The Black-Box Protocol",
-    "System Escalation",
+    "Skill Showdown",
     "student tech community India",
     "developer community India",
-    "AI hackathon India",
+    "AI workshops India",
     "Web3 hackathon India",
     "student developer events",
     "technology workshops India",
     "developer workshops Gwalior",
     "Campus Ambassador Program 2026",
     "CAP 2026",
-    "Vedansh Goyal"
+    "Vedansh Goyal",
+    "Monika Jha",
+    "Gautam Kumar Maurya"
   ],
-  authors: [{ name: "TECHhelp4U Core Team" }],
+  authors: [
+    { name: "Vedansh Goyal" },
+    { name: "Monika Jha" },
+    { name: "TECHhelp4U Core Team" }
+  ],
   creator: "TECHhelp4U",
   publisher: "TECHhelp4U",
   formatDetection: {
@@ -82,10 +88,18 @@ const jsonLdOrg = {
   "url": "https://techhelp4u.in",
   "logo": "https://techhelp4u.in/logo.png",
   "description": "A student-driven technology community and builder ecosystem empowering engineers across India through real-world projects, hackathons, and mentorship.",
-  "founder": {
-    "@type": "Person",
-    "name": "Vedansh Goyal"
-  },
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "Vedansh Goyal",
+      "jobTitle": "Founder & Community Lead"
+    },
+    {
+      "@type": "Person",
+      "name": "Monika Jha",
+      "jobTitle": "Co-Founder & Operations Lead"
+    }
+  ],
   "sameAs": [
     "https://commudle.com/communities/techhelp4u",
     "https://devfolio.co",

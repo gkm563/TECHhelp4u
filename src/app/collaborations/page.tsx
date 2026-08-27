@@ -5,18 +5,16 @@ import { SectionHeading } from "@/ui/SectionHeading";
 import { Badge } from "@/ui/Badge";
 import { Button } from "@/ui/Button";
 import { PartnerCardSkeleton } from "@/ui/Skeleton";
-import { FloatingOrb, FloatingTelemetryChip } from "@/components/motion/FloatingElements";
+import { FloatingOrb } from "@/components/motion/FloatingElements";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { partnersData } from "@/data/partners";
-import { PartnerCategory } from "@/types";
 import { 
   ArrowUpRight, 
   Sparkles, 
   Handshake, 
   ExternalLink, 
-  Terminal, 
   ShieldCheck,
-  Network
+  Building2
 } from "lucide-react";
 
 export default function CollaborationsPage() {
@@ -48,15 +46,6 @@ export default function CollaborationsPage() {
       <FloatingOrb color="cyan" size="xl" className="top-20 left-1/4" />
       <FloatingOrb color="violet" size="lg" className="bottom-20 right-10" />
 
-      {/* Floating Telemetry Badge */}
-      <div className="hidden lg:block absolute top-36 right-16 z-10 pointer-events-none">
-        <FloatingTelemetryChip
-          icon={Network}
-          text="ALLIANCE_TOPOLOGY::VERIFIED"
-          color="violet"
-        />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <ScrollReveal direction="up" duration={0.6}>
@@ -65,11 +54,10 @@ export default function CollaborationsPage() {
               ECOSYSTEM & ALLIANCES
             </Badge>
             <h1 className="text-4xl sm:text-6xl font-extrabold text-foreground font-display tracking-tight">
-              Great Communities Grow by{" "}
-              <span className="text-gradient-cyan">Building Together</span>
+              Our Partners & <span className="text-gradient-cyan">Collaborators</span>
             </h1>
             <p className="mt-4 text-lg text-slate-300 leading-relaxed font-normal">
-              TECHhelp4U actively collaborates with leading Web3 foundations, AI communities, hackathon platforms, and academic institutions to unlock opportunities for student builders.
+              TECHhelp4U works alongside leading tech platforms, dev communities, and academic institutions to bring world-class hackathons and learning opportunities to students.
             </p>
           </div>
         </ScrollReveal>
@@ -123,7 +111,7 @@ export default function CollaborationsPage() {
                     <h3 className="text-xl font-bold text-foreground font-display group-hover:text-cyan transition-colors">
                       {partner.name}
                     </h3>
-                    <span className="text-xs font-mono text-cyan/90 block mt-1">
+                    <span className="text-xs font-mono text-cyan/90 block mt-1 font-semibold">
                       {partner.collaborationType}
                     </span>
 
@@ -152,7 +140,7 @@ export default function CollaborationsPage() {
 
                   <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between relative z-10">
                     <span className="text-xs font-mono text-slate-400">
-                      Verified Partner
+                      Community Partner
                     </span>
                     <a
                       href={partner.website}
@@ -160,7 +148,7 @@ export default function CollaborationsPage() {
                       rel="noopener noreferrer"
                       className="text-xs font-mono text-cyan hover:underline flex items-center gap-1 font-semibold"
                     >
-                      Visit Portal <ArrowUpRight className="w-3.5 h-3.5" />
+                      Visit Website <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -179,7 +167,7 @@ export default function CollaborationsPage() {
                 Want to Partner or Sponsor an Event?
               </h2>
               <p className="mt-3 text-sm text-slate-300 leading-relaxed font-normal">
-                We collaborate with Web3 protocols, AI platforms, tech scale-ups, and student communities for workshops, hackathons, and regional campus outreach.
+                We collaborate with tech companies, startups, developer tool makers, and student communities for hackathons, workshops, and college outreach.
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button href="/contact" variant="cyan-glow" size="md">
