@@ -8,7 +8,7 @@ import { Quote } from "lucide-react";
 
 export function BuilderStoriesSection() {
   return (
-    <section className="py-24 relative overflow-hidden bg-navy-950/60">
+    <section className="py-20 sm:py-24 relative overflow-hidden bg-navy-950/60">
       {/* Background ambient chromatic glow */}
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-cyan/10 blur-[150px] rounded-full pointer-events-none" />
 
@@ -20,7 +20,7 @@ export function BuilderStoriesSection() {
           description="Authentic feedback from participants, campus leads, and student engineers across our hackathons and masterclasses."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonialsData.map((item, idx) => (
             <SpotlightCard
               key={item.id}
@@ -34,7 +34,7 @@ export function BuilderStoriesSection() {
                 </p>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center justify-between">
+              <div className="mt-6 pt-5 border-t border-white/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
                   <h4 className="text-sm font-bold text-foreground font-display">
                     {item.author}
@@ -43,7 +43,7 @@ export function BuilderStoriesSection() {
                     {item.role} • {item.institutionOrCompany}
                   </p>
                 </div>
-                <span className="text-[10px] font-mono text-cyan bg-cyan/10 px-3 py-1 rounded-full border border-cyan/30 backdrop-blur-md shadow-[0_0_10px_rgba(0,229,255,0.15)] font-semibold">
+                <span className="self-start sm:self-auto text-[10px] font-mono text-cyan bg-cyan/10 px-2.5 py-1 rounded-full border border-cyan/30 backdrop-blur-md shadow-[0_0_10px_rgba(0,229,255,0.15)] font-semibold">
                   {item.event}
                 </span>
               </div>
