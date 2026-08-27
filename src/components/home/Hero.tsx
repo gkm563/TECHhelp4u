@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/ui/Button";
 import { Badge } from "@/ui/Badge";
 import { SpotlightCard } from "@/ui/SpotlightCard";
@@ -15,8 +16,10 @@ import {
   BookOpen, 
   Code2, 
   HeartHandshake,
-  CheckCircle2,
-  Globe
+  MessageSquare,
+  Globe,
+  Flame,
+  CheckCircle2
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -39,10 +42,10 @@ export function Hero() {
           <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/[0.05] backdrop-blur-2xl border border-white/[0.12] text-xs font-mono text-cyan shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.18),0_10px_30px_-5px_rgba(0,229,255,0.2)]">
             <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
             <span className="font-bold tracking-wide uppercase">
-              Where Passion Meets Possibility
+              STUDENT-DRIVEN TECH COMMUNITY
             </span>
             <span className="text-slate-600">|</span>
-            <span className="text-slate-200">10,000+ Active Learners</span>
+            <span className="text-slate-200">Based in Bhopal, Open to the World</span>
           </div>
         </motion.div>
 
@@ -54,13 +57,13 @@ export function Hero() {
           className="text-center max-w-4xl mx-auto mb-8"
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground font-display leading-[1.1]">
-            Bridge the Gap Between Learning &{" "}
+            Empowering the Next Generation of{" "}
             <span className="text-gradient-cyan drop-shadow-[0_0_35px_rgba(0,229,255,0.35)]">
-              Real-World Application
+              Tech Innovators
             </span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">
-            TECHhelp4U is a student-driven technology community built by students, for students. A launchpad for student innovators offering hands-on workshops, multi-city hackathons, startup collaborations, and a peer-to-peer developer ecosystem across 100+ partner communities.
+            A student-driven tech community bridging the gap between classroom theory and real-world application. We provide a hands-on sandbox where developers learn by breaking, building, and deploying real systems.
           </p>
         </motion.div>
 
@@ -72,21 +75,22 @@ export function Hero() {
           className="flex flex-wrap items-center justify-center gap-4 mb-16"
         >
           <Button
-            href="/events"
-            variant="cyan-glow"
-            size="lg"
-            rightIcon={<ArrowUpRight className="w-4 h-4" />}
-          >
-            Explore Events & Hackathons
-          </Button>
-          <Button
             href="https://linktr.ee/techhelpu"
             isExternal
+            variant="cyan-glow"
+            size="lg"
+            leftIcon={<MessageSquare className="w-4 h-4" />}
+            rightIcon={<ArrowUpRight className="w-4 h-4" />}
+          >
+            Join Our Discord / WhatsApp
+          </Button>
+          <Button
+            href="/events"
             variant="glass"
             size="lg"
-            leftIcon={<Globe className="w-4 h-4 text-cyan" />}
+            leftIcon={<Trophy className="w-4 h-4 text-cyan" />}
           >
-            Linktree Official Hub
+            Explore Events & Hackathons
           </Button>
           <Button
             href="/community"
@@ -98,88 +102,114 @@ export function Hero() {
           </Button>
         </motion.div>
 
-        {/* 4 Community Empowerment Pillars Grid */}
+        {/* 3 Core Pillars (Learn, Build, Connect) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
         >
-          {/* Pillar 1 */}
-          <SpotlightCard glowColor="cyan" className="p-6 bg-navy-950/60 flex flex-col justify-between">
+          {/* Pillar 1: LEARN */}
+          <SpotlightCard glowColor="cyan" className="p-8 bg-navy-950/60 flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan mb-4 backdrop-blur-md">
+              <div className="w-12 h-12 rounded-2xl bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan mb-5 backdrop-blur-md shadow-[0_0_15px_rgba(0,229,255,0.2)]">
                 <BookOpen className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground font-display">
-                Skill-Building Workshops
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-mono text-cyan font-bold uppercase tracking-wider">PILLAR 01</span>
+                <span className="text-xs text-slate-500">•</span>
+                <span className="text-xs text-slate-400 font-mono">Workshops & Webinars</span>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground font-display">
+                Learn
               </h3>
-              <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                Interactive masterclasses and hands-on exposure to cutting-edge tech like LLMs, RAG, Web3, and cloud systems.
+              <p className="mt-3 text-sm text-slate-300 leading-relaxed font-normal">
+                Hands-on interactive masterclasses covering Artificial Intelligence, Data Science, Web3, LLMs & RAG, and production software engineering.
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-cyan flex items-center justify-between">
-              <span>Hands-on Sessions</span>
-              <span>100% Free →</span>
+            <div className="mt-6 pt-4 border-t border-white/[0.06] text-xs font-mono text-cyan flex items-center justify-between">
+              <span>Interactive Sessions</span>
+              <span>100% Free Access →</span>
             </div>
           </SpotlightCard>
 
-          {/* Pillar 2 */}
-          <SpotlightCard glowColor="violet" className="p-6 bg-navy-950/60 flex flex-col justify-between">
+          {/* Pillar 2: BUILD */}
+          <SpotlightCard glowColor="violet" className="p-8 bg-navy-950/60 flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-electric-violet/10 border border-electric-violet/30 flex items-center justify-center text-electric-violet mb-4 backdrop-blur-md">
+              <div className="w-12 h-12 rounded-2xl bg-electric-violet/10 border border-electric-violet/30 flex items-center justify-center text-electric-violet mb-5 backdrop-blur-md shadow-[0_0_15px_rgba(139,92,246,0.2)]">
                 <Trophy className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground font-display">
-                Hackathons & Sprints
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-mono text-electric-violet font-bold uppercase tracking-wider">PILLAR 02</span>
+                <span className="text-xs text-slate-500">•</span>
+                <span className="text-xs text-slate-400 font-mono">Hackathons & Sprints</span>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground font-display">
+                Build
               </h3>
-              <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                National hackathons like System Escalation and Skill Climax with ₹2,00,000+ prize pools to build working MVPs.
+              <p className="mt-3 text-sm text-slate-300 leading-relaxed font-normal">
+                Collaborative mini-projects and fast-paced national hackathons like The Black Box Protocol and Skill Climax with ₹2,00,000+ in prize pools.
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-electric-violet flex items-center justify-between">
-              <span>National Series</span>
+            <div className="mt-6 pt-4 border-t border-white/[0.06] text-xs font-mono text-electric-violet flex items-center justify-between">
+              <span>Ship Real MVPs</span>
               <span>Compete & Win →</span>
             </div>
           </SpotlightCard>
 
-          {/* Pillar 3 */}
-          <SpotlightCard glowColor="cyan" className="p-6 bg-navy-950/60 flex flex-col justify-between">
+          {/* Pillar 3: CONNECT */}
+          <SpotlightCard glowColor="cyan" className="p-8 bg-navy-950/60 flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan mb-4 backdrop-blur-md">
-                <HeartHandshake className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground font-display">
-                Startup Collaborations
-              </h3>
-              <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                Collaborating with tech startups, incubators like HiDevs, and industry experts for real-world project experience.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-cyan flex items-center justify-between">
-              <span>Incubation Pipeline</span>
-              <span>Mentorship →</span>
-            </div>
-          </SpotlightCard>
-
-          {/* Pillar 4 */}
-          <SpotlightCard glowColor="violet" className="p-6 bg-navy-950/60 flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4 backdrop-blur-md">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5 backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                 <Users className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground font-display">
-                Peer-to-Peer Network
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">PILLAR 03</span>
+                <span className="text-xs text-slate-500">•</span>
+                <span className="text-xs text-slate-400 font-mono">Peer Network</span>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground font-display">
+                Connect
               </h3>
-              <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                10,000+ active learners across 100+ partner communities networking, sharing code, and growing together.
+              <p className="mt-3 text-sm text-slate-300 leading-relaxed font-normal">
+                Peer-to-peer mentoring, startup collaborations, and direct networking with industry-ready developers across 100+ partner communities.
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-emerald-400 flex items-center justify-between">
-              <span>WhatsApp & Discord</span>
+            <div className="mt-6 pt-4 border-t border-white/[0.06] text-xs font-mono text-emerald-400 flex items-center justify-between">
+              <span>Discord & WhatsApp Hubs</span>
               <span>Join Network →</span>
             </div>
           </SpotlightCard>
+        </motion.div>
+
+        {/* Metrics & Social Proof Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="rounded-3xl bg-navy-950/60 border border-white/[0.08] p-6 sm:p-8 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_20px_45px_-10px_rgba(0,0,0,0.6)] grid grid-cols-2 md:grid-cols-4 gap-6 text-center relative overflow-hidden"
+        >
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+          
+          <div>
+            <span className="text-3xl sm:text-4xl font-extrabold text-foreground font-display block">10,000+</span>
+            <span className="text-xs font-mono text-slate-400 uppercase tracking-wider mt-1 block">Active Learners</span>
+          </div>
+
+          <div>
+            <span className="text-3xl sm:text-4xl font-extrabold text-foreground font-display block">10+</span>
+            <span className="text-xs font-mono text-slate-400 uppercase tracking-wider mt-1 block">Hackathons & Sprints</span>
+          </div>
+
+          <div>
+            <span className="text-3xl sm:text-4xl font-extrabold text-foreground font-display block">100+</span>
+            <span className="text-xs font-mono text-slate-400 uppercase tracking-wider mt-1 block">Partner Communities</span>
+          </div>
+
+          <div>
+            <span className="text-3xl sm:text-4xl font-extrabold text-cyan font-display block">₹2,00,000+</span>
+            <span className="text-xs font-mono text-slate-400 uppercase tracking-wider mt-1 block">Prize Pool Awarded</span>
+          </div>
         </motion.div>
       </div>
     </section>

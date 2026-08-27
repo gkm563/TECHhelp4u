@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Phone, MapPin, Mail } from "lucide-react";
+import { ArrowUpRight, Phone, MapPin, Mail, MessageSquare } from "lucide-react";
 import { navItems, socialLinks } from "@/data/navigation";
 
 export function Footer() {
@@ -37,7 +37,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-slate-300 text-sm leading-relaxed max-w-sm mb-4 font-normal">
-              A student-driven tech community built by students, for students. Bridging the gap between learning and real-world application through hands-on opportunities in technology, innovation, and personal development.
+              A student-driven tech community bridging the gap between classroom theory and real-world application. We provide a hands-on sandbox for student developers to break, build, and deploy real systems.
             </p>
             <div className="space-y-1.5 text-xs font-mono text-slate-300 mb-6">
               <div className="flex items-center gap-2">
@@ -45,15 +45,21 @@ export function Footer() {
                 <span>Bhopal, Madhya Pradesh 462042, India</span>
               </div>
               <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-cyan shrink-0" />
+                <a href="mailto:info@techhelp4u.com" className="hover:text-cyan transition-colors">
+                  info@techhelp4u.com / partner@techhelp4u.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-cyan shrink-0" />
                 <a href="tel:+919238253996" className="hover:text-cyan transition-colors">
-                  +91 9238253996
+                  +91 9238253996 / +91 9301768404
                 </a>
               </div>
             </div>
             <div className="flex items-center gap-2 text-xs font-mono text-cyan bg-cyan/10 px-3.5 py-1.5 rounded-full border border-cyan/25 backdrop-blur-md shadow-[0_0_12px_rgba(0,229,255,0.15)]">
               <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-              <span>Founded 2025 • Open for Partnerships</span>
+              <span>Founded 2025 in Bhopal • Open to the World</span>
             </div>
           </div>
 
@@ -69,14 +75,14 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/events/techhack-2026" className="text-slate-300 hover:text-cyan transition-colors flex items-center gap-1">
-                  TECHhack 2026
+                <Link href="/events/system-escalation" className="text-slate-300 hover:text-cyan transition-colors flex items-center gap-1">
+                  The Black-Box Protocol
                   <span className="text-[10px] text-cyan font-mono bg-cyan/10 px-1.5 py-0.2 rounded-full border border-cyan/20">Flagship</span>
                 </Link>
               </li>
               <li>
-                <Link href="/initiatives" className="text-slate-300 hover:text-cyan transition-colors">
-                  Flagship Initiatives
+                <Link href="/events/skill-climax-v1" className="text-slate-300 hover:text-cyan transition-colors">
+                  Skill Climax V1.0
                 </Link>
               </li>
               <li>
@@ -110,7 +116,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/collaborations" className="text-slate-300 hover:text-cyan transition-colors">
-                  Partners & Alliances
+                  Partner Ecosystem
                 </Link>
               </li>
               <li>
@@ -120,19 +126,19 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-slate-300 hover:text-cyan transition-colors">
-                  Partner / Contact Us
+                  Partner / Sponsor Us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Verified Platforms */}
+          {/* Column 3: Official Portals */}
           <div>
             <h3 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-4 font-semibold">
               Official Hubs
             </h3>
             <ul className="space-y-2.5 text-sm">
-              {socialLinks.map((item) => (
+              {socialLinks.slice(0, 6).map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
@@ -152,12 +158,18 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 mt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono">
           <p>© {new Date().getFullYear()} TECHhelp4U Community. Built by Students, For Students.</p>
-          <div className="flex items-center gap-2 text-slate-400">
-            <span>Bhopal, Madhya Pradesh 462042, India</span>
+          <div className="flex items-center gap-3 text-slate-400">
+            <Link href="/contact" className="hover:text-cyan transition-colors">
+              Privacy Policy
+            </Link>
             <span>•</span>
-            <a href="tel:+919238253996" className="text-cyan hover:underline">
-              +91 9238253996
-            </a>
+            <Link href="/contact" className="hover:text-cyan transition-colors">
+              Terms of Service
+            </Link>
+            <span>•</span>
+            <Link href="/contact" className="hover:text-cyan transition-colors">
+              Community Guidelines
+            </Link>
           </div>
         </div>
       </div>
