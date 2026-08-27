@@ -3,7 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { TrustMarquee } from "@/components/home/TrustMarquee";
 import { StorytellingNarrative } from "@/components/home/StorytellingNarrative";
 import { EcosystemExplorer } from "@/components/home/EcosystemExplorer";
-import { BlackBoxCampaignSection } from "@/components/home/BlackBoxCampaignSection";
+import { FlagshipHackathonSection } from "@/components/home/FlagshipHackathonSection";
 import { EventsPreview } from "@/components/home/EventsPreview";
 import { ImpactSection } from "@/components/home/ImpactSection";
 import { BuilderStoriesSection } from "@/components/home/BuilderStoriesSection";
@@ -16,7 +16,7 @@ export default function HomePage() {
       <TrustMarquee />
       <StorytellingNarrative />
       <EcosystemExplorer />
-      <BlackBoxCampaignSection />
+      <FlagshipHackathonSection />
       <EventsPreview />
       <ImpactSection />
       <BuilderStoriesSection />

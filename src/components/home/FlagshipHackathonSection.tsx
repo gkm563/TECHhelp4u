@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function BlackBoxCampaignSection() {
+export function FlagshipHackathonSection() {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const hackathonStages = [
