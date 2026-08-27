@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Code2, ArrowUpRight, Heart, Sparkles, Users } from "lucide-react";
+import { Code2, ArrowUpRight, Phone, MapPin, Mail } from "lucide-react";
 import { navItems, socialLinks } from "@/data/navigation";
 
 export function Footer() {
@@ -24,12 +24,24 @@ export function Footer() {
                 TECH<span className="text-cyan font-mono">help4U</span>
               </span>
             </Link>
-            <p className="text-slate-300 text-sm leading-relaxed max-w-sm mb-6 font-normal">
-              Where Passion Meets Possibility. A student-driven technology community and builder ecosystem empowering engineers across India through real-world projects, hackathons, and mentorship.
+            <p className="text-slate-300 text-sm leading-relaxed max-w-sm mb-4 font-normal">
+              A student-driven tech community built by students, for students. Bridging the gap between learning and real-world application through hands-on opportunities in technology, innovation, and personal development.
             </p>
+            <div className="space-y-1.5 text-xs font-mono text-slate-300 mb-6">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-cyan shrink-0" />
+                <span>Bhopal, Madhya Pradesh 462042, India</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-cyan shrink-0" />
+                <a href="tel:+919238253996" className="hover:text-cyan transition-colors">
+                  +91 9238253996
+                </a>
+              </div>
+            </div>
             <div className="flex items-center gap-2 text-xs font-mono text-cyan bg-cyan/10 px-3.5 py-1.5 rounded-full border border-cyan/25 backdrop-blur-md shadow-[0_0_12px_rgba(0,229,255,0.15)]">
               <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-              <span>Building Pan-India Chapters (2026–2031)</span>
+              <span>Founded 2025 • Open for Partnerships</span>
             </div>
           </div>
 
@@ -41,7 +53,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/events" className="text-slate-300 hover:text-cyan transition-colors">
-                  All Events & Hackathons
+                  All Events & Workshops
                 </Link>
               </li>
               <li>
@@ -96,7 +108,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-slate-300 hover:text-cyan transition-colors">
-                  Contact Us
+                  Partner / Contact Us
                 </Link>
               </li>
             </ul>
@@ -127,11 +139,13 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 mt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono">
-          <p>© {new Date().getFullYear()} TECHhelp4U Community. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} TECHhelp4U Community. Built by Students, For Students.</p>
           <div className="flex items-center gap-2 text-slate-400">
-            <span>Built by Students for Students</span>
+            <span>Bhopal, Madhya Pradesh 462042, India</span>
             <span>•</span>
-            <span>Gwalior, India</span>
+            <a href="tel:+919238253996" className="text-cyan hover:underline">
+              +91 9238253996
+            </a>
           </div>
         </div>
       </div>

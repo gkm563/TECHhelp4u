@@ -18,7 +18,7 @@ export const navItems: NavItem[] = [
 ];
 
 export const socialLinks = [
-  { name: "LinkedIn", href: "https://linkedin.com", icon: "Linkedin" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/107663920/", icon: "Linkedin" },
   { name: "Commudle", href: "https://commudle.com/communities/techhelp4u", icon: "Globe" },
   { name: "Devfolio", href: "https://devfolio.co", icon: "Code" },
   { name: "Unstop", href: "https://unstop.com", icon: "Trophy" },

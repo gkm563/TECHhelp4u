@@ -8,11 +8,13 @@ import {
   Send, 
   Mail, 
   MapPin, 
-  MessageSquare, 
+  Phone, 
   ShieldCheck, 
   CheckCircle2, 
   ArrowUpRight,
-  Terminal
+  Sparkles,
+  HeartHandshake,
+  Clock
 } from "lucide-react";
 import { socialLinks } from "@/data/navigation";
 
@@ -22,16 +24,16 @@ export default function ContactPage() {
     name: "",
     email: "",
     organization: "",
-    purpose: "Partner With Us",
+    purpose: "Partnership & Collaboration",
     message: "",
   });
 
   const purposes = [
-    "Partner With Us",
-    "Sponsor an Event / Hackathon",
-    "Invite TECHhelp4U to Campus",
-    "Join Community & Chapters",
-    "Become a Technical Mentor",
+    "Partnership & Collaboration",
+    "Sponsor a Hackathon / Event",
+    "Invite TECHhelp4U to Your College",
+    "Speaker & Workshop Collaboration",
+    "Campus Ambassador Program (CAP)",
     "General Inquiry",
   ];
 
@@ -51,13 +53,13 @@ export default function ContactPage() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="cyan" dot size="md" className="mb-4">
-            GET IN TOUCH
+            LET&apos;S BUILD TOGETHER
           </Badge>
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-foreground font-display tracking-tight">
-            Connect With <span className="text-gradient-cyan">TECHhelp4U</span>
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-foreground font-display tracking-tight leading-tight">
+            Connect with <span className="text-gradient-cyan">TECHhelp4U</span>
           </h1>
           <p className="mt-4 text-lg text-slate-300 leading-relaxed font-normal">
-            Whether you are a university looking to host a hackathon, an AI/Web3 protocol seeking developer reach, or a student wanting to lead a campus chapter — we&apos;re ready to collaborate.
+            We&apos;re open to partnerships, speakers, sponsors, and changemakers. Join us in building a stronger, smarter student tech ecosystem.
           </p>
         </div>
 
@@ -67,10 +69,24 @@ export default function ContactPage() {
             <div className="rounded-3xl bg-navy-950/50 border border-white/[0.08] p-8 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
               <h3 className="text-xl font-bold text-foreground font-display mb-6">
-                Ecosystem Contact Points
+                Official Contact Points
               </h3>
 
               <div className="space-y-6 text-sm">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-2xl bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan shrink-0 backdrop-blur-md shadow-[0_0_15px_rgba(0,229,255,0.2)]">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-slate-400 block uppercase">
+                      Direct Phone Support
+                    </span>
+                    <a href="tel:+919238253996" className="text-slate-200 font-medium font-mono hover:text-cyan transition-colors">
+                      +91 9238253996
+                    </a>
+                  </div>
+                </div>
+
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-2xl bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan shrink-0 backdrop-blur-md shadow-[0_0_15px_rgba(0,229,255,0.2)]">
                     <Mail className="w-5 h-5" />
@@ -91,21 +107,21 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="text-xs font-mono text-slate-400 block uppercase">
-                      Headquarters & Regional Hub
+                      Headquarters
                     </span>
                     <span className="text-slate-200 font-medium">
-                      Gwalior, Madhya Pradesh, India
+                      Bhopal, Madhya Pradesh 462042, India
                     </span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-2xl bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan shrink-0 backdrop-blur-md shadow-[0_0_15px_rgba(0,229,255,0.2)]">
-                    <Terminal className="w-5 h-5" />
+                    <Clock className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-xs font-mono text-slate-400 block uppercase">
-                      Community Response Time
+                      Response Cadence
                     </span>
                     <span className="text-cyan font-mono text-xs font-semibold">
                       Under 24–48 Business Hours
@@ -118,7 +134,7 @@ export default function ContactPage() {
             {/* Social Gateways */}
             <div className="rounded-3xl bg-navy-950/50 border border-white/[0.08] p-8 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)]">
               <h4 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-4 font-semibold">
-                Official Digital Hubs
+                Official Digital Gateways
               </h4>
               <div className="grid grid-cols-2 gap-3">
                 {socialLinks.map((item) => (
@@ -148,10 +164,10 @@ export default function ContactPage() {
                     <ShieldCheck className="w-8 h-8" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground font-display">
-                    Message Dispatched Successfully!
+                    Message Sent Successfully!
                   </h3>
                   <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed font-normal">
-                    Thank you for reaching out to TECHhelp4U. Your inquiry regarding &ldquo;{formData.purpose}&rdquo; has been logged into our operations queue.
+                    Thank you for contacting TECHhelp4U. The leadership team will review your inquiry regarding &ldquo;{formData.purpose}&rdquo; and get back to you shortly.
                   </p>
                   <Button
                     variant="glass"
@@ -163,7 +179,7 @@ export default function ContactPage() {
                         name: "",
                         email: "",
                         organization: "",
-                        purpose: "Partner With Us",
+                        purpose: "Partnership & Collaboration",
                         message: "",
                       });
                     }}
@@ -195,7 +211,7 @@ export default function ContactPage() {
                       <input
                         type="email"
                         required
-                        placeholder="rahul@domain.com"
+                        placeholder="rahul@college.edu"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full bg-navy-950/50 backdrop-blur-xl border border-white/[0.08] rounded-2xl px-4 py-3.5 text-foreground placeholder:text-slate-500 focus:outline-none focus:border-cyan focus:bg-navy-900/60 focus:shadow-[0_0_20px_rgba(0,229,255,0.2)] shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.4)] transition-all"
@@ -240,7 +256,7 @@ export default function ContactPage() {
                     <textarea
                       rows={4}
                       required
-                      placeholder="Describe your event proposal, sponsorship intent, or questions for the team..."
+                      placeholder="Tell us what you'd like to collaborate on (e.g. workshop, hackathon sponsorship, speaker session, campus ambassador)..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full bg-navy-950/50 backdrop-blur-xl border border-white/[0.08] rounded-2xl px-4 py-3.5 text-foreground placeholder:text-slate-500 focus:outline-none focus:border-cyan focus:bg-navy-900/60 focus:shadow-[0_0_20px_rgba(0,229,255,0.2)] shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.4)] transition-all"
@@ -254,7 +270,7 @@ export default function ContactPage() {
                     className="w-full justify-center mt-4"
                     rightIcon={<Send className="w-4 h-4" />}
                   >
-                    Dispatch Inquiry
+                    Send Message
                   </Button>
                 </form>
               )}

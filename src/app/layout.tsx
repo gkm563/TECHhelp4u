@@ -15,10 +15,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://techhelp4u.in"),
   title: {
-    default: "TECHhelp4U | Where Passion Meets Possibility — Student Tech Community & Ecosystem",
+    default: "TECHhelp4U | Student-Driven Tech Community — Built by Students, For Students",
     template: "%s | TECHhelp4U",
   },
-  description: "Official TECHhelp4U digital home. A student-driven technology community and builder ecosystem across India empowering engineers through hackathons, workshops, AI/Web3 innovation, and leadership pipelines.",
+  description: "Official TECHhelp4U digital home. A student-driven tech community built by students, for students. Bridging the gap between learning and real-world application through workshops, hackathons, and mentorship.",
   keywords: [
     "TECHhelp4U",
     "TECHhelp4U community",
@@ -28,12 +28,11 @@ export const metadata: Metadata = {
     "Skill Climax",
     "Skill Showdown",
     "student tech community India",
-    "developer community India",
+    "developer community Bhopal",
+    "developer community Madhya Pradesh",
     "AI workshops India",
     "Web3 hackathon India",
     "student developer events",
-    "technology workshops India",
-    "developer workshops Gwalior",
     "Campus Ambassador Program 2026",
     "CAP 2026",
     "Vedansh Goyal",
@@ -56,8 +55,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://techhelp4u.in",
-    title: "TECHhelp4U | Where Passion Meets Possibility",
-    description: "Student-driven technology community empowering builders through hackathons, practical learning, and campus leadership.",
+    title: "TECHhelp4U | Student-Driven Tech Community",
+    description: "Built by students, for students. Bridging the gap between learning and real-world application through workshops, hackathons, and startup collaborations.",
     siteName: "TECHhelp4U Community",
     images: [
       {
@@ -70,8 +69,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TECHhelp4U | Student Tech Community & Ecosystem",
-    description: "Where Passion Meets Possibility. Hackathons, workshops, AI, Web3, and builder pipelines.",
+    title: "TECHhelp4U | Student-Driven Tech Community",
+    description: "Built by students, for students. Workshops, hackathons, startup collaborations, and mentorship.",
     images: ["https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"],
   },
   robots: {
@@ -87,7 +86,16 @@ const jsonLdOrg = {
   "alternateName": "TECHhelp4U Community",
   "url": "https://techhelp4u.in",
   "logo": "https://techhelp4u.in/logo.png",
-  "description": "A student-driven technology community and builder ecosystem empowering engineers across India through real-world projects, hackathons, and mentorship.",
+  "description": "A student-driven tech community built by students, for students. Our mission is to bridge the gap between learning and real-world application by offering accessible, hands-on opportunities in technology, innovation, and personal development.",
+  "foundingDate": "2025",
+  "telephone": "+91-9238253996",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bhopal",
+    "addressRegion": "Madhya Pradesh",
+    "postalCode": "462042",
+    "addressCountry": "IN"
+  },
   "founders": [
     {
       "@type": "Person",
@@ -101,10 +109,10 @@ const jsonLdOrg = {
     }
   ],
   "sameAs": [
+    "https://www.linkedin.com/company/107663920/",
     "https://commudle.com/communities/techhelp4u",
     "https://devfolio.co",
     "https://unstop.com",
-    "https://linkedin.com",
     "https://github.com/techhelp4u"
   ]
 };

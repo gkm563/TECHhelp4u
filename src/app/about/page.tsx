@@ -10,76 +10,48 @@ import {
   Sparkles, 
   CheckCircle2, 
   ArrowUpRight, 
-  Terminal, 
-  Users2, 
-  TrendingUp, 
-  Flame 
+  Users, 
+  HeartHandshake, 
+  Trophy, 
+  BookOpen, 
+  MapPin, 
+  Phone, 
+  Calendar, 
+  Building2,
+  HelpCircle
 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | Philosophy, Mission & 5-Year Roadmap",
-  description: "Learn how TECHhelp4U began as a peer-to-peer engineering group and grew into a pan-India student technology leadership ecosystem.",
+  title: "About TECHhelp4U | Student-Driven Tech Community",
+  description: "Learn about TECHhelp4U, founded in 2025 in Bhopal, MP. Built by students, for students to bridge the gap between learning and real-world application.",
 };
 
 export default function AboutPage() {
-  const values = [
+  const pillars = [
     {
-      title: "Accessibility",
-      desc: "Zero paywalls on foundational technical learning. Quality knowledge should never be gated by tuition fees or geography.",
-      icon: Target,
+      title: "Skill-Building Workshops & Webinars",
+      desc: "Accessible, hands-on masterclasses in full-stack development, Python, AI APIs, Git, and modern engineering tools to prepare students for real-world projects.",
+      icon: BookOpen,
       color: "#00E5FF",
     },
     {
-      title: "Authenticity",
-      desc: "Real mentors, real codebases, honest case studies, and zero fabricated vanity statistics. What you see is what we build.",
-      icon: ShieldCheck,
+      title: "Hackathons & Mini Projects",
+      desc: "Fostering creativity, problem-solving, and teamwork through 36-hour hackathons, mini builds, and project-based learning with prize rewards.",
+      icon: Trophy,
       color: "#8B5CF6",
     },
     {
-      title: "Consistency",
-      desc: "A predictable, structured cadence of workshops, hackathons, and study groups rather than fleeting one-off hype events.",
-      icon: Sparkles,
+      title: "Collaborations with Startups & Experts",
+      desc: "Connecting students directly with working software engineers, startup founders, and ecosystem platforms for genuine 1-on-1 mentorship.",
+      icon: HeartHandshake,
       color: "#10B981",
     },
     {
-      title: "Merit-Based Growth",
-      desc: "Recognition, letters of recommendation, and leadership promotions tied directly to tangible contributions and skill mastery.",
-      icon: TrendingUp,
+      title: "Peer-to-Peer Support System",
+      desc: "A warm, inclusive community where learners at all levels can ask questions, collaborate on code, find hackathon teammates, and grow together.",
+      icon: Users,
       color: "#F59E0B",
-    },
-  ];
-
-  const roadmapMilestones = [
-    {
-      year: "Year 1 (2026)",
-      title: "Pilot Validation & 50 Campuses",
-      desc: "Deploy the Campus Ambassador Program (CAP) across 50 target colleges, establish Regional Lead tiers, and execute flagship hybrid hackathons.",
-      status: "CURRENT FOCUS",
-    },
-    {
-      year: "Year 2 (2027)",
-      title: "250 Colleges & Flagship Conference",
-      desc: "Host the inaugural TECHhelp4U National Builder Summit and formalize corporate accelerator sponsorships.",
-      status: "PLANNED",
-    },
-    {
-      year: "Year 3 (2028)",
-      title: "500 Colleges & State Governance",
-      desc: "Decentralized state chapter leadership circles driving regional innovation labs and hackathon qualifying circuits.",
-      status: "PLANNED",
-    },
-    {
-      year: "Year 4 (2029)",
-      title: "750 Colleges & Alumni Placements",
-      desc: "Dedicated talent placement network matching high-performing alumni directly with tech scale-ups and venture studios.",
-      status: "PLANNED",
-    },
-    {
-      year: "Year 5 (2030–31)",
-      title: "1,000+ Colleges Pan-India Network",
-      desc: "Self-sustaining student innovation engine operating across every major engineering and technical hub in India.",
-      status: "PLANNED",
     },
   ];
 
@@ -90,174 +62,173 @@ export default function AboutPage() {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-electric-violet/10 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Hero Section */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="cyan" dot size="md" className="mb-4">
-            OUR STORY & PHILOSOPHY
+            ABOUT TECHHELP4U
           </Badge>
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-foreground font-display tracking-tight">
-            Building India&apos;s Student{" "}
-            <span className="text-gradient-cyan">Technology Ecosystem</span>
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-foreground font-display tracking-tight leading-tight">
+            Built by Students, <span className="text-gradient-cyan">For Students</span>
           </h1>
-          <p className="mt-6 text-lg text-slate-300 leading-relaxed font-normal">
-            TECHhelp4U began as a small peer-to-peer help group among engineering students tired of learning in isolation. Today, it is evolving into a structured leadership and builder network spanning dozens of campuses.
+          <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
+            TECHhelp4U is a student-driven tech community founded in 2025. Our mission is to bridge the gap between learning and real-world application by offering accessible, hands-on opportunities in technology, innovation, and personal development.
           </p>
         </div>
 
-        {/* Founder Message Frosted Glass Section */}
-        <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-8 sm:p-12 mb-20 backdrop-blur-2xl relative overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_20px_50px_-10px_rgba(0,0,0,0.6)]">
-          {/* Specular top glare line */}
+        {/* Quick Facts Card Strip */}
+        <div className="rounded-3xl bg-navy-950/60 border border-white/[0.08] p-6 sm:p-8 mb-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_20px_45px_-10px_rgba(0,0,0,0.6)] relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan/10 blur-[120px] rounded-full pointer-events-none" />
+          <div className="flex flex-col items-center">
+            <Calendar className="w-5 h-5 text-cyan mb-2" />
+            <span className="text-2xl sm:text-3xl font-extrabold text-foreground font-display">2025</span>
+            <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Founded In</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <MapPin className="w-5 h-5 text-cyan mb-2" />
+            <span className="text-xl sm:text-2xl font-bold text-foreground font-display">Bhopal, MP</span>
+            <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Headquarters</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <Users className="w-5 h-5 text-cyan mb-2" />
+            <span className="text-2xl sm:text-3xl font-extrabold text-foreground font-display">11–50</span>
+            <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Team & Coordinators</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <Building2 className="w-5 h-5 text-cyan mb-2" />
+            <span className="text-lg sm:text-xl font-bold text-foreground font-display">Tech & Internet</span>
+            <span className="text-xs font-mono text-slate-400 block mt-1 uppercase">Industry Domain</span>
+          </div>
+        </div>
+
+        {/* Detailed Overview Story Section */}
+        <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-8 sm:p-12 mb-20 backdrop-blur-2xl relative overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_20px_50px_-10px_rgba(0,0,0,0.6)]">
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
           
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start relative z-10">
-            <div className="w-16 h-16 rounded-2xl bg-cyan/10 border border-cyan/40 flex items-center justify-center text-cyan shrink-0 backdrop-blur-md shadow-[0_0_20px_rgba(0,229,255,0.25)]">
-              <Terminal className="w-8 h-8" />
+          <div className="max-w-4xl mx-auto">
+            <Badge variant="cyan" size="sm" className="mb-4">OUR PURPOSE & VISION</Badge>
+            <h2 className="text-2xl sm:text-4xl font-bold text-foreground font-display leading-snug">
+              &ldquo;Whether you&apos;re a curious beginner, a skilled coder, or someone passionate about tech education — TECHhelp4U is your platform to learn, share, and grow.&rdquo;
+            </h2>
+            <div className="mt-6 space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+              <p>
+                We believe that standard college curricula often leave a gap when it comes to hands-on software development, open-source collaboration, and modern industry workflows. Students often struggle to find practical guidance, hackathon teammates, or a safe place to ask technical questions without judgment.
+              </p>
+              <p>
+                TECHhelp4U was built to solve exactly that. We organize hands-on masterclasses, multi-track hackathons, campus ambassador chapters, and direct startup mentorship sessions across universities in India.
+              </p>
+              <p className="text-cyan font-medium pt-2">
+                🔗 We&apos;re open to partnerships, speakers, sponsors, and changemakers. Join us in building a stronger, smarter student tech ecosystem.
+              </p>
             </div>
 
-            <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-cyan font-semibold block mb-2">
-                FOUNDER&apos;S PERSPECTIVE
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-display">
-                &ldquo;Talent in India&apos;s colleges is not the constraint — access, mentorship, and consistent opportunity are.&rdquo;
-              </h2>
-              <div className="mt-4 space-y-4 text-slate-300 text-base leading-relaxed">
-                <p>
-                  Every large movement begins with a small, stubborn belief. Over our cycles of workshops, hackathons, and community drives, we consistently observed the same pattern: motivated students exist on every campus, but they lack a structured platform to convert that motivation into leadership experience, a professional network, and a portfolio of real accomplishments.
-                </p>
-                <p>
-                  TECHhelp4U exists to solve that problem deliberately, measurably, and at scale. We are not just organizing weekend events; we are building a multi-year leadership pipeline where students who join as curious learners today become the regional chapter heads and core team members of tomorrow.
-                </p>
-              </div>
-
-              <div className="mt-6 pt-6 border-t border-white/[0.08] flex items-center justify-between">
-                <div>
-                  <h4 className="text-base font-bold text-foreground">Vedansh Goyal</h4>
-                  <p className="text-xs font-mono text-slate-400">Founder & Community Lead, TECHhelp4U</p>
-                </div>
+            <div className="mt-8 pt-8 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
                 <Link
                   href="/team"
-                  className="text-xs font-mono text-cyan hover:underline flex items-center gap-1 font-semibold"
+                  className="text-xs font-mono text-cyan hover:underline flex items-center gap-1 font-bold"
                 >
-                  Meet Leadership Team <ArrowUpRight className="w-3.5 h-3.5" />
+                  Meet Leadership Team (Vedansh, Monika & Core Team) <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
+              <Button href="/contact" variant="cyan-glow" size="sm">
+                Get in Touch
+              </Button>
             </div>
           </div>
         </div>
 
-        {/* Mission & Vision Glass Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          <div className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-8 backdrop-blur-xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/30 to-transparent pointer-events-none" />
-            <div className="w-12 h-12 rounded-2xl bg-cyan/10 border border-cyan/40 flex items-center justify-center text-cyan mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(0,229,255,0.2)]">
-              <Target className="w-6 h-6" />
-            </div>
-            <h3 className="text-2xl font-bold text-foreground font-display mb-3">Our Mission</h3>
-            <p className="text-slate-300 leading-relaxed text-base">
-              To make high-quality technical learning, mentorship, and real-world opportunity accessible to every student, regardless of which college they attend or what resources their campus provides.
-            </p>
-          </div>
-
-          <div className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-8 backdrop-blur-xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-electric-violet/30 to-transparent pointer-events-none" />
-            <div className="w-12 h-12 rounded-2xl bg-electric-violet/10 border border-electric-violet/40 flex items-center justify-center text-electric-violet mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(139,92,246,0.2)]">
-              <Eye className="w-6 h-6" />
-            </div>
-            <h3 className="text-2xl font-bold text-foreground font-display mb-3">Our Vision</h3>
-            <p className="text-slate-300 leading-relaxed text-base">
-              To become one of India&apos;s most trusted and active student-led technology ecosystems — a recognizable platform where builders launch production software, lead campus chapters, and connect directly with industry opportunities.
-            </p>
-          </div>
-        </div>
-
-        {/* Core Values Section */}
+        {/* 4 Core Pillars */}
         <div className="mb-20">
           <SectionHeading
-            badge="OUR CORE PRINCIPLES"
-            title="Values That Guide"
-            highlightText="Every Decision"
-            description="Our culture is built around practical execution, transparent meritocracy, and putting the student builder first."
+            badge="HOW WE EMPOWER LEARNERS"
+            title="Our Four Core"
+            highlightText="Community Pillars"
+            description="Designed to support students at every stage of their developer journey."
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((v) => {
-              const Icon = v.icon;
+            {pillars.map((p) => {
+              const Icon = p.icon;
               return (
                 <div
-                  key={v.title}
-                  className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-7 backdrop-blur-xl hover:border-cyan/40 hover:bg-white/[0.04] transition-all duration-300 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)] hover:shadow-[0_15px_35px_-10px_rgba(0,229,255,0.15)] hover:-translate-y-1 relative overflow-hidden group"
+                  key={p.title}
+                  className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-7 backdrop-blur-xl hover:border-cyan/40 hover:bg-white/[0.04] transition-all duration-300 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)] hover:shadow-[0_15px_35px_-10px_rgba(0,229,255,0.15)] hover:-translate-y-1 relative overflow-hidden group flex flex-col justify-between"
                 >
                   <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.1] to-transparent pointer-events-none" />
                   
-                  <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center border mb-6 backdrop-blur-md transition-transform group-hover:scale-110 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)]"
-                    style={{
-                      backgroundColor: `${v.color}15`,
-                      borderColor: `${v.color}40`,
-                    }}
-                  >
-                    <Icon className="w-6 h-6" style={{ color: v.color }} />
+                  <div>
+                    <div
+                      className="w-12 h-12 rounded-2xl flex items-center justify-center border mb-6 backdrop-blur-md transition-transform group-hover:scale-110 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)]"
+                      style={{
+                        backgroundColor: `${p.color}15`,
+                        borderColor: `${p.color}40`,
+                      }}
+                    >
+                      <Icon className="w-6 h-6" style={{ color: p.color }} />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground font-display mb-2">
+                      {p.title}
+                    </h3>
+                    <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                      {p.desc}
+                    </p>
                   </div>
-                  <h4 className="text-lg font-bold text-foreground font-display mb-2">
-                    {v.title}
-                  </h4>
-                  <p className="text-xs text-slate-300 leading-relaxed font-normal">
-                    {v.desc}
-                  </p>
+
+                  <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-slate-400 flex items-center justify-between">
+                    <span>Active Program</span>
+                    <span className="text-cyan font-bold">100% Free</span>
+                  </div>
                 </div>
               );
             })}
           </div>
         </div>
 
-        {/* 5-Year Expansion Roadmap Glass Container */}
+        {/* Official Contact & HQ Location Card */}
         <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-8 sm:p-12 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_20px_50px_-10px_rgba(0,0,0,0.6)] relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
 
-          <div className="max-w-2xl mb-10">
-            <Badge variant="cyan" dot size="sm" className="mb-3">
-              EXPANSION PLAYBOOK
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-display">
-              5-Year Strategic Roadmap (2026–2031)
-            </h2>
-            <p className="mt-3 text-slate-400 text-sm">
-              Our structured trajectory from pilot campus validation to a pan-India student leadership ecosystem.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <Badge variant="cyan" size="sm" className="mb-3">
+                OFFICIAL COMMUNITY HEADQUARTERS
+              </Badge>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-display">
+                Connect with TECHhelp4U
+              </h2>
+              <p className="mt-3 text-slate-300 text-sm leading-relaxed">
+                Whether you want to organize a campus workshop, invite our team for a speaker session, or explore partnership opportunities, we&apos;d love to hear from you.
+              </p>
 
-          <div className="space-y-4">
-            {roadmapMilestones.map((m) => (
-              <div
-                key={m.year}
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.07] hover:border-cyan/40 hover:bg-white/[0.06] transition-all duration-200 gap-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
-              >
-                <div className="flex items-start sm:items-center gap-4">
-                  <span className="font-mono text-sm font-bold text-cyan bg-cyan/10 px-3 py-1.5 rounded-xl border border-cyan/25 shrink-0 shadow-[0_0_10px_rgba(0,229,255,0.15)]">
-                    {m.year}
-                  </span>
-                  <div>
-                    <h4 className="text-base font-bold text-foreground font-display">
-                      {m.title}
-                    </h4>
-                    <p className="text-xs text-slate-300 mt-1 max-w-xl">
-                      {m.desc}
-                    </p>
-                  </div>
+              <div className="mt-6 space-y-3 font-mono text-xs text-slate-300">
+                <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+                  <MapPin className="w-4 h-4 text-cyan shrink-0" />
+                  <span>Bhopal, Madhya Pradesh 462042, India</span>
                 </div>
-                <span
-                  className={`text-[11px] font-mono px-3 py-1 rounded-full border self-start sm:self-auto shrink-0 ${
-                    m.status === "CURRENT FOCUS"
-                      ? "text-cyan bg-cyan/10 border-cyan/40 animate-pulse shadow-[0_0_12px_rgba(0,229,255,0.2)]"
-                      : "text-slate-400 bg-white/[0.02] border-white/[0.08]"
-                  }`}
-                >
-                  {m.status}
-                </span>
+                <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+                  <Phone className="w-4 h-4 text-cyan shrink-0" />
+                  <span>+91 9238253996</span>
+                </div>
               </div>
-            ))}
+            </div>
+
+            <div className="flex flex-col items-center justify-center p-6 rounded-3xl bg-white/[0.03] border border-white/[0.08] text-center">
+              <Sparkles className="w-10 h-10 text-cyan mb-3 drop-shadow-[0_0_15px_rgba(0,229,255,0.4)]" />
+              <h3 className="text-lg font-bold text-foreground font-display">
+                Join as a Partner or Sponsor
+              </h3>
+              <p className="text-xs text-slate-300 mt-2 max-w-sm">
+                Collaborate with our student builder ecosystem for hackathon grants, speaker invitations, and campus outreach.
+              </p>
+              <div className="mt-6 flex gap-3">
+                <Button href="/contact" variant="cyan-glow" size="sm">
+                  Contact Us
+                </Button>
+                <Button href="/community" variant="glass" size="sm">
+                  Campus Ambassador
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
