@@ -14,13 +14,13 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
-  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("dark");
+  const [theme, setThemeState] = useState<Theme>("light");
+  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Read saved theme from localStorage
-    const savedTheme = (localStorage.getItem("techhelp4u-theme") as Theme) || "dark";
+    // Read saved theme from localStorage, default to 'light'
+    const savedTheme = (localStorage.getItem("techhelp4u-theme") as Theme) || "light";
     setThemeState(savedTheme);
     setMounted(true);
   }, []);
@@ -29,7 +29,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (!mounted) return;
 
     const root = document.documentElement;
-    let actualTheme: "light" | "dark" = "dark";
+    let actualTheme: "light" | "dark" = "light";
 
     if (theme === "system") {
       const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;

@@ -150,7 +150,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${outfit.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
+      className={`light ${outfit.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -160,7 +160,7 @@ export default function RootLayout({
               (function() {
                 try {
                   var saved = localStorage.getItem('techhelp4u-theme');
-                  var theme = saved || 'dark';
+                  var theme = saved || 'light';
                   if (theme === 'system') {
                     theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                   }
