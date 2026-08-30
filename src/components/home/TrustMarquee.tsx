@@ -12,7 +12,7 @@ export function TrustMarquee() {
   return (
     <section className="py-14 sm:py-16 border-y border-slate-200/80 dark:border-white/[0.08] bg-slate-50/80 dark:bg-navy-950/50 backdrop-blur-2xl overflow-hidden relative transition-colors duration-300">
       {/* Soft background ambient gradient */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[250px] bg-cyan/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[250px] bg-cyan/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative z-10">
         <div className="flex items-center gap-2.5">
@@ -36,8 +36,8 @@ export function TrustMarquee() {
         <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-        <div className="flex items-center gap-4 sm:gap-6 animate-marquee group-hover:[animation-play-state:paused] shrink-0">
-          {row1Partners.concat(row1Partners).concat(row1Partners).map((partner, index) => (
+        <div className="animate-marquee-infinite flex items-center gap-4 sm:gap-6 shrink-0 py-1">
+          {row1Partners.concat(row1Partners).concat(row1Partners).concat(row1Partners).map((partner, index) => (
             <div
               key={`r1-${partner.id}-${index}`}
               className="flex items-center gap-3.5 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-white/95 dark:bg-navy-950/80 backdrop-blur-xl border border-slate-200/90 dark:border-white/[0.08] hover:border-cyan-500/50 dark:hover:border-cyan/50 hover:bg-white dark:hover:bg-navy-900 transition-all duration-200 shrink-0 shadow-sm hover:shadow-md"
@@ -68,8 +68,8 @@ export function TrustMarquee() {
         <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-        <div className="flex items-center gap-4 sm:gap-6 animate-marquee-reverse group-hover:[animation-play-state:paused] shrink-0">
-          {row2Partners.concat(row2Partners).concat(row2Partners).map((partner, index) => (
+        <div className="animate-marquee-reverse-infinite flex items-center gap-4 sm:gap-6 shrink-0 py-1">
+          {row2Partners.concat(row2Partners).concat(row2Partners).concat(row2Partners).map((partner, index) => (
             <div
               key={`r2-${partner.id}-${index}`}
               className="flex items-center gap-3.5 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-white/95 dark:bg-navy-950/80 backdrop-blur-xl border border-slate-200/90 dark:border-white/[0.08] hover:border-cyan-500/50 dark:hover:border-cyan/50 hover:bg-white dark:hover:bg-navy-900 transition-all duration-200 shrink-0 shadow-sm hover:shadow-md"

@@ -151,7 +151,7 @@ body {
 }
 
 /* ==========================================================================
-   PREMIUM GLASSMORPHISM & GLASS CHIP SYSTEM (LIGHT & DARK ADAPTIVE)
+   PREMIUM GLASSMORPHISM & GLASS CHIP SYSTEM
    ========================================================================== */
 
 .glass-card {
@@ -189,57 +189,45 @@ body {
     0 20px 45px -10px rgba(0, 229, 255, 0.18);
 }
 
-/* Glass Chips */
-.glass-chip-cyan {
-  background: rgba(2, 132, 199, 0.08);
-  border: 1px solid rgba(2, 132, 199, 0.25);
-  color: #0284C7;
-  backdrop-filter: blur(8px);
+/* ==========================================================================
+   INFINITE MARQUEE KEYFRAMES & UTILITIES
+   ========================================================================== */
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.dark .glass-chip-cyan {
-  background: rgba(0, 229, 255, 0.08);
-  border: 1px solid rgba(0, 229, 255, 0.25);
-  color: #00E5FF;
+@keyframes marquee-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
-.glass-chip-violet {
-  background: rgba(124, 58, 237, 0.08);
-  border: 1px solid rgba(124, 58, 237, 0.25);
-  color: #7C3AED;
-  backdrop-filter: blur(8px);
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 24s linear infinite;
+  will-change: transform;
 }
 
-.dark .glass-chip-violet {
-  background: rgba(139, 92, 246, 0.08);
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  color: #8B5CF6;
+.animate-marquee-reverse-infinite {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-reverse 24s linear infinite;
+  will-change: transform;
 }
 
-.glass-chip-emerald {
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #059669;
-  backdrop-filter: blur(8px);
-}
-
-.dark .glass-chip-emerald {
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #10B981;
-}
-
-.glass-chip-amber {
-  background: rgba(245, 158, 11, 0.08);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  color: #D97706;
-  backdrop-filter: blur(8px);
-}
-
-.dark .glass-chip-amber {
-  background: rgba(245, 158, 11, 0.08);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  color: #F59E0B;
+.animate-marquee-infinite:hover,
+.animate-marquee-reverse-infinite:hover {
+  animation-play-state: paused;
 }
 
 /* ==========================================================================
