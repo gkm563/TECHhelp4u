@@ -3,7 +3,6 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { CustomCursor } from "@/components/motion/CustomCursor";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { BackToTop } from "@/components/motion/FloatingElements";
 
@@ -156,10 +155,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }}
         />
       </head>
-      <body className="min-h-screen bg-background text-foreground font-sans antialiased selection:bg-cyan selection:text-navy-900 flex flex-col transition-colors duration-300">
+      <body className="min-h-screen bg-background text-foreground font-sans antialiased selection:bg-cyan selection:text-navy-900 flex flex-col transition-colors duration-200">
         <ThemeProvider>
           <ScrollProgress />
-          <CustomCursor />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />

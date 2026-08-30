@@ -5,8 +5,7 @@ import Link from "next/link";
 import { Event } from "@/types";
 import { Badge } from "@/ui/Badge";
 import { Button } from "@/ui/Button";
-import { SpotlightCard } from "@/ui/SpotlightCard";
-import { Calendar, MapPin, Users, ArrowUpRight, Sparkles, Terminal, Flame } from "lucide-react";
+import { Calendar, MapPin, Users, ArrowUpRight } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 
 export interface EventCardProps {
@@ -22,10 +21,9 @@ export function EventCard({ event, featured = false }: EventCardProps) {
   };
 
   return (
-    <SpotlightCard
-      glowColor={event.status === "active" ? "emerald" : "cyan"}
-      className={`flex flex-col justify-between group ${
-        featured ? "lg:col-span-2 bg-white dark:bg-navy-950/70 border-cyan-500/40 dark:border-cyan/40 shadow-md dark:shadow-[0_0_40px_rgba(0,229,255,0.15)]" : ""
+    <div
+      className={`rounded-3xl bg-white/90 dark:bg-navy-950/60 border border-slate-200/80 dark:border-white/[0.08] p-6 sm:p-7 backdrop-blur-xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 group ${
+        featured ? "lg:col-span-2 border-cyan-500/40 dark:border-cyan/40" : ""
       }`}
     >
       <div>
@@ -41,7 +39,7 @@ export function EventCard({ event, featured = false }: EventCardProps) {
               </Badge>
             )}
           </div>
-          <span className="text-[11px] font-mono text-cyan-700 dark:text-cyan/90 uppercase font-bold">
+          <span className="text-[11px] font-mono text-cyan-700 dark:text-cyan uppercase font-bold">
             [{event.category}]
           </span>
         </div>
@@ -52,14 +50,14 @@ export function EventCard({ event, featured = false }: EventCardProps) {
             {event.title}
           </h3>
         </Link>
-        <p className="mt-2 text-xs font-mono text-cyan-700 dark:text-cyan line-clamp-1 font-semibold">
+        <p className="mt-1.5 text-xs font-mono text-cyan-700 dark:text-cyan line-clamp-1 font-semibold">
           {event.tagline}
         </p>
         <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed font-normal">
           {event.description}
         </p>
 
-        {/* Metadata Details with subtle glass separator */}
+        {/* Metadata Details */}
         <div className="mt-5 space-y-2 text-xs font-mono text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-white/[0.06] pt-4">
           <div className="flex items-center gap-2">
             <Calendar className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan shrink-0" />
@@ -78,12 +76,12 @@ export function EventCard({ event, featured = false }: EventCardProps) {
           )}
         </div>
 
-        {/* Tech Glass Chips */}
+        {/* Tech Chips */}
         <div className="mt-5 flex flex-wrap gap-1.5">
           {event.technologies.slice(0, 4).map((tech) => (
             <span
               key={tech}
-              className="text-[10px] font-mono px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-white/[0.04] backdrop-blur-md border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-slate-300"
+              className="text-[10px] font-mono px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-slate-300 font-medium"
             >
               {tech}
             </span>
@@ -111,9 +109,9 @@ export function EventCard({ event, featured = false }: EventCardProps) {
             isExternal
             variant="cyan-glow"
             size="sm"
-            className="text-xs"
+            className="text-xs font-bold"
           >
-            Register Now
+            Register Free
           </Button>
         ) : (
           <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 font-medium">
@@ -121,6 +119,6 @@ export function EventCard({ event, featured = false }: EventCardProps) {
           </span>
         )}
       </div>
-    </SpotlightCard>
+    </div>
   );
 }
