@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, useScroll, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp, Sparkles, Terminal, Radio, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -73,7 +73,7 @@ export function FloatingOrb({
         y: [0, -25, 10, 0],
         x: [0, 20, -15, 0],
         scale: [1, 1.1, 0.95, 1],
-        opacity: [0.6, 0.85, 0.5, 0.6],
+        opacity: [0.5, 0.8, 0.4, 0.5],
       }}
       transition={{
         duration: 9,
@@ -104,17 +104,17 @@ export function FloatingTelemetryChip({
   delay?: number;
 }) {
   const colors = {
-    cyan: "border-cyan/30 text-cyan shadow-[0_0_20px_rgba(0,229,255,0.2)]",
-    amber: "border-amber-400/30 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]",
-    violet: "border-electric-violet/30 text-electric-violet shadow-[0_0_20px_rgba(139,92,246,0.2)]",
-    emerald: "border-emerald-400/30 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.2)]",
+    cyan: "border-cyan-300 dark:border-cyan/30 text-cyan-700 dark:text-cyan shadow-sm dark:shadow-[0_0_20px_rgba(0,229,255,0.2)]",
+    amber: "border-amber-300 dark:border-amber-400/30 text-amber-700 dark:text-amber-400 shadow-sm dark:shadow-[0_0_20px_rgba(245,158,11,0.2)]",
+    violet: "border-purple-300 dark:border-electric-violet/30 text-purple-700 dark:text-electric-violet shadow-sm dark:shadow-[0_0_20px_rgba(139,92,246,0.2)]",
+    emerald: "border-emerald-300 dark:border-emerald-400/30 text-emerald-700 dark:text-emerald-400 shadow-sm dark:shadow-[0_0_20px_rgba(16,185,129,0.2)]",
   };
 
   return (
     <FloatingElement duration={5} yOffset={12} delay={delay} className={className}>
       <div
         className={cn(
-          "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-navy-950/70 backdrop-blur-xl border font-mono text-[11px] font-medium select-none shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)]",
+          "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-white/80 dark:bg-navy-950/70 backdrop-blur-xl border font-mono text-[11px] font-semibold select-none shadow-sm",
           colors[color]
         )}
       >
@@ -161,7 +161,7 @@ export function BackToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 p-3 rounded-2xl bg-navy-950/80 backdrop-blur-2xl border border-white/[0.12] text-slate-300 hover:text-cyan hover:border-cyan/50 focus:outline-none transition-all shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),0_15px_30px_-5px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.2)] group"
+          className="fixed bottom-6 right-6 z-50 p-3 rounded-2xl bg-white/90 dark:bg-navy-950/80 backdrop-blur-2xl border border-slate-200 dark:border-white/[0.12] text-slate-700 dark:text-slate-300 hover:text-cyan-700 dark:hover:text-cyan hover:border-cyan-500/50 dark:hover:border-cyan/50 focus:outline-none transition-all shadow-md dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),0_15px_30px_-5px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.2)] group"
           aria-label="Scroll to top of page"
         >
           {/* Circular Progress Ring */}
@@ -170,7 +170,7 @@ export function BackToTop() {
               cx="18"
               cy="18"
               r="15"
-              className="text-white/[0.08]"
+              className="text-slate-200 dark:text-white/[0.08]"
               strokeWidth="2"
               stroke="currentColor"
               fill="transparent"
@@ -179,7 +179,7 @@ export function BackToTop() {
               cx="18"
               cy="18"
               r="15"
-              className="text-cyan transition-all duration-150"
+              className="text-cyan-600 dark:text-cyan transition-all duration-150"
               strokeWidth="2.5"
               strokeDasharray={94.2}
               strokeDashoffset={94.2 - (94.2 * scrollProgress) / 100}

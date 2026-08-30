@@ -39,7 +39,7 @@ export default function TeamPage() {
   });
 
   return (
-    <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+    <div className="pt-28 sm:pt-32 pb-24 min-h-screen relative overflow-hidden bg-background transition-colors duration-300">
       {/* Soft ambient background glow orbs */}
       <FloatingOrb color="cyan" size="xl" className="top-20 left-1/4" />
       <FloatingOrb color="violet" size="lg" className="bottom-20 right-10" />
@@ -54,7 +54,7 @@ export default function TeamPage() {
             <h1 className="text-4xl sm:text-6xl font-extrabold text-foreground font-display tracking-tight">
               The People Behind <span className="text-gradient-cyan">TECHhelp4U</span>
             </h1>
-            <p className="mt-4 text-lg text-slate-300 leading-relaxed font-normal">
+            <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
               We are a passionate team of student developers, organizers, and campus ambassadors dedicated to making practical technology education accessible to everyone.
             </p>
           </div>
@@ -72,11 +72,11 @@ export default function TeamPage() {
                   onClick={() => setSelectedFilter(tab.id)}
                   className={`px-4 py-2.5 rounded-2xl text-xs font-mono font-medium transition-all flex items-center gap-2 backdrop-blur-xl ${
                     isSelected
-                      ? "bg-cyan text-navy-900 font-bold shadow-[0_0_20px_rgba(0,229,255,0.4)] border border-cyan"
-                      : "bg-white/[0.04] border border-white/[0.08] text-slate-300 hover:border-white/[0.2] hover:bg-white/[0.08]"
+                      ? "bg-cyan text-navy-900 font-bold shadow-sm dark:shadow-[0_0_20px_rgba(0,229,255,0.4)] border border-cyan"
+                      : "bg-white/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-slate-300 hover:border-cyan-500/40 dark:hover:border-white/[0.2] hover:bg-slate-100 dark:hover:bg-white/[0.08]"
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 ${isSelected ? "text-navy-900" : "text-cyan"}`} />
+                  <Icon className={`w-3.5 h-3.5 ${isSelected ? "text-navy-900" : "text-cyan-700 dark:text-cyan"}`} />
                   <span>{tab.label}</span>
                 </button>
               );
@@ -96,7 +96,7 @@ export default function TeamPage() {
                   {/* Top Avatar & Role Badge */}
                   <div className="flex items-start justify-between gap-4 mb-6">
                     <div className="relative">
-                      <div className="w-16 h-16 rounded-2xl overflow-hidden border border-white/[0.15] bg-navy-900 shadow-[0_0_20px_rgba(0,229,255,0.2)] group-hover:border-cyan/50 transition-colors">
+                      <div className="w-16 h-16 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/[0.15] bg-slate-100 dark:bg-navy-900 shadow-sm dark:shadow-[0_0_20px_rgba(0,229,255,0.2)] group-hover:border-cyan-500/50 dark:group-hover:border-cyan/50 transition-colors">
                         <Image
                           src={member.avatar}
                           alt={member.name}
@@ -106,7 +106,7 @@ export default function TeamPage() {
                         />
                       </div>
                       {member.tier === "leadership" && (
-                        <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-cyan border-2 border-navy-950 flex items-center justify-center text-[9px] text-navy-950 font-bold shadow-[0_0_8px_rgba(0,229,255,0.8)]" title="Core Leadership">
+                        <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-cyan border-2 border-background flex items-center justify-center text-[9px] text-navy-950 font-bold shadow-sm" title="Core Leadership">
                           ★
                         </span>
                       )}
@@ -121,15 +121,15 @@ export default function TeamPage() {
                   </div>
 
                   {/* Name & Department */}
-                  <h3 className="text-2xl font-bold text-foreground font-display group-hover:text-cyan transition-colors">
+                  <h3 className="text-2xl font-bold text-foreground font-display group-hover:text-cyan-700 dark:group-hover:text-cyan transition-colors">
                     {member.name}
                   </h3>
-                  <span className="text-xs font-mono text-cyan/90 block mt-1 font-semibold">
+                  <span className="text-xs font-mono text-cyan-700 dark:text-cyan block mt-1 font-semibold">
                     {member.department}
                   </span>
 
                   {/* Bio */}
-                  <p className="mt-4 text-sm text-slate-300 leading-relaxed font-normal">
+                  <p className="mt-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                     {member.bio}
                   </p>
 
@@ -138,7 +138,7 @@ export default function TeamPage() {
                     {member.skills.map((s) => (
                       <span
                         key={s}
-                        className="text-[11px] font-mono px-2.5 py-1 rounded-xl bg-white/[0.04] backdrop-blur-md border border-white/[0.08] text-slate-300 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+                        className="text-[11px] font-mono px-2.5 py-1 rounded-xl bg-slate-100 dark:bg-white/[0.04] backdrop-blur-md border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-slate-300"
                       >
                         {s}
                       </span>
@@ -147,8 +147,8 @@ export default function TeamPage() {
                 </div>
 
                 {/* Social Links & Footer */}
-                <div className="mt-8 pt-5 border-t border-white/[0.06] flex items-center justify-between">
-                  <span className="text-xs font-mono text-slate-400">
+                <div className="mt-8 pt-5 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between">
+                  <span className="text-xs font-mono text-slate-500 dark:text-slate-400 font-medium">
                     TECHhelp4U Team
                   </span>
                   <div className="flex items-center gap-2">
@@ -157,7 +157,7 @@ export default function TeamPage() {
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-400 hover:text-cyan hover:border-cyan/40 hover:bg-white/[0.08] transition-all"
+                        className="p-2 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] text-slate-500 dark:text-slate-400 hover:text-cyan-700 dark:hover:text-cyan hover:border-cyan-500/40 dark:hover:border-cyan/40 transition-all"
                         aria-label={`${member.name} LinkedIn Profile`}
                       >
                         <Linkedin className="w-4 h-4" />
@@ -168,7 +168,7 @@ export default function TeamPage() {
                         href={member.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-400 hover:text-cyan hover:border-cyan/40 hover:bg-white/[0.08] transition-all"
+                        className="p-2 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] text-slate-500 dark:text-slate-400 hover:text-cyan-700 dark:hover:text-cyan hover:border-cyan-500/40 dark:hover:border-cyan/40 transition-all"
                         aria-label={`${member.name} GitHub Profile`}
                       >
                         <Github className="w-4 h-4" />
@@ -183,14 +183,14 @@ export default function TeamPage() {
 
         {/* Join the Team / Community Lead CTA */}
         <ScrollReveal direction="up" duration={0.6}>
-          <div className="mt-16 rounded-3xl bg-navy-950/60 border border-white/[0.1] p-8 sm:p-12 text-center relative overflow-hidden backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_20px_50px_-10px_rgba(0,0,0,0.6)]">
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+          <div className="mt-16 rounded-3xl bg-white/80 dark:bg-navy-950/60 border border-slate-200/80 dark:border-white/[0.1] p-8 sm:p-12 text-center relative overflow-hidden backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_20px_50px_-10px_rgba(0,0,0,0.6)]">
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/40 dark:via-cyan/40 to-transparent pointer-events-none" />
             <div className="max-w-2xl mx-auto relative z-10">
-              <Sparkles className="w-10 h-10 text-cyan mx-auto mb-4 drop-shadow-[0_0_15px_rgba(0,229,255,0.4)]" />
+              <Sparkles className="w-10 h-10 text-cyan-600 dark:text-cyan mx-auto mb-4 drop-shadow-sm dark:drop-shadow-[0_0_15px_rgba(0,229,255,0.4)]" />
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-display">
                 Want to Lead or Join Our Core Team?
               </h2>
-              <p className="mt-3 text-sm text-slate-300 leading-relaxed font-normal">
+              <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                 We are always looking for enthusiastic student developers, designers, event organizers, and campus ambassadors to join TECHhelp4U.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">

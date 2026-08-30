@@ -23,7 +23,7 @@ export function Skeleton({
   return (
     <div
       className={cn(
-        "skeleton-shimmer bg-white/[0.04] border border-white/[0.06]",
+        "skeleton-shimmer bg-slate-200/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.06]",
         variantClasses[variant],
         className
       )}
@@ -34,7 +34,7 @@ export function Skeleton({
 
 export function EventCardSkeleton() {
   return (
-    <div className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between relative overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)]">
+    <div className="rounded-3xl bg-white/80 dark:bg-navy-950/45 border border-slate-200/80 dark:border-white/[0.08] p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between relative overflow-hidden shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)]">
       <div>
         {/* Top Badges */}
         <div className="flex items-center justify-between gap-2 mb-4">
@@ -51,7 +51,7 @@ export function EventCardSkeleton() {
         <Skeleton className="w-full h-12 rounded-xl mb-4" />
 
         {/* Metadata Details */}
-        <div className="mt-5 space-y-2 border-t border-white/[0.06] pt-4">
+        <div className="mt-5 space-y-2 border-t border-slate-200 dark:border-white/[0.06] pt-4">
           <Skeleton className="w-1/2 h-4 rounded-md" />
           <Skeleton className="w-2/3 h-4 rounded-md" />
           <Skeleton className="w-1/3 h-4 rounded-md" />
@@ -67,7 +67,7 @@ export function EventCardSkeleton() {
       </div>
 
       {/* Bottom Actions */}
-      <div className="mt-7 pt-4 border-t border-white/[0.06] flex items-center justify-between">
+      <div className="mt-7 pt-4 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between">
         <Skeleton className="w-24 h-4 rounded-md" />
         <Skeleton className="w-28 h-9 rounded-xl" />
       </div>
@@ -77,7 +77,7 @@ export function EventCardSkeleton() {
 
 export function ResourceCardSkeleton() {
   return (
-    <div className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-7 backdrop-blur-2xl flex flex-col justify-between relative overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)]">
+    <div className="rounded-3xl bg-white/80 dark:bg-navy-950/45 border border-slate-200/80 dark:border-white/[0.08] p-7 backdrop-blur-2xl flex flex-col justify-between relative overflow-hidden shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)]">
       <div>
         <div className="flex items-center justify-between mb-4">
           <Skeleton className="w-20 h-5 rounded-full" />
@@ -91,7 +91,7 @@ export function ResourceCardSkeleton() {
           <Skeleton className="w-10 h-4 rounded-md" />
         </div>
       </div>
-      <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+      <div className="pt-4 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between">
         <Skeleton className="w-20 h-4 rounded-md" />
         <Skeleton className="w-24 h-4 rounded-md" />
       </div>
@@ -101,7 +101,7 @@ export function ResourceCardSkeleton() {
 
 export function PartnerCardSkeleton() {
   return (
-    <div className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-7 backdrop-blur-2xl flex flex-col justify-between relative overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)]">
+    <div className="rounded-3xl bg-white/80 dark:bg-navy-950/45 border border-slate-200/80 dark:border-white/[0.08] p-7 backdrop-blur-2xl flex flex-col justify-between relative overflow-hidden shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)]">
       <div>
         <div className="flex items-center justify-between mb-6">
           <Skeleton className="w-12 h-12 rounded-2xl" />
@@ -111,7 +111,7 @@ export function PartnerCardSkeleton() {
         <Skeleton className="w-1/2 h-4 rounded-md mb-3" />
         <Skeleton className="w-full h-12 rounded-lg" />
       </div>
-      <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between">
+      <div className="mt-6 pt-4 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between">
         <Skeleton className="w-20 h-4 rounded-md" />
         <Skeleton className="w-20 h-4 rounded-md" />
       </div>
@@ -121,9 +121,9 @@ export function PartnerCardSkeleton() {
 
 export function GalleryCardSkeleton() {
   return (
-    <div className="rounded-3xl bg-navy-950/45 border border-white/[0.08] overflow-hidden backdrop-blur-xl">
+    <div className="rounded-3xl bg-white/80 dark:bg-navy-950/45 border border-slate-200/80 dark:border-white/[0.08] overflow-hidden backdrop-blur-xl">
       <Skeleton className="h-64 sm:h-72 w-full rounded-none" />
-      <div className="p-6 space-y-2 border-t border-white/[0.06]">
+      <div className="p-6 space-y-2 border-t border-slate-200 dark:border-white/[0.06]">
         <Skeleton className="w-1/3 h-3 rounded-md" />
         <Skeleton className="w-2/3 h-5 rounded-lg" />
         <Skeleton className="w-1/2 h-3 rounded-md" />
@@ -134,7 +134,7 @@ export function GalleryCardSkeleton() {
 
 export function TeamCardSkeleton() {
   return (
-    <div className="rounded-3xl bg-navy-950/50 border border-white/[0.08] p-8 sm:p-10 backdrop-blur-2xl flex flex-col justify-between relative overflow-hidden">
+    <div className="rounded-3xl bg-white/80 dark:bg-navy-950/50 border border-slate-200/80 dark:border-white/[0.08] p-8 sm:p-10 backdrop-blur-2xl flex flex-col justify-between relative overflow-hidden">
       <div>
         <div className="flex items-center justify-between mb-6">
           <Skeleton className="w-16 h-16 rounded-2xl" />
@@ -149,7 +149,7 @@ export function TeamCardSkeleton() {
           <Skeleton className="w-12 h-6 rounded-xl" />
         </div>
       </div>
-      <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center justify-between">
+      <div className="mt-8 pt-6 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between">
         <Skeleton className="w-28 h-4 rounded-md" />
         <div className="flex gap-2">
           <Skeleton className="w-8 h-8 rounded-xl" />
@@ -162,7 +162,7 @@ export function TeamCardSkeleton() {
 
 export function InitiativeCardSkeleton() {
   return (
-    <div className="rounded-3xl bg-navy-950/50 border border-white/[0.08] p-8 sm:p-12 backdrop-blur-2xl relative overflow-hidden">
+    <div className="rounded-3xl bg-white/80 dark:bg-navy-950/50 border border-slate-200/80 dark:border-white/[0.08] p-8 sm:p-12 backdrop-blur-2xl relative overflow-hidden">
       <div className="flex items-center justify-between gap-4 mb-6">
         <div className="flex items-center gap-3">
           <Skeleton className="w-12 h-12 rounded-2xl" />
@@ -178,7 +178,7 @@ export function InitiativeCardSkeleton() {
         <Skeleton className="h-28 rounded-3xl" />
         <Skeleton className="h-28 rounded-3xl" />
       </div>
-      <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
+      <div className="pt-6 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between">
         <Skeleton className="w-36 h-4 rounded-md" />
         <Skeleton className="w-36 h-9 rounded-xl" />
       </div>

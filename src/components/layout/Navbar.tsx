@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { navItems } from "@/data/navigation";
 import { Button } from "@/ui/Button";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -51,7 +52,7 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "py-3 bg-navy-950/80 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+            ? "py-3 bg-white/85 dark:bg-navy-950/80 backdrop-blur-2xl border-b border-slate-200/80 dark:border-white/[0.08] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
             : "py-5 bg-transparent"
         )}
       >
@@ -62,7 +63,7 @@ export function Navbar() {
             className="group flex items-center gap-3 focus:outline-none"
             aria-label="TECHhelp4U Home"
           >
-            <div className="w-10 h-10 rounded-2xl bg-navy-950/80 backdrop-blur-xl border border-white/[0.15] flex items-center justify-center relative overflow-hidden group-hover:border-cyan/60 transition-all duration-300 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),0_0_15px_rgba(0,229,255,0.2)] group-hover:shadow-[0_0_25px_rgba(0,229,255,0.4)]">
+            <div className="w-10 h-10 rounded-2xl bg-white/90 dark:bg-navy-950/80 backdrop-blur-xl border border-slate-200 dark:border-white/[0.15] flex items-center justify-center relative overflow-hidden group-hover:border-cyan/60 transition-all duration-300 shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),0_0_15px_rgba(0,229,255,0.2)] group-hover:shadow-[0_0_25px_rgba(0,229,255,0.4)]">
               <Image
                 src="/logo.png"
                 alt="TECHhelp4U Official Logo"
@@ -77,14 +78,14 @@ export function Navbar() {
                 TECH<span className="text-cyan font-mono">help4U</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
               </span>
-              <span className="text-[9px] font-mono uppercase tracking-widest text-slate-400">
+              <span className="text-[9px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400">
                 Where Passion Meets Possibility
               </span>
             </div>
           </Link>
 
           {/* Desktop Frosted Glass Navigation Pill */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/[0.04] backdrop-blur-2xl px-4 py-1.5 rounded-full border border-white/[0.09] shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_10px_25px_-5px_rgba(0,0,0,0.5)]">
+          <nav className="hidden lg:flex items-center gap-1 bg-white/80 dark:bg-white/[0.04] backdrop-blur-2xl px-4 py-1.5 rounded-full border border-slate-200/80 dark:border-white/[0.09] shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_10px_25px_-5px_rgba(0,0,0,0.5)]">
             {navItems.slice(0, 8).map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -95,20 +96,20 @@ export function Navbar() {
                     "px-3.5 py-1.5 rounded-full text-xs font-medium transition-all relative",
                     isActive
                       ? "text-navy-900 font-semibold"
-                      : "text-slate-300 hover:text-cyan hover:bg-white/[0.05]"
+                      : "text-slate-700 dark:text-slate-300 hover:text-cyan dark:hover:text-cyan hover:bg-slate-100/80 dark:hover:bg-white/[0.05]"
                   )}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="navPill"
-                      className="absolute inset-0 bg-gradient-to-r from-cyan to-electric-blue rounded-full shadow-[0_0_20px_rgba(0,229,255,0.5)]"
+                      className="absolute inset-0 bg-gradient-to-r from-cyan to-electric-blue rounded-full shadow-[0_0_20px_rgba(0,229,255,0.4)]"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
                   <span className="relative z-10 flex items-center gap-1.5">
                     {item.title}
                     {item.badge && (
-                      <span className="px-1.5 py-0.2 rounded-full text-[9px] bg-red-500/20 text-red-400 font-mono">
+                      <span className="px-1.5 py-0.2 rounded-full text-[9px] bg-red-500/15 text-red-600 dark:text-red-400 font-mono font-bold">
                         {item.badge}
                       </span>
                     )}
@@ -118,8 +119,9 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Right Action CTAs */}
+          {/* Right Action CTAs & Theme Toggle */}
           <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
             <Button
               href="/events"
               variant="ghost"
@@ -138,8 +140,9 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Right Bar */}
           <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
             <Button
               href="/community"
               variant="primary"
@@ -150,7 +153,7 @@ export function Navbar() {
             </Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/[0.1] text-slate-200 hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)]"
+              className="p-2.5 rounded-2xl bg-white/80 dark:bg-white/[0.05] backdrop-blur-xl border border-slate-200 dark:border-white/[0.1] text-slate-700 dark:text-slate-200 hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)]"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -168,15 +171,19 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-navy-950/90 backdrop-blur-3xl flex flex-col pt-24 pb-8 px-6 lg:hidden overflow-y-auto border-b border-white/[0.08]"
+            className="fixed inset-0 z-40 bg-white/95 dark:bg-navy-950/95 backdrop-blur-3xl flex flex-col pt-24 pb-8 px-6 lg:hidden overflow-y-auto border-b border-slate-200 dark:border-white/[0.08]"
           >
             {/* Ambient background glow inside mobile menu */}
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 h-72 bg-cyan/10 blur-[100px] rounded-full pointer-events-none" />
 
-            <div className="flex flex-col gap-2 mb-8 relative z-10">
-              <span className="text-xs font-mono uppercase tracking-widest text-slate-500 px-3">
+            <div className="flex items-center justify-between px-3 mb-4 relative z-10">
+              <span className="text-xs font-mono uppercase tracking-widest text-slate-500">
                 Navigation
               </span>
+              <ThemeToggle showLabel />
+            </div>
+
+            <div className="flex flex-col gap-2 mb-8 relative z-10">
               {navItems.map((item, idx) => {
                 const isActive = pathname === item.href;
                 return (
@@ -191,14 +198,14 @@ export function Navbar() {
                       className={cn(
                         "flex items-center justify-between px-4 py-3.5 rounded-2xl text-base font-medium transition-all",
                         isActive
-                          ? "bg-cyan/15 text-cyan border border-cyan/40 shadow-[0_0_20px_rgba(0,229,255,0.2),inset_0_1px_1px_0_rgba(255,255,255,0.1)]"
-                          : "text-slate-300 hover:bg-white/[0.06] hover:text-foreground border border-transparent"
+                          ? "bg-cyan/15 text-cyan dark:text-cyan border border-cyan/40 shadow-[0_0_20px_rgba(0,229,255,0.15)]"
+                          : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/[0.06] hover:text-foreground border border-transparent"
                       )}
                     >
                       <span className="flex items-center gap-2">
                         {item.title}
                         {item.badge && (
-                          <span className="px-2 py-0.5 text-[10px] rounded-full bg-red-500/20 text-red-400 font-mono">
+                          <span className="px-2 py-0.5 text-[10px] rounded-full bg-red-500/15 text-red-600 dark:text-red-400 font-mono font-bold">
                             {item.badge}
                           </span>
                         )}
@@ -210,7 +217,7 @@ export function Navbar() {
               })}
             </div>
 
-            <div className="mt-auto pt-6 border-t border-white/[0.08] flex flex-col gap-3 relative z-10">
+            <div className="mt-auto pt-6 border-t border-slate-200 dark:border-white/[0.08] flex flex-col gap-3 relative z-10">
               <Button
                 href="/community"
                 variant="cyan-glow"

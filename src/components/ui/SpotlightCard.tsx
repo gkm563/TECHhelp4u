@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export interface SpotlightCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -13,7 +13,7 @@ export interface SpotlightCardProps extends React.HTMLAttributes<HTMLDivElement>
 export function SpotlightCard({
   children,
   className,
-  spotlightColor = "rgba(0, 229, 255, 0.15)",
+  spotlightColor = "rgba(0, 229, 255, 0.12)",
   glowColor = "cyan",
   ...props
 }: SpotlightCardProps) {
@@ -36,10 +36,10 @@ export function SpotlightCard({
   };
 
   const borderGlow = {
-    cyan: "hover:border-cyan/50 hover:shadow-[0_0_35px_rgba(0,229,255,0.18)]",
-    violet: "hover:border-electric-violet/50 hover:shadow-[0_0_35px_rgba(139,92,246,0.18)]",
-    emerald: "hover:border-electric-emerald/50 hover:shadow-[0_0_35px_rgba(16,185,129,0.18)]",
-    amber: "hover:border-electric-amber/50 hover:shadow-[0_0_35px_rgba(245,158,11,0.18)]",
+    cyan: "hover:border-cyan/50 hover:shadow-[0_10px_30px_rgba(2,132,199,0.12)] dark:hover:shadow-[0_0_35px_rgba(0,229,255,0.18)]",
+    violet: "hover:border-electric-violet/50 hover:shadow-[0_10px_30px_rgba(124,58,237,0.12)] dark:hover:shadow-[0_0_35px_rgba(139,92,246,0.18)]",
+    emerald: "hover:border-electric-emerald/50 hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] dark:hover:shadow-[0_0_35px_rgba(16,185,129,0.18)]",
+    amber: "hover:border-electric-amber/50 hover:shadow-[0_10px_30px_rgba(245,158,11,0.12)] dark:hover:shadow-[0_0_35px_rgba(245,158,11,0.18)]",
   };
 
   return (
@@ -49,14 +49,14 @@ export function SpotlightCard({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative rounded-3xl bg-navy-950/50 border border-white/[0.08] p-7 backdrop-blur-2xl overflow-hidden transition-all duration-300 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_15px_35px_-10px_rgba(0,0,0,0.6)] hover:-translate-y-1.5",
+        "relative rounded-3xl bg-white/80 dark:bg-navy-950/50 border border-slate-200/80 dark:border-white/[0.08] p-6 sm:p-7 backdrop-blur-2xl overflow-hidden transition-all duration-300 shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_15px_35px_-10px_rgba(0,0,0,0.6)] hover:-translate-y-1.5",
         borderGlow[glowColor],
         className
       )}
       {...props}
     >
       {/* Specular top glare line */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.18] to-transparent pointer-events-none z-10" />
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/30 dark:via-white/[0.18] to-transparent pointer-events-none z-10" />
 
       {/* Mouse-tracking spotlight gradient */}
       <div

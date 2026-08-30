@@ -16,20 +16,20 @@ export function Badge({
   ...props
 }: BadgeProps) {
   const variantClasses = {
-    cyan: "bg-cyan/10 backdrop-blur-md text-cyan border-cyan/30 shadow-[0_0_15px_rgba(0,229,255,0.18),inset_0_1px_0_0_rgba(0,229,255,0.2)]",
-    violet: "bg-electric-violet/10 backdrop-blur-md text-electric-violet border-electric-violet/30 shadow-[0_0_15px_rgba(139,92,246,0.18),inset_0_1px_0_0_rgba(139,92,246,0.2)]",
-    emerald: "bg-electric-emerald/10 backdrop-blur-md text-electric-emerald border-electric-emerald/30 shadow-[0_0_15px_rgba(16,185,129,0.18),inset_0_1px_0_0_rgba(16,185,129,0.2)]",
-    amber: "bg-electric-amber/10 backdrop-blur-md text-electric-amber border-electric-amber/30 shadow-[0_0_15px_rgba(245,158,11,0.18),inset_0_1px_0_0_rgba(245,158,11,0.2)]",
-    neutral: "bg-white/[0.04] backdrop-blur-md text-slate-300 border-white/[0.08] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]",
-    glass: "bg-navy-950/50 backdrop-blur-lg text-slate-200 border-white/[0.1] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)]",
-    outline: "bg-transparent text-slate-300 border-slate-700",
+    cyan: "bg-cyan-50 dark:bg-cyan/10 backdrop-blur-md text-cyan-700 dark:text-cyan border-cyan-200 dark:border-cyan/30 shadow-sm dark:shadow-[0_0_15px_rgba(0,229,255,0.18)] font-bold",
+    violet: "bg-purple-50 dark:bg-electric-violet/10 backdrop-blur-md text-purple-700 dark:text-electric-violet border-purple-200 dark:border-electric-violet/30 shadow-sm dark:shadow-[0_0_15px_rgba(139,92,246,0.18)] font-bold",
+    emerald: "bg-emerald-50 dark:bg-electric-emerald/10 backdrop-blur-md text-emerald-700 dark:text-electric-emerald border-emerald-200 dark:border-electric-emerald/30 shadow-sm dark:shadow-[0_0_15px_rgba(16,185,129,0.18)] font-bold",
+    amber: "bg-amber-50 dark:bg-electric-amber/10 backdrop-blur-md text-amber-700 dark:text-electric-amber border-amber-200 dark:border-electric-amber/30 shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.18)] font-bold",
+    neutral: "bg-slate-100 dark:bg-white/[0.04] backdrop-blur-md text-slate-700 dark:text-slate-300 border-slate-200 dark:border-white/[0.08]",
+    glass: "bg-white/80 dark:bg-navy-950/50 backdrop-blur-lg text-slate-800 dark:text-slate-200 border-slate-200 dark:border-white/[0.1]",
+    outline: "bg-transparent text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700",
   };
 
   const dotColors = {
-    cyan: "bg-cyan animate-pulse",
-    violet: "bg-electric-violet animate-pulse",
-    emerald: "bg-electric-emerald animate-pulse",
-    amber: "bg-electric-amber animate-pulse",
+    cyan: "bg-cyan-600 dark:bg-cyan animate-pulse",
+    violet: "bg-purple-600 dark:bg-electric-violet animate-pulse",
+    emerald: "bg-emerald-600 dark:bg-electric-emerald animate-pulse",
+    amber: "bg-amber-600 dark:bg-electric-amber animate-pulse",
     neutral: "bg-slate-400",
     glass: "bg-cyan animate-pulse",
     outline: "bg-slate-400",

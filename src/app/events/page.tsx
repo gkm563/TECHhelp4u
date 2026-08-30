@@ -80,7 +80,7 @@ export default function EventsPage() {
   }, [searchQuery, selectedCategory, selectedMode, selectedStatus]);
 
   return (
-    <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+    <div className="pt-28 sm:pt-32 pb-24 min-h-screen relative overflow-hidden bg-background transition-colors duration-300">
       {/* Floating ambient glow orbs */}
       <FloatingOrb color="cyan" size="xl" className="top-20 left-1/4" />
       <FloatingOrb color="violet" size="lg" className="bottom-20 right-10" />
@@ -95,7 +95,7 @@ export default function EventsPage() {
             <h1 className="text-4xl sm:text-6xl font-extrabold text-foreground font-display tracking-tight">
               Learn, Build & <span className="text-gradient-cyan">Compete</span>
             </h1>
-            <p className="mt-4 text-lg text-slate-300 leading-relaxed font-normal">
+            <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
               Explore our upcoming hackathons, hands-on coding masterclasses, open-source sprints, and campus workshop series across India.
             </p>
           </div>
@@ -103,9 +103,9 @@ export default function EventsPage() {
 
         {/* Frosted Glass Filter & Search Bar */}
         <ScrollReveal direction="up" delay={0.1} duration={0.6}>
-          <div className="mb-12 rounded-3xl bg-navy-950/60 border border-white/[0.1] p-6 sm:p-8 backdrop-blur-2xl space-y-6 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_20px_45px_-10px_rgba(0,0,0,0.6)] relative overflow-hidden">
+          <div className="mb-12 rounded-3xl bg-white/80 dark:bg-navy-950/60 border border-slate-200/80 dark:border-white/[0.1] p-5 sm:p-8 backdrop-blur-2xl space-y-6 shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_20px_45px_-10px_rgba(0,0,0,0.6)] relative overflow-hidden">
             {/* Specular top glare line */}
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/40 dark:via-cyan/40 to-transparent pointer-events-none" />
 
             {/* Top row: Glass Search input */}
             <div className="relative">
@@ -115,23 +115,23 @@ export default function EventsPage() {
                 placeholder="Search by event title, technology (e.g. Next.js, Python, Solidity), or city..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                className="w-full bg-navy-950/50 backdrop-blur-xl border border-white/[0.08] rounded-2xl pl-12 pr-4 py-3.5 text-sm text-foreground placeholder:text-slate-500 focus:outline-none focus:border-cyan focus:bg-navy-900/60 focus:shadow-[0_0_20px_rgba(0,229,255,0.2)] transition-all shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.4)]"
+                className="w-full bg-slate-50 dark:bg-navy-950/50 backdrop-blur-xl border border-slate-200 dark:border-white/[0.08] rounded-2xl pl-12 pr-4 py-3.5 text-sm text-foreground placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-cyan focus:bg-white dark:focus:bg-navy-900/60 transition-all shadow-inner"
               />
             </div>
 
             {/* Category Pills with glassmorphic styling */}
-            <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/[0.06]">
-              <span className="text-xs font-mono uppercase tracking-widest text-slate-400 mr-2">
+            <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-200 dark:border-white/[0.06]">
+              <span className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mr-2 font-semibold">
                 Category:
               </span>
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => handleCategoryChange(cat.id)}
-                  className={`px-4 py-2 rounded-2xl text-xs font-mono font-medium transition-all backdrop-blur-md ${
+                  className={`px-3.5 sm:px-4 py-2 rounded-2xl text-xs font-mono font-medium transition-all backdrop-blur-md ${
                     selectedCategory === cat.id
-                      ? "bg-cyan text-navy-900 font-bold shadow-[0_0_20px_rgba(0,229,255,0.4)] border border-cyan"
-                      : "bg-white/[0.04] border border-white/[0.08] text-slate-300 hover:border-white/[0.2] hover:bg-white/[0.08]"
+                      ? "bg-cyan text-navy-900 font-bold shadow-sm dark:shadow-[0_0_20px_rgba(0,229,255,0.4)] border border-cyan"
+                      : "bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-slate-300 hover:border-cyan-500/40 dark:hover:border-white/[0.2]"
                   }`}
                 >
                   {cat.label}
@@ -140,9 +140,9 @@ export default function EventsPage() {
             </div>
 
             {/* Format & Status Filters */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/[0.06]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-slate-200 dark:border-white/[0.06]">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-mono uppercase tracking-widest text-slate-400 mr-2">
+                <span className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mr-2 font-semibold">
                   Format:
                 </span>
                 {modes.map((mode) => (
@@ -151,8 +151,8 @@ export default function EventsPage() {
                     onClick={() => setSelectedMode(mode.id)}
                     className={`px-3 py-1.5 rounded-xl text-xs font-mono transition-all backdrop-blur-md ${
                       selectedMode === mode.id
-                        ? "bg-electric-violet/20 border border-electric-violet/50 text-electric-violet font-semibold shadow-[0_0_15px_rgba(139,92,246,0.2)]"
-                        : "text-slate-400 hover:text-slate-200 bg-white/[0.02] border border-transparent"
+                        ? "bg-purple-100 dark:bg-electric-violet/20 border border-purple-300 dark:border-electric-violet/50 text-purple-700 dark:text-electric-violet font-semibold"
+                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 bg-slate-100/50 dark:bg-white/[0.02] border border-transparent"
                     }`}
                   >
                     {mode.label}
@@ -160,8 +160,8 @@ export default function EventsPage() {
                 ))}
               </div>
 
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-mono uppercase tracking-widest text-slate-400 mr-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mr-2 font-semibold">
                   Status:
                 </span>
                 {statuses.map((status) => (
@@ -170,8 +170,8 @@ export default function EventsPage() {
                     onClick={() => setSelectedStatus(status.id)}
                     className={`px-3 py-1.5 rounded-xl text-xs font-mono transition-all backdrop-blur-md ${
                       selectedStatus === status.id
-                        ? "bg-cyan/20 border border-cyan/50 text-cyan font-semibold shadow-[0_0_15px_rgba(0,229,255,0.2)]"
-                        : "text-slate-400 hover:text-slate-200 bg-white/[0.02] border border-transparent"
+                        ? "bg-cyan-100 dark:bg-cyan/20 border border-cyan-300 dark:border-cyan/50 text-cyan-700 dark:text-cyan font-semibold"
+                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 bg-slate-100/50 dark:bg-white/[0.02] border border-transparent"
                     }`}
                   >
                     {status.label}
@@ -184,8 +184,8 @@ export default function EventsPage() {
 
         {/* Results Counter */}
         <div className="flex items-center justify-between mb-6 px-1">
-          <span className="text-xs font-mono text-slate-400">
-            Showing <strong className="text-cyan">{filteredEvents.length}</strong> events
+          <span className="text-xs font-mono text-slate-500 dark:text-slate-400 font-medium">
+            Showing <strong className="text-cyan-700 dark:text-cyan">{filteredEvents.length}</strong> events
           </span>
           {(searchQuery || selectedCategory !== "all" || selectedMode !== "all" || selectedStatus !== "all") && (
             <button
@@ -195,7 +195,7 @@ export default function EventsPage() {
                 setSelectedMode("all");
                 setSelectedStatus("all");
               }}
-              className="text-xs font-mono text-cyan hover:underline font-semibold"
+              className="text-xs font-mono text-cyan-700 dark:text-cyan hover:underline font-semibold"
             >
               Reset Filters
             </button>
@@ -218,12 +218,12 @@ export default function EventsPage() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 rounded-3xl bg-navy-950/40 border border-white/[0.08] p-8 backdrop-blur-xl shadow-inner">
-            <Compass className="w-12 h-12 text-slate-500 mx-auto mb-4" />
+          <div className="text-center py-20 rounded-3xl bg-white/80 dark:bg-navy-950/40 border border-slate-200 dark:border-white/[0.08] p-8 backdrop-blur-xl shadow-inner">
+            <Compass className="w-12 h-12 text-slate-400 mx-auto mb-4" />
             <h3 className="text-lg font-bold text-foreground font-display">
               No matching events found
             </h3>
-            <p className="text-slate-400 text-sm mt-1 max-w-sm mx-auto">
+            <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 max-w-sm mx-auto">
               Try adjusting your search terms or filter selections to find what you&apos;re looking for.
             </p>
             <Button

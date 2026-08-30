@@ -54,24 +54,24 @@ export function FlagshipHackathonSection() {
   ];
 
   return (
-    <section className="py-20 sm:py-24 relative overflow-hidden bg-navy-950/60 border-y border-white/[0.08]">
+    <section className="py-20 sm:py-24 relative overflow-hidden bg-slate-100/60 dark:bg-navy-950/60 border-y border-slate-200 dark:border-white/[0.08] transition-colors duration-300">
       {/* Background ambient chromatic glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] bg-cyan/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-80 h-80 bg-electric-violet/10 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="rounded-3xl bg-navy-950/80 border border-white/[0.12] backdrop-blur-3xl p-6 sm:p-10 lg:p-12 shadow-[inset_0_1px_2px_0_rgba(255,255,255,0.15),0_25px_70px_-15px_rgba(0,0,0,0.8),0_0_40px_rgba(0,229,255,0.1)] relative overflow-hidden">
+        <div className="rounded-3xl bg-white/90 dark:bg-navy-950/80 border border-slate-200/90 dark:border-white/[0.12] backdrop-blur-3xl p-6 sm:p-10 lg:p-12 shadow-sm dark:shadow-[inset_0_1px_2px_0_rgba(255,255,255,0.15),0_25px_70px_-15px_rgba(0,0,0,0.8),0_0_40px_rgba(0,229,255,0.1)] relative overflow-hidden">
           {/* Specular top glare line */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/40 dark:via-cyan/40 to-transparent pointer-events-none" />
 
           {/* Top Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.08] pb-6 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-white/[0.08] pb-6 mb-8">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-2xl bg-cyan/10 border border-cyan/30 flex items-center justify-center text-cyan backdrop-blur-md shadow-[0_0_15px_rgba(0,229,255,0.2)] shrink-0">
-                <Trophy className="w-5 h-5 text-cyan" />
+              <div className="w-11 h-11 rounded-2xl bg-cyan-100 dark:bg-cyan/10 border border-cyan-300 dark:border-cyan/30 flex items-center justify-center text-cyan-700 dark:text-cyan backdrop-blur-md shadow-sm dark:shadow-[0_0_15px_rgba(0,229,255,0.2)] shrink-0">
+                <Trophy className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-cyan font-bold block">
+                <span className="text-xs font-mono uppercase tracking-widest text-cyan-700 dark:text-cyan font-bold block">
                   FLAGSHIP NATIONAL HACKATHON
                 </span>
                 <span className="text-sm font-bold text-foreground font-display">
@@ -81,7 +81,7 @@ export function FlagshipHackathonSection() {
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono text-amber-400 bg-amber-400/10 px-3.5 py-1 rounded-full border border-amber-400/30 font-bold">
+              <span className="text-xs font-mono text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-400/10 px-3.5 py-1 rounded-full border border-amber-300 dark:border-amber-400/30 font-bold">
                 ₹2,00,000 PRIZE POOL
               </span>
               <Badge variant="cyan" size="sm">
@@ -94,8 +94,8 @@ export function FlagshipHackathonSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Column */}
             <div className="lg:col-span-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/[0.04] backdrop-blur-md border border-amber-400/30 text-xs font-mono text-amber-400 mb-4">
-                <Flame className="w-3.5 h-3.5 text-amber-400 animate-pulse shrink-0" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-amber-50 dark:bg-white/[0.04] backdrop-blur-md border border-amber-300 dark:border-amber-400/30 text-xs font-mono text-amber-700 dark:text-amber-400 mb-4 font-semibold">
+                <Flame className="w-3.5 h-3.5 animate-pulse shrink-0" />
                 <span>MITS GWALIOR • WITH HIDEVS & UNSTOP</span>
               </div>
 
@@ -104,23 +104,23 @@ export function FlagshipHackathonSection() {
                 <span className="text-gradient-cyan">System Escalation</span>
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                 A 9-city national hackathon series empowering student innovators. 500+ builders competed in AI, Web3, and Data Science — judged by senior industry mentors and backed by long-term 6–12 month incubation.
               </p>
 
               {/* Quick Details Strip (Fully Responsive) */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mt-6 pt-6 border-t border-white/[0.08] font-mono text-xs">
-                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-slate-400 block text-[10px]">VENUE</span>
-                  <span className="text-slate-200 font-bold">MITS Gwalior</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mt-6 pt-6 border-t border-slate-200 dark:border-white/[0.08] font-mono text-xs">
+                <div className="p-3 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06]">
+                  <span className="text-slate-500 dark:text-slate-400 block text-[10px]">VENUE</span>
+                  <span className="text-slate-800 dark:text-slate-200 font-bold">MITS Gwalior</span>
                 </div>
-                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-slate-400 block text-[10px]">PRIZE POOL</span>
-                  <span className="text-amber-400 font-bold">₹2,00,000</span>
+                <div className="p-3 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06]">
+                  <span className="text-slate-500 dark:text-slate-400 block text-[10px]">PRIZE POOL</span>
+                  <span className="text-amber-600 dark:text-amber-400 font-bold">₹2,00,000</span>
                 </div>
-                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-slate-400 block text-[10px]">PARTNERS</span>
-                  <span className="text-cyan font-bold">Unstop & HiDevs</span>
+                <div className="p-3 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06]">
+                  <span className="text-slate-500 dark:text-slate-400 block text-[10px]">PARTNERS</span>
+                  <span className="text-cyan-700 dark:text-cyan font-bold">Unstop & HiDevs</span>
                 </div>
               </div>
 
@@ -147,13 +147,13 @@ export function FlagshipHackathonSection() {
             </div>
 
             {/* Right Column: Interactive Hackathon Journey Tabs */}
-            <div className="lg:col-span-6 bg-navy-950/60 border border-white/[0.08] rounded-3xl p-5 sm:p-6 font-mono text-xs backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)]">
-              <div className="flex items-center justify-between border-b border-white/[0.08] pb-3 mb-4 text-slate-400">
-                <span className="flex items-center gap-1.5 text-xs text-slate-200 font-bold">
-                  <Calendar className="w-3.5 h-3.5 text-cyan" />
+            <div className="lg:col-span-6 bg-slate-50 dark:bg-navy-950/60 border border-slate-200 dark:border-white/[0.08] rounded-3xl p-5 sm:p-6 font-mono text-xs backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)]">
+              <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/[0.08] pb-3 mb-4 text-slate-500 dark:text-slate-400">
+                <span className="flex items-center gap-1.5 text-xs text-slate-700 dark:text-slate-200 font-bold">
+                  <Calendar className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan" />
                   INCUBATION ROADMAP
                 </span>
-                <span className="text-cyan font-bold text-[10px] sm:text-xs">
+                <span className="text-cyan-700 dark:text-cyan font-bold text-[10px] sm:text-xs">
                   9-CITY SERIES
                 </span>
               </div>
@@ -167,7 +167,7 @@ export function FlagshipHackathonSection() {
                     className={`py-2 px-2 rounded-xl text-center font-mono text-[11px] transition-all ${
                       activeTab === idx
                         ? "bg-cyan text-navy-900 font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)] border border-cyan"
-                        : "bg-white/[0.03] border border-white/[0.06] text-slate-400 hover:text-slate-200"
+                        : "bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
                     }`}
                   >
                     {s.stage}
@@ -183,31 +183,31 @@ export function FlagshipHackathonSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.2 }}
-                  className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] space-y-3"
+                  className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] space-y-3 shadow-sm dark:shadow-none"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
-                    <span className="text-cyan font-bold text-sm font-display">
+                    <span className="text-cyan-700 dark:text-cyan font-bold text-sm font-display">
                       {hackathonStages[activeTab].title}
                     </span>
-                    <span className="self-start sm:self-auto text-[10px] text-slate-400 bg-white/[0.05] px-2.5 py-0.5 rounded-full border border-white/[0.08]">
+                    <span className="self-start sm:self-auto text-[10px] text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-white/[0.05] px-2.5 py-0.5 rounded-full border border-slate-200 dark:border-white/[0.08]">
                       {hackathonStages[activeTab].timing}
                     </span>
                   </div>
 
-                  <p className="text-slate-300 text-xs leading-relaxed font-sans font-normal">
+                  <p className="text-slate-600 dark:text-slate-300 text-xs leading-relaxed font-sans font-normal">
                     {hackathonStages[activeTab].desc}
                   </p>
 
-                  <div className="pt-3 border-t border-white/[0.06] flex items-center gap-2 text-[11px]">
-                    <span className="text-amber-400 font-bold shrink-0">KEY PERK:</span>
-                    <span className="text-slate-300">{hackathonStages[activeTab].perk}</span>
+                  <div className="pt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center gap-2 text-[11px]">
+                    <span className="text-amber-700 dark:text-amber-400 font-bold shrink-0">KEY PERK:</span>
+                    <span className="text-slate-700 dark:text-slate-300">{hackathonStages[activeTab].perk}</span>
                   </div>
                 </motion.div>
               </AnimatePresence>
 
-              <div className="mt-4 pt-3 border-t border-white/[0.08] text-[10px] sm:text-[11px] text-slate-400 flex items-center justify-between">
+              <div className="mt-4 pt-3 border-t border-slate-200 dark:border-white/[0.08] text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between font-medium">
                 <span>UNSTOP × HIDEVS × GWALIOR DAO</span>
-                <span className="text-cyan font-bold">500+ BUILDERS</span>
+                <span className="text-cyan-700 dark:text-cyan font-bold">500+ BUILDERS</span>
               </div>
             </div>
           </div>

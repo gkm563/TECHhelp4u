@@ -10,10 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#080C14",
-        foreground: "#F8FAFC",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         midnight: "#0B132B",
         navy: {
+          950: "#050811",
           900: "#080C14",
           850: "#0B101E",
           800: "#0E172A",
@@ -21,9 +22,16 @@ const config: Config = {
           600: "#1E293B",
         },
         cyan: {
+          50: "#ECFEFF",
+          100: "#CFFAFE",
+          200: "#A5F3FC",
           300: "#67E8F9",
           400: "#22D3EE",
           500: "#00E5FF",
+          600: "#0891B2",
+          700: "#0E7490",
+          800: "#155E75",
+          900: "#164E63",
           DEFAULT: "#00E5FF",
           glow: "rgba(0, 229, 255, 0.15)",
         },
@@ -36,11 +44,8 @@ const config: Config = {
           amber: "#F59E0B",
         },
         surface: {
-          DEFAULT: "rgba(15, 23, 42, 0.6)",
-          hover: "rgba(30, 41, 59, 0.8)",
-          active: "rgba(30, 41, 59, 0.95)",
-          border: "rgba(51, 65, 85, 0.4)",
-          "border-highlight": "rgba(0, 229, 255, 0.4)",
+          DEFAULT: "var(--surface)",
+          border: "var(--surface-border)",
         }
       },
       fontFamily: {
@@ -84,8 +89,8 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        "grid-pattern": "radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px)",
-        "circuit-grid": "linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)",
+        "grid-pattern": "radial-gradient(circle, var(--grid-dot-color, rgba(255, 255, 255, 0.08)) 1px, transparent 1px)",
+        "circuit-grid": "linear-gradient(to right, var(--grid-line-color, rgba(255, 255, 255, 0.03)) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line-color, rgba(255, 255, 255, 0.03)) 1px, transparent 1px)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
     },

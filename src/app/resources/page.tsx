@@ -51,7 +51,7 @@ export default function ResourcesPage() {
   }, [searchQuery, selectedCategory]);
 
   return (
-    <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+    <div className="pt-28 sm:pt-32 pb-24 min-h-screen relative overflow-hidden bg-background transition-colors duration-300">
       {/* Ambient background refraction glows */}
       <FloatingOrb color="cyan" size="xl" className="top-20 left-1/3" />
       <FloatingOrb color="violet" size="lg" className="bottom-20 right-10" />
@@ -66,7 +66,7 @@ export default function ResourcesPage() {
             <h1 className="text-4xl sm:text-6xl font-extrabold text-foreground font-display tracking-tight">
               Developer Resources & <span className="text-gradient-cyan">Guides</span>
             </h1>
-            <p className="mt-4 text-lg text-slate-300 leading-relaxed font-normal">
+            <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
               Curated roadmaps, production starter boilerplates, and practical handbooks created for students and builders in our community.
             </p>
           </div>
@@ -74,8 +74,8 @@ export default function ResourcesPage() {
 
         {/* Search & Filter Frosted Glass Bar */}
         <ScrollReveal direction="up" delay={0.1} duration={0.6}>
-          <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-6 sm:p-8 backdrop-blur-2xl mb-12 space-y-4 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_20px_45px_-10px_rgba(0,0,0,0.6)] relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+          <div className="rounded-3xl bg-white/80 dark:bg-navy-950/60 border border-slate-200/80 dark:border-white/[0.1] p-6 sm:p-8 backdrop-blur-2xl mb-12 space-y-4 shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_20px_45px_-10px_rgba(0,0,0,0.6)] relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/40 dark:via-cyan/40 to-transparent pointer-events-none" />
             
             <div className="relative">
               <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -84,19 +84,19 @@ export default function ResourcesPage() {
                 placeholder="Search resources by topic (e.g. Next.js, Python, Git, AI, Web3)..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                className="w-full bg-navy-950/50 backdrop-blur-xl border border-white/[0.08] rounded-2xl pl-12 pr-4 py-3.5 text-sm text-foreground placeholder:text-slate-500 focus:outline-none focus:border-cyan focus:bg-navy-900/60 focus:shadow-[0_0_20px_rgba(0,229,255,0.2)] shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.4)] transition-all"
+                className="w-full bg-slate-50 dark:bg-navy-950/50 backdrop-blur-xl border border-slate-200 dark:border-white/[0.08] rounded-2xl pl-12 pr-4 py-3.5 text-sm text-foreground placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-cyan focus:bg-white dark:focus:bg-navy-900/60 shadow-sm transition-all"
               />
             </div>
 
-            <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/[0.06]">
+            <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-200 dark:border-white/[0.06]">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => handleCategoryChange(cat.id)}
                   className={`px-4 py-2 rounded-2xl text-xs font-mono font-medium transition-all backdrop-blur-md ${
                     selectedCategory === cat.id
-                      ? "bg-cyan text-navy-900 font-bold shadow-[0_0_20px_rgba(0,229,255,0.4)] border border-cyan"
-                      : "bg-white/[0.04] border border-white/[0.08] text-slate-300 hover:border-white/[0.2] hover:bg-white/[0.08]"
+                      ? "bg-cyan text-navy-900 font-bold shadow-sm dark:shadow-[0_0_20px_rgba(0,229,255,0.4)] border border-cyan"
+                      : "bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-slate-300 hover:border-cyan-500/40 dark:hover:border-white/[0.2] hover:bg-slate-200 dark:hover:bg-white/[0.08]"
                   }`}
                 >
                   {cat.label}
@@ -118,17 +118,17 @@ export default function ResourcesPage() {
             {filteredResources.map((res) => (
               <ScrollReveal key={res.id} direction="up" duration={0.4}>
                 <div
-                  className="rounded-3xl bg-navy-950/45 border border-white/[0.08] p-7 backdrop-blur-2xl hover:border-cyan/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(0,229,255,0.15)] hover:-translate-y-1.5 relative overflow-hidden group h-full"
+                  className="rounded-3xl bg-white/80 dark:bg-navy-950/45 border border-slate-200/80 dark:border-white/[0.08] p-6 sm:p-7 backdrop-blur-2xl hover:border-cyan-500/40 dark:hover:border-cyan/40 hover:bg-slate-50 dark:hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] hover:shadow-md dark:hover:shadow-[0_20px_45px_-10px_rgba(0,229,255,0.15)] hover:-translate-y-1.5 relative overflow-hidden group h-full"
                 >
                   {/* Specular top glare line */}
-                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.15] to-transparent pointer-events-none" />
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 dark:via-white/[0.15] to-transparent pointer-events-none" />
 
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-4">
                       <Badge variant="neutral" size="sm">
                         {res.category}
                       </Badge>
-                      <span className="text-[10px] font-mono text-cyan bg-cyan/10 px-2.5 py-1 rounded-full border border-cyan/25 backdrop-blur-md shadow-[0_0_10px_rgba(0,229,255,0.15)] font-semibold">
+                      <span className="text-[10px] font-mono text-cyan-700 dark:text-cyan bg-cyan-50 dark:bg-cyan/10 px-2.5 py-1 rounded-full border border-cyan-200 dark:border-cyan/25 backdrop-blur-md shadow-sm dark:shadow-[0_0_10px_rgba(0,229,255,0.15)] font-bold">
                         {res.level}
                       </span>
                     </div>
@@ -136,7 +136,7 @@ export default function ResourcesPage() {
                     <h3 className="text-lg font-bold text-foreground font-display mb-2">
                       {res.title}
                     </h3>
-                    <p className="text-xs text-slate-300 leading-relaxed mb-6 font-normal">
+                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6 font-normal">
                       {res.description}
                     </p>
 
@@ -145,7 +145,7 @@ export default function ResourcesPage() {
                       {res.tags.map((t) => (
                         <span
                           key={t}
-                          className="text-[10px] font-mono px-2.5 py-0.5 rounded-lg bg-white/[0.04] backdrop-blur-md border border-white/[0.06] text-slate-300"
+                          className="text-[10px] font-mono px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-white/[0.04] backdrop-blur-md border border-slate-200 dark:border-white/[0.06] text-slate-700 dark:text-slate-300"
                         >
                           #{t}
                         </span>
@@ -153,8 +153,8 @@ export default function ResourcesPage() {
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between relative z-10">
-                    <span className="text-[11px] font-mono text-slate-400">
+                  <div className="pt-4 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between relative z-10">
+                    <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 font-medium">
                       {res.authorOrOrg}
                     </span>
 
@@ -163,14 +163,14 @@ export default function ResourcesPage() {
                         href={res.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs font-mono text-cyan hover:underline flex items-center gap-1 font-semibold"
+                        className="text-xs font-mono text-cyan-700 dark:text-cyan hover:underline flex items-center gap-1 font-bold"
                       >
                         Open Resource <ArrowUpRight className="w-3.5 h-3.5" />
                       </a>
                     ) : (
                       <Link
                         href={res.link}
-                        className="text-xs font-mono text-cyan hover:underline flex items-center gap-1 font-semibold"
+                        className="text-xs font-mono text-cyan-700 dark:text-cyan hover:underline flex items-center gap-1 font-bold"
                       >
                         View Guide <ArrowUpRight className="w-3.5 h-3.5" />
                       </Link>

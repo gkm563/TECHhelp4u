@@ -97,7 +97,7 @@ export default async function EventDetailPage({ params }: Props) {
   };
 
   return (
-    <div className="pt-28 pb-24 min-h-screen relative overflow-hidden">
+    <div className="pt-28 pb-24 min-h-screen relative overflow-hidden bg-background transition-colors duration-300">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdEvent) }}
@@ -111,15 +111,15 @@ export default async function EventDetailPage({ params }: Props) {
         {/* Back Link */}
         <Link
           href="/events"
-          className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-cyan mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 hover:text-cyan-700 dark:hover:text-cyan mb-8 transition-colors font-semibold"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Event Archive
         </Link>
 
         {/* Frosted Glass Hero Banner Card */}
-        <div className="rounded-3xl bg-navy-950/65 border border-white/[0.1] p-8 sm:p-12 backdrop-blur-3xl relative overflow-hidden mb-12 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_25px_60px_-15px_rgba(0,0,0,0.8)]">
+        <div className="rounded-3xl bg-white/90 dark:bg-navy-950/65 border border-slate-200/90 dark:border-white/[0.1] p-6 sm:p-10 lg:p-12 backdrop-blur-3xl relative overflow-hidden mb-12 shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_25px_60px_-15px_rgba(0,0,0,0.8)]">
           {/* Specular top glare line */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/40 to-transparent pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/40 dark:via-cyan/40 to-transparent pointer-events-none" />
           <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-cyan/10 blur-[130px] rounded-full pointer-events-none" />
 
           <div className="relative z-10">
@@ -133,7 +133,7 @@ export default async function EventDetailPage({ params }: Props) {
                   {event.featuredBadge}
                 </Badge>
               )}
-              <span className="text-xs font-mono text-slate-400 uppercase">
+              <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase font-semibold">
                 [{event.category}]
               </span>
             </div>
@@ -143,41 +143,41 @@ export default async function EventDetailPage({ params }: Props) {
               {event.title}
             </h1>
 
-            <p className="mt-4 text-base sm:text-xl text-cyan font-mono font-medium max-w-3xl">
+            <p className="mt-4 text-base sm:text-xl text-cyan-700 dark:text-cyan font-mono font-semibold max-w-3xl">
               {event.tagline}
             </p>
 
             {/* Meta Bar */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 pt-8 border-t border-white/[0.08] font-mono text-xs text-slate-300">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 pt-8 border-t border-slate-200 dark:border-white/[0.08] font-mono text-xs text-slate-700 dark:text-slate-300">
               <div className="flex items-center gap-2.5">
-                <Calendar className="w-4 h-4 text-cyan shrink-0" />
+                <Calendar className="w-4 h-4 text-cyan-600 dark:text-cyan shrink-0" />
                 <div>
                   <span className="text-[10px] text-slate-500 uppercase block">DATE</span>
-                  <span>{formatDate(event.date)}</span>
+                  <span className="font-semibold">{formatDate(event.date)}</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-cyan shrink-0" />
+                <Clock className="w-4 h-4 text-cyan-600 dark:text-cyan shrink-0" />
                 <div>
                   <span className="text-[10px] text-slate-500 uppercase block">TIME</span>
-                  <span>{event.time || "Full Day"}</span>
+                  <span className="font-semibold">{event.time || "Full Day"}</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-cyan shrink-0" />
+                <MapPin className="w-4 h-4 text-cyan-600 dark:text-cyan shrink-0" />
                 <div>
                   <span className="text-[10px] text-slate-500 uppercase block">VENUE</span>
-                  <span className="truncate">{event.location}</span>
+                  <span className="truncate font-semibold">{event.location}</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Users className="w-4 h-4 text-cyan shrink-0" />
+                <Users className="w-4 h-4 text-cyan-600 dark:text-cyan shrink-0" />
                 <div>
                   <span className="text-[10px] text-slate-500 uppercase block">TEAM SIZE</span>
-                  <span>{event.teamSize || "Individual / Squad"}</span>
+                  <span className="font-semibold">{event.teamSize || "Individual / Squad"}</span>
                 </div>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default async function EventDetailPage({ params }: Props) {
                   Register on Official Portal
                 </Button>
               ) : (
-                <span className="px-4 py-2.5 rounded-2xl bg-white/[0.04] backdrop-blur-md border border-white/[0.08] text-xs font-mono text-slate-400">
+                <span className="px-4 py-2.5 rounded-2xl bg-slate-100 dark:bg-white/[0.04] backdrop-blur-md border border-slate-200 dark:border-white/[0.08] text-xs font-mono text-slate-600 dark:text-slate-400 font-semibold">
                   {event.registrationStatusText || "Event Concluded"}
                 </span>
               )}
@@ -219,12 +219,12 @@ export default async function EventDetailPage({ params }: Props) {
           {/* Left Column: Deep Dive */}
           <div className="lg:col-span-8 space-y-10">
             {/* Overview */}
-            <section className="rounded-3xl bg-navy-950/50 border border-white/[0.08] p-8 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/30 to-transparent pointer-events-none" />
+            <section className="rounded-3xl bg-white/80 dark:bg-navy-950/50 border border-slate-200/80 dark:border-white/[0.08] p-6 sm:p-8 backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)] relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 dark:via-cyan/30 to-transparent pointer-events-none" />
               <h2 className="text-2xl font-bold text-foreground font-display mb-4 flex items-center gap-2">
-                <Terminal className="w-5 h-5 text-cyan" /> Event Overview
+                <Terminal className="w-5 h-5 text-cyan-600 dark:text-cyan" /> Event Overview
               </h2>
-              <div className="space-y-4 text-slate-300 text-base leading-relaxed font-normal">
+              <div className="space-y-4 text-slate-700 dark:text-slate-300 text-base leading-relaxed font-normal">
                 {event.fullDescription.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -232,14 +232,14 @@ export default async function EventDetailPage({ params }: Props) {
 
               {/* Highlights */}
               {event.highlights && (
-                <div className="mt-6 pt-6 border-t border-white/[0.08]">
-                  <h3 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3 font-semibold">
+                <div className="mt-6 pt-6 border-t border-slate-200 dark:border-white/[0.08]">
+                  <h3 className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-3 font-semibold">
                     Key Highlights
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {event.highlights.map((h, i) => (
-                      <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-cyan shrink-0 mt-0.5" />
+                      <div key={i} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-600 dark:text-cyan shrink-0 mt-0.5" />
                         <span>{h}</span>
                       </div>
                     ))}
@@ -250,22 +250,22 @@ export default async function EventDetailPage({ params }: Props) {
 
             {/* Schedule / Timeline */}
             {event.schedule && event.schedule.length > 0 && (
-              <section className="rounded-3xl bg-navy-950/50 border border-white/[0.08] p-8 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)] relative overflow-hidden">
+              <section className="rounded-3xl bg-white/80 dark:bg-navy-950/50 border border-slate-200/80 dark:border-white/[0.08] p-6 sm:p-8 backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)] relative overflow-hidden">
                 <h2 className="text-2xl font-bold text-foreground font-display mb-6 flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-cyan" /> Multi-Stage Timeline & Agenda
+                  <Clock className="w-5 h-5 text-cyan-600 dark:text-cyan" /> Multi-Stage Timeline & Agenda
                 </h2>
                 <div className="space-y-4">
                   {event.schedule.map((item, idx) => (
                     <div
                       key={idx}
-                      className="p-5 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.07] hover:border-cyan/40 transition-all duration-200 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+                      className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] backdrop-blur-xl border border-slate-200 dark:border-white/[0.07] hover:border-cyan-500/40 dark:hover:border-cyan/40 transition-all duration-200 shadow-sm"
                     >
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
-                        <span className="text-xs font-mono text-cyan font-bold">
+                        <span className="text-xs font-mono text-cyan-700 dark:text-cyan font-bold">
                           {item.timeOrPhase}
                         </span>
                         {item.location && (
-                          <span className="text-[10px] font-mono text-slate-400 bg-white/[0.05] px-2.5 py-0.5 rounded-full border border-white/[0.08]">
+                          <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-white/[0.05] px-2.5 py-0.5 rounded-full border border-slate-200 dark:border-white/[0.08]">
                             {item.location}
                           </span>
                         )}
@@ -273,7 +273,7 @@ export default async function EventDetailPage({ params }: Props) {
                       <h4 className="text-base font-bold text-foreground font-display">
                         {item.title}
                       </h4>
-                      <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                      <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed font-normal">
                         {item.description}
                       </p>
                     </div>
@@ -284,27 +284,27 @@ export default async function EventDetailPage({ params }: Props) {
 
             {/* Tracks */}
             {event.tracks && event.tracks.length > 0 && (
-              <section className="rounded-3xl bg-navy-950/50 border border-white/[0.08] p-8 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)] relative overflow-hidden">
+              <section className="rounded-3xl bg-white/80 dark:bg-navy-950/50 border border-slate-200/80 dark:border-white/[0.08] p-6 sm:p-8 backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)] relative overflow-hidden">
                 <h2 className="text-2xl font-bold text-foreground font-display mb-6 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-cyan" /> Challenge Tracks & Themes
+                  <Sparkles className="w-5 h-5 text-cyan-600 dark:text-cyan" /> Challenge Tracks & Themes
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {event.tracks.map((track, idx) => (
                     <div
                       key={idx}
-                      className="p-5 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.07] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+                      className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] backdrop-blur-xl border border-slate-200 dark:border-white/[0.07] shadow-sm"
                     >
                       <h4 className="text-base font-bold text-foreground font-display mb-2">
                         {track.title}
                       </h4>
-                      <p className="text-xs text-slate-300 mb-4 leading-relaxed font-normal">
+                      <p className="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed font-normal">
                         {track.description}
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {track.technologies.map((t) => (
                           <span
                             key={t}
-                            className="text-[10px] font-mono px-2 py-0.5 rounded-lg bg-cyan/10 border border-cyan/25 text-cyan"
+                            className="text-[10px] font-mono px-2 py-0.5 rounded-lg bg-cyan-50 dark:bg-cyan/10 border border-cyan-200 dark:border-cyan/25 text-cyan-700 dark:text-cyan font-semibold"
                           >
                             {t}
                           </span>
@@ -318,20 +318,20 @@ export default async function EventDetailPage({ params }: Props) {
 
             {/* FAQs */}
             {event.faqs && event.faqs.length > 0 && (
-              <section className="rounded-3xl bg-navy-950/50 border border-white/[0.08] p-8 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)] relative overflow-hidden">
+              <section className="rounded-3xl bg-white/80 dark:bg-navy-950/50 border border-slate-200/80 dark:border-white/[0.08] p-6 sm:p-8 backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)] relative overflow-hidden">
                 <h2 className="text-2xl font-bold text-foreground font-display mb-6 flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-cyan" /> Frequently Asked Questions
+                  <HelpCircle className="w-5 h-5 text-cyan-600 dark:text-cyan" /> Frequently Asked Questions
                 </h2>
                 <div className="space-y-4">
                   {event.faqs.map((faq, idx) => (
                     <div
                       key={idx}
-                      className="p-5 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.07]"
+                      className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] backdrop-blur-xl border border-slate-200 dark:border-white/[0.07]"
                     >
                       <h4 className="text-sm font-bold text-foreground mb-2">
                         {faq.question}
                       </h4>
-                      <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                         {faq.answer}
                       </p>
                     </div>
@@ -345,24 +345,24 @@ export default async function EventDetailPage({ params }: Props) {
           <div className="lg:col-span-4 space-y-6">
             {/* Prizes / Rewards */}
             {event.prizes && event.prizes.length > 0 && (
-              <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-6 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12)]">
-                <h3 className="text-sm font-mono uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2 font-bold">
-                  <Trophy className="w-4 h-4 text-amber-400" /> Prizes & Recognition
+              <div className="rounded-3xl bg-white/80 dark:bg-navy-950/60 border border-slate-200/80 dark:border-white/[0.1] p-6 backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12)]">
+                <h3 className="text-sm font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-2 font-bold">
+                  <Trophy className="w-4 h-4 text-amber-500" /> Prizes & Recognition
                 </h3>
                 <div className="space-y-3">
                   {event.prizes.map((prize, idx) => (
                     <div
                       key={idx}
-                      className="p-4 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/[0.07]"
+                      className="p-4 rounded-2xl bg-slate-50 dark:bg-white/[0.03] backdrop-blur-md border border-slate-200 dark:border-white/[0.07]"
                     >
-                      <span className="text-[11px] font-mono text-amber-400 font-bold block">
+                      <span className="text-[11px] font-mono text-amber-700 dark:text-amber-400 font-bold block">
                         {prize.title}
                       </span>
                       <h5 className="text-sm font-bold text-foreground font-display mt-0.5">
                         {prize.reward}
                       </h5>
                       {prize.description && (
-                        <p className="text-xs text-slate-300 mt-1">
+                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
                           {prize.description}
                         </p>
                       )}
@@ -374,21 +374,21 @@ export default async function EventDetailPage({ params }: Props) {
 
             {/* Strategic Partners */}
             {event.partners && event.partners.length > 0 && (
-              <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-6 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12)]">
-                <h3 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-4 font-bold">
+              <div className="rounded-3xl bg-white/80 dark:bg-navy-950/60 border border-slate-200/80 dark:border-white/[0.1] p-6 backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12)]">
+                <h3 className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4 font-bold">
                   Event Partners
                 </h3>
                 <div className="space-y-2.5">
                   {event.partners.map((p, idx) => (
                     <div
                       key={idx}
-                      className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/[0.07] flex items-center justify-between"
+                      className="p-3.5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] backdrop-blur-md border border-slate-200 dark:border-white/[0.07] flex items-center justify-between"
                     >
                       <div>
                         <h5 className="text-xs font-bold text-foreground">
                           {p.name}
                         </h5>
-                        <span className="text-[10px] font-mono text-cyan block">
+                        <span className="text-[10px] font-mono text-cyan-700 dark:text-cyan block font-semibold">
                           {p.role}
                         </span>
                       </div>
@@ -397,7 +397,7 @@ export default async function EventDetailPage({ params }: Props) {
                           href={p.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-slate-400 hover:text-cyan"
+                          className="text-slate-400 hover:text-cyan-700 dark:hover:text-cyan"
                         >
                           <ArrowUpRight className="w-3.5 h-3.5" />
                         </a>
@@ -410,21 +410,21 @@ export default async function EventDetailPage({ params }: Props) {
 
             {/* Speakers / Mentors */}
             {event.speakersAndMentors && event.speakersAndMentors.length > 0 && (
-              <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-6 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12)]">
-                <h3 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-4 font-bold">
+              <div className="rounded-3xl bg-white/80 dark:bg-navy-950/60 border border-slate-200/80 dark:border-white/[0.1] p-6 backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12)]">
+                <h3 className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4 font-bold">
                   Mentors & Evaluators
                 </h3>
                 <div className="space-y-2.5">
                   {event.speakersAndMentors.map((s, idx) => (
                     <div
                       key={idx}
-                      className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/[0.07] flex items-center justify-between"
+                      className="p-3.5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] backdrop-blur-md border border-slate-200 dark:border-white/[0.07] flex items-center justify-between"
                     >
                       <div>
                         <h5 className="text-xs font-bold text-foreground">
                           {s.name}
                         </h5>
-                        <span className="text-[10px] font-mono text-slate-400 block">
+                        <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 block">
                           {s.role} • {s.companyOrOrg}
                         </span>
                       </div>
@@ -433,7 +433,7 @@ export default async function EventDetailPage({ params }: Props) {
                           href={s.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-slate-400 hover:text-cyan"
+                          className="text-slate-400 hover:text-cyan-700 dark:hover:text-cyan"
                         >
                           <ArrowUpRight className="w-3.5 h-3.5" />
                         </a>
@@ -445,15 +445,15 @@ export default async function EventDetailPage({ params }: Props) {
             )}
 
             {/* Tech Stack */}
-            <div className="rounded-3xl bg-navy-950/60 border border-white/[0.1] p-6 backdrop-blur-2xl shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12)]">
-              <h3 className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+            <div className="rounded-3xl bg-white/80 dark:bg-navy-950/60 border border-slate-200/80 dark:border-white/[0.1] p-6 backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12)]">
+              <h3 className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-3 font-bold">
                 Technologies Involved
               </h3>
               <div className="flex flex-wrap gap-1.5">
                 {event.technologies.map((t) => (
                   <span
                     key={t}
-                    className="text-[11px] font-mono px-2.5 py-1 rounded-xl bg-cyan/10 border border-cyan/25 text-cyan"
+                    className="text-[11px] font-mono px-2.5 py-1 rounded-xl bg-cyan-50 dark:bg-cyan/10 border border-cyan-200 dark:border-cyan/25 text-cyan-700 dark:text-cyan font-semibold"
                   >
                     {t}
                   </span>
