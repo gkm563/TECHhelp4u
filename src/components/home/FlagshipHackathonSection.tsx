@@ -24,68 +24,64 @@ export function FlagshipHackathonSection() {
 
   const hackathonStages = [
     {
-      stage: "STAGE 01",
-      title: "Architecture Blueprint & Skill Assessment",
-      desc: "Register your team on Unstop, submit your 6-slide system architecture blueprint, and complete the technical skill assessment powered by HiDevs.",
-      timing: "Filtration Round (Online)",
-      perk: "Access to mentor office hours & Discord prep channels",
+      stage: "STEP 01",
+      title: "Online Registration & Problem PPT",
+      desc: "Register your team on Unstop, choose a challenge track (AI/ML, Full-Stack, Web3), and submit your proposed solution overview.",
+      timing: "Online Round",
+      perk: "Access to discord prep channels & mentor AMAs",
     },
     {
-      stage: "STAGE 02",
-      title: "12-Hour Intensive Build Arena @ MITS Gwalior",
-      desc: "Top shortlisted squads compete live on-ground at the Center for Computer Science & Technology, MITS Gwalior — pure execution, live debugging, and system sprints.",
+      stage: "STEP 02",
+      title: "12-Hour Live Build Sprint @ MITS Gwalior",
+      desc: "Shortlisted squads build on-ground at MITS Gwalior — rapid prototyping, code execution, and live debugging under mentor guidance.",
       timing: "Grand Finale",
-      perk: "Direct mentorship from Web3 and AI industry engineers",
+      perk: "1-on-1 feedback from senior tech engineers",
     },
     {
-      stage: "STAGE 03",
-      title: "Live Product Demos & Jury Evaluation",
-      desc: "Present working MVPs to judges from SITA, Propvivo, Nasdaq, and Gwalior DAO. Evaluated on system design, innovation, and real-world utility.",
-      timing: "Demo Day & Results",
-      perk: "₹2,00,000 Total Prize Pool, Winner Trophies & Merit LORs",
+      stage: "STEP 03",
+      title: "Live Product Demos & Jury Presentation",
+      desc: "Pitch working prototypes to evaluators from industry leading tech firms and developer DAOs. Judged on innovation and execution.",
+      timing: "Demo Day",
+      perk: "₹2,00,000 Total Prizes, Trophies & Merit Certificates",
     },
     {
-      stage: "STAGE 04",
-      title: "6–12 Month Incubation & Acceleration",
-      desc: "Winning teams (Shield Clan, Gradient Gang, Code Sena, NyaySetu) receive ongoing post-event mentorship, cloud compute, and startup acceleration.",
-      timing: "Post-Hackathon Support",
-      perk: "Direct placement connect, cloud credits & accelerator access",
+      stage: "STEP 04",
+      title: "Post-Event Incubation & Mentorship",
+      desc: "Winning teams receive ongoing project mentorship, cloud credits, and direct interview connections for developer internships.",
+      timing: "Post-Hackathon",
+      perk: "Resume reviews & startup acceleration connects",
     },
   ];
 
   return (
-    <section className="py-20 sm:py-24 relative overflow-hidden bg-slate-100/60 dark:bg-navy-950/60 border-y border-slate-200 dark:border-white/[0.08] transition-colors duration-300">
+    <section className="py-20 sm:py-24 relative overflow-hidden bg-slate-50/60 dark:bg-navy-950/60 border-y border-slate-200/80 dark:border-white/[0.08] transition-colors duration-300">
       {/* Background ambient chromatic glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] bg-cyan/10 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-80 h-80 bg-electric-violet/10 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="rounded-3xl bg-white/90 dark:bg-navy-950/80 border border-slate-200/90 dark:border-white/[0.12] backdrop-blur-3xl p-6 sm:p-10 lg:p-12 shadow-sm dark:shadow-[inset_0_1px_2px_0_rgba(255,255,255,0.15),0_25px_70px_-15px_rgba(0,0,0,0.8),0_0_40px_rgba(0,229,255,0.1)] relative overflow-hidden">
-          {/* Specular top glare line */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/40 dark:via-cyan/40 to-transparent pointer-events-none" />
-
+        <div className="rounded-3xl bg-white/95 dark:bg-navy-950/80 border border-slate-200/90 dark:border-white/[0.12] backdrop-blur-3xl p-6 sm:p-10 lg:p-12 shadow-sm relative overflow-hidden">
           {/* Top Bar */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-white/[0.08] pb-6 mb-8">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-2xl bg-cyan-100 dark:bg-cyan/10 border border-cyan-300 dark:border-cyan/30 flex items-center justify-center text-cyan-700 dark:text-cyan backdrop-blur-md shadow-sm dark:shadow-[0_0_15px_rgba(0,229,255,0.2)] shrink-0">
+              <div className="w-11 h-11 rounded-2xl bg-amber-50 dark:bg-amber-400/10 border border-amber-200 dark:border-amber-400/30 flex items-center justify-center text-amber-600 dark:text-amber-400 shrink-0">
                 <Trophy className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-cyan-700 dark:text-cyan font-bold block">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-600 dark:text-amber-400 font-bold block">
                   FLAGSHIP NATIONAL HACKATHON
                 </span>
                 <span className="text-sm font-bold text-foreground font-display">
-                  The Black-Box Protocol • Stage 01: System Escalation
+                  Skill Climax & The Black-Box Protocol
                 </span>
               </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-400/10 px-3.5 py-1 rounded-full border border-amber-300 dark:border-amber-400/30 font-bold">
+              <span className="text-xs font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-400/10 px-3.5 py-1 rounded-full border border-emerald-200 dark:border-emerald-400/30 font-bold">
                 ₹2,00,000 PRIZE POOL
               </span>
               <Badge variant="cyan" size="sm">
-                AI × WEB3 CONVERGENCE
+                500+ BUILDERS
               </Badge>
             </div>
           </div>
@@ -94,32 +90,32 @@ export function FlagshipHackathonSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Column */}
             <div className="lg:col-span-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-amber-50 dark:bg-white/[0.04] backdrop-blur-md border border-amber-300 dark:border-amber-400/30 text-xs font-mono text-amber-700 dark:text-amber-400 mb-4 font-semibold">
-                <Flame className="w-3.5 h-3.5 animate-pulse shrink-0" />
-                <span>MITS GWALIOR • WITH HIDEVS & UNSTOP</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] text-xs font-mono text-slate-700 dark:text-slate-300 mb-4 font-semibold">
+                <Flame className="w-3.5 h-3.5 text-amber-500 animate-pulse shrink-0" />
+                <span>CO-ORGANIZED WITH MITS GWALIOR, HIDEVS & UNSTOP</span>
               </div>
 
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground font-display tracking-tight leading-[1.15]">
-                The Black-Box Protocol:{" "}
-                <span className="text-gradient-cyan">System Escalation</span>
+                Central India&apos;s Largest{" "}
+                <span className="text-gradient-cyan">Student Hackathon</span>
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
-                A 9-city national hackathon series empowering student innovators. 500+ builders competed in AI, Web3, and Data Science — judged by senior industry mentors and backed by long-term 6–12 month incubation.
+                Over 500+ enthusiastic student developers participated across India. Participants tackled real-world challenges in Artificial Intelligence, Web3, and Full-Stack Engineering with active industry mentorship.
               </p>
 
-              {/* Quick Details Strip (Fully Responsive) */}
+              {/* Quick Details Strip */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mt-6 pt-6 border-t border-slate-200 dark:border-white/[0.08] font-mono text-xs">
                 <div className="p-3 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06]">
                   <span className="text-slate-500 dark:text-slate-400 block text-[10px]">VENUE</span>
-                  <span className="text-slate-800 dark:text-slate-200 font-bold">MITS Gwalior</span>
+                  <span className="text-slate-800 dark:text-slate-200 font-bold">MITS Gwalior & Online</span>
                 </div>
                 <div className="p-3 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06]">
-                  <span className="text-slate-500 dark:text-slate-400 block text-[10px]">PRIZE POOL</span>
-                  <span className="text-amber-600 dark:text-amber-400 font-bold">₹2,00,000</span>
+                  <span className="text-slate-500 dark:text-slate-400 block text-[10px]">CASH PRIZES</span>
+                  <span className="text-emerald-600 dark:text-emerald-400 font-bold">₹2,00,000</span>
                 </div>
                 <div className="p-3 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06]">
-                  <span className="text-slate-500 dark:text-slate-400 block text-[10px]">PARTNERS</span>
+                  <span className="text-slate-500 dark:text-slate-400 block text-[10px]">PLATFORMS</span>
                   <span className="text-cyan-700 dark:text-cyan font-bold">Unstop & HiDevs</span>
                 </div>
               </div>
@@ -146,15 +142,15 @@ export function FlagshipHackathonSection() {
               </div>
             </div>
 
-            {/* Right Column: Interactive Hackathon Journey Tabs */}
-            <div className="lg:col-span-6 bg-slate-50 dark:bg-navy-950/60 border border-slate-200 dark:border-white/[0.08] rounded-3xl p-5 sm:p-6 font-mono text-xs backdrop-blur-2xl shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1),0_15px_35px_-10px_rgba(0,0,0,0.5)]">
+            {/* Right Column: 4 Hackathon Steps */}
+            <div className="lg:col-span-6 bg-slate-50 dark:bg-navy-950/60 border border-slate-200 dark:border-white/[0.08] rounded-3xl p-5 sm:p-6 font-mono text-xs backdrop-blur-2xl shadow-sm">
               <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/[0.08] pb-3 mb-4 text-slate-500 dark:text-slate-400">
                 <span className="flex items-center gap-1.5 text-xs text-slate-700 dark:text-slate-200 font-bold">
                   <Calendar className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan" />
-                  INCUBATION ROADMAP
+                  HACKATHON STRUCTURE
                 </span>
                 <span className="text-cyan-700 dark:text-cyan font-bold text-[10px] sm:text-xs">
-                  9-CITY SERIES
+                  4 STAGES
                 </span>
               </div>
 
@@ -166,7 +162,7 @@ export function FlagshipHackathonSection() {
                     onClick={() => setActiveTab(idx)}
                     className={`py-2 px-2 rounded-xl text-center font-mono text-[11px] transition-all ${
                       activeTab === idx
-                        ? "bg-cyan text-navy-900 font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)] border border-cyan"
+                        ? "bg-cyan text-navy-900 font-bold shadow-sm border border-cyan"
                         : "bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
                     }`}
                   >
@@ -183,7 +179,7 @@ export function FlagshipHackathonSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.2 }}
-                  className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] space-y-3 shadow-sm dark:shadow-none"
+                  className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] space-y-3 shadow-sm"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                     <span className="text-cyan-700 dark:text-cyan font-bold text-sm font-display">
@@ -199,7 +195,7 @@ export function FlagshipHackathonSection() {
                   </p>
 
                   <div className="pt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center gap-2 text-[11px]">
-                    <span className="text-amber-700 dark:text-amber-400 font-bold shrink-0">KEY PERK:</span>
+                    <span className="text-amber-600 dark:text-amber-400 font-bold shrink-0">KEY PERK:</span>
                     <span className="text-slate-700 dark:text-slate-300">{hackathonStages[activeTab].perk}</span>
                   </div>
                 </motion.div>
@@ -207,7 +203,7 @@ export function FlagshipHackathonSection() {
 
               <div className="mt-4 pt-3 border-t border-slate-200 dark:border-white/[0.08] text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between font-medium">
                 <span>UNSTOP × HIDEVS × GWALIOR DAO</span>
-                <span className="text-cyan-700 dark:text-cyan font-bold">500+ BUILDERS</span>
+                <span className="text-cyan-700 dark:text-cyan font-bold">500+ STUDENTS</span>
               </div>
             </div>
           </div>

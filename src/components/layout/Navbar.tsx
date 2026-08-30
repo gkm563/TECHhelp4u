@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { navItems } from "@/data/navigation";
 import { Button } from "@/ui/Button";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, MessageSquare } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +15,16 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const desktopNavItems = [
+    { title: "About", href: "/about" },
+    { title: "Events", href: "/events", badge: "Live" },
+    { title: "Campus Leads (CAP)", href: "/community" },
+    { title: "Resources", href: "/resources" },
+    { title: "Team", href: "/team" },
+    { title: "Gallery", href: "/gallery" },
+    { title: "Contact", href: "/contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +62,7 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "py-3 bg-white/85 dark:bg-navy-950/80 backdrop-blur-2xl border-b border-slate-200/80 dark:border-white/[0.08] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+            ? "py-3 bg-white/90 dark:bg-navy-950/85 backdrop-blur-2xl border-b border-slate-200/80 dark:border-white/[0.08] shadow-sm"
             : "py-5 bg-transparent"
         )}
       >
@@ -63,7 +73,7 @@ export function Navbar() {
             className="group flex items-center gap-3 focus:outline-none"
             aria-label="TECHhelp4U Home"
           >
-            <div className="w-10 h-10 rounded-2xl bg-white/90 dark:bg-navy-950/80 backdrop-blur-xl border border-slate-200 dark:border-white/[0.15] flex items-center justify-center relative overflow-hidden group-hover:border-cyan/60 transition-all duration-300 shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),0_0_15px_rgba(0,229,255,0.2)] group-hover:shadow-[0_0_25px_rgba(0,229,255,0.4)]">
+            <div className="w-10 h-10 rounded-2xl bg-white dark:bg-navy-950/80 border border-slate-200 dark:border-white/[0.15] flex items-center justify-center relative overflow-hidden group-hover:border-cyan-500/60 dark:group-hover:border-cyan/60 transition-all duration-300 shadow-sm">
               <Image
                 src="/logo.png"
                 alt="TECHhelp4U Official Logo"
@@ -75,18 +85,18 @@ export function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold text-lg tracking-tight text-foreground flex items-center gap-1.5">
-                TECH<span className="text-cyan font-mono">help4U</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
+                TECH<span className="text-cyan-700 dark:text-cyan font-mono">help4U</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan animate-pulse" />
               </span>
-              <span className="text-[9px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                Where Passion Meets Possibility
+              <span className="text-[9px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 font-medium">
+                Student Tech Community
               </span>
             </div>
           </Link>
 
           {/* Desktop Frosted Glass Navigation Pill */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/80 dark:bg-white/[0.04] backdrop-blur-2xl px-4 py-1.5 rounded-full border border-slate-200/80 dark:border-white/[0.09] shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.12),0_10px_25px_-5px_rgba(0,0,0,0.5)]">
-            {navItems.slice(0, 8).map((item) => {
+          <nav className="hidden lg:flex items-center gap-1 bg-white/80 dark:bg-white/[0.04] backdrop-blur-2xl px-4 py-1.5 rounded-full border border-slate-200/80 dark:border-white/[0.09] shadow-sm">
+            {desktopNavItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
@@ -95,8 +105,8 @@ export function Navbar() {
                   className={cn(
                     "px-3.5 py-1.5 rounded-full text-xs font-medium transition-all relative",
                     isActive
-                      ? "text-navy-900 font-semibold"
-                      : "text-slate-700 dark:text-slate-300 hover:text-cyan dark:hover:text-cyan hover:bg-slate-100/80 dark:hover:bg-white/[0.05]"
+                      ? "text-navy-900 font-bold"
+                      : "text-slate-700 dark:text-slate-300 hover:text-cyan-700 dark:hover:text-cyan hover:bg-slate-100/80 dark:hover:bg-white/[0.05]"
                   )}
                 >
                   {isActive && (
@@ -123,17 +133,11 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
             <Button
-              href="/events"
-              variant="ghost"
-              size="sm"
-              className="text-xs font-medium"
-            >
-              Explore Events
-            </Button>
-            <Button
-              href="/community"
+              href="https://linktr.ee/techhelpu"
+              isExternal
               variant="cyan-glow"
               size="sm"
+              leftIcon={<MessageSquare className="w-3.5 h-3.5" />}
               rightIcon={<ArrowUpRight className="w-3.5 h-3.5" />}
             >
               Join Community
@@ -144,7 +148,8 @@ export function Navbar() {
           <div className="flex items-center gap-2 lg:hidden">
             <ThemeToggle />
             <Button
-              href="/community"
+              href="https://linktr.ee/techhelpu"
+              isExternal
               variant="primary"
               size="sm"
               className="text-xs px-3 py-1.5"
@@ -153,7 +158,7 @@ export function Navbar() {
             </Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-2xl bg-white/80 dark:bg-white/[0.05] backdrop-blur-xl border border-slate-200 dark:border-white/[0.1] text-slate-700 dark:text-slate-200 hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan shadow-sm dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.1)]"
+              className="p-2.5 rounded-2xl bg-white/80 dark:bg-white/[0.05] backdrop-blur-xl border border-slate-200 dark:border-white/[0.1] text-slate-700 dark:text-slate-200 hover:text-cyan focus:outline-none shadow-sm"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -177,8 +182,8 @@ export function Navbar() {
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 h-72 bg-cyan/10 blur-[100px] rounded-full pointer-events-none" />
 
             <div className="flex items-center justify-between px-3 mb-4 relative z-10">
-              <span className="text-xs font-mono uppercase tracking-widest text-slate-500">
-                Navigation
+              <span className="text-xs font-mono uppercase tracking-widest text-slate-500 font-semibold">
+                Menu & Pages
               </span>
               <ThemeToggle showLabel />
             </div>
@@ -198,11 +203,11 @@ export function Navbar() {
                       className={cn(
                         "flex items-center justify-between px-4 py-3.5 rounded-2xl text-base font-medium transition-all",
                         isActive
-                          ? "bg-cyan/15 text-cyan dark:text-cyan border border-cyan/40 shadow-[0_0_20px_rgba(0,229,255,0.15)]"
+                          ? "bg-cyan/15 text-cyan-700 dark:text-cyan border border-cyan/40 shadow-sm"
                           : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/[0.06] hover:text-foreground border border-transparent"
                       )}
                     >
-                      <span className="flex items-center gap-2">
+                      <span className="flex items-center gap-2 font-medium">
                         {item.title}
                         {item.badge && (
                           <span className="px-2 py-0.5 text-[10px] rounded-full bg-red-500/15 text-red-600 dark:text-red-400 font-mono font-bold">
@@ -219,20 +224,23 @@ export function Navbar() {
 
             <div className="mt-auto pt-6 border-t border-slate-200 dark:border-white/[0.08] flex flex-col gap-3 relative z-10">
               <Button
-                href="/community"
+                href="https://linktr.ee/techhelpu"
+                isExternal
                 variant="cyan-glow"
                 size="lg"
                 className="w-full justify-center"
+                leftIcon={<MessageSquare className="w-4 h-4" />}
+                rightIcon={<ArrowUpRight className="w-4 h-4" />}
               >
-                Join Community & CAP 2026
+                Join WhatsApp & Discord
               </Button>
               <Button
-                href="/contact"
+                href="/community"
                 variant="glass"
                 size="lg"
                 className="w-full justify-center"
               >
-                Partner With Us
+                Campus Ambassador (CAP)
               </Button>
             </div>
           </motion.div>
