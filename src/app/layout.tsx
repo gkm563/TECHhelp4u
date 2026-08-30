@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     siteName: "TECHhelp4U Community",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+        url: "https://techhelp4u.in/logo.png",
         width: 1200,
         height: 630,
         alt: "TECHhelp4U Community & Builder Ecosystem",
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TECHhelp4U | Student-Driven Tech Community",
     description: "Built by students, for students. Workshops, hackathons, startup collaborations, and mentorship.",
-    images: ["https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://techhelp4u.in/logo.png"],
   },
   robots: {
     index: true,

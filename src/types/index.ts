@@ -96,7 +96,9 @@ export interface Partner {
   id: string;
   name: string;
   category: PartnerCategory;
-  logo: string;
+  logo?: string;
+  initials?: string;
+  gradient?: string;
   description: string;
   collaborationType: string;
   website: string;

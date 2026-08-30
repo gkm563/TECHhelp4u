@@ -8,7 +8,6 @@ export const testimonialsData: Testimonial[] = [
     role: "2nd Runner-Up (Team Code Sena)",
     institutionOrCompany: "LNCT Group of Colleges, Bhopal",
     event: "The Black-Box Protocol @ MITS Gwalior",
-    avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
     profileUrl: "https://www.linkedin.com/in/udbhav-shrivastava"
   },
   {
@@ -18,7 +17,6 @@ export const testimonialsData: Testimonial[] = [
     role: "Top 10 Finalist (Team NyaySetu)",
     institutionOrCompany: "MITS Gwalior",
     event: "The Black-Box Protocol: System Escalation",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
     profileUrl: "https://www.linkedin.com/in/harshita-rawat-726995330"
   },
   {
@@ -28,7 +26,6 @@ export const testimonialsData: Testimonial[] = [
     role: "Frontend Developer & Finalist",
     institutionOrCompany: "GSSoC Contributor / B.Tech",
     event: "The Black-Box Protocol @ MITS Gwalior",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
     profileUrl: "https://www.linkedin.com/in/suhani-tomar-9bbb48348"
   },
   {
@@ -38,7 +35,6 @@ export const testimonialsData: Testimonial[] = [
     role: "Founder, Gwalior DAO & Web3 Mentor",
     institutionOrCompany: "Gwalior DAO",
     event: "System Escalation Hackathon",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
     profileUrl: "https://www.linkedin.com/in/gauravvsonii"
   },
   {
@@ -48,7 +44,6 @@ export const testimonialsData: Testimonial[] = [
     role: "Top 10 Finalist",
     institutionOrCompany: "Shri Ram Group of Institutions, Jabalpur",
     event: "The Black-Box Protocol @ MITS Gwalior",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
     profileUrl: "https://www.linkedin.com/in/devansh-mishra-830027342"
   }
 ];

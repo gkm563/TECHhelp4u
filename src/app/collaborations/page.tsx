@@ -100,8 +100,8 @@ export default function CollaborationsPage() {
 
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-2xl bg-cyan-50 dark:bg-white/[0.05] border border-cyan-200 dark:border-white/[0.1] backdrop-blur-md flex items-center justify-center font-bold text-cyan-700 dark:text-cyan text-sm group-hover:border-cyan-500/40 dark:group-hover:border-cyan/40 shadow-sm transition-all">
-                        {partner.name.substring(0, 2).toUpperCase()}
+                      <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${partner.gradient || "from-cyan-500 to-blue-600"} text-white flex items-center justify-center font-display font-extrabold text-sm shadow-sm`}>
+                        {partner.initials || partner.name.substring(0, 2).toUpperCase()}
                       </div>
                       <Badge variant="neutral" size="sm">
                         {partner.category}
