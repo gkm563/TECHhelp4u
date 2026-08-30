@@ -219,8 +219,8 @@ export default function AboutPage() {
                 key={m.id}
                 className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] hover:border-cyan-500/40 dark:hover:border-cyan/40 transition-all group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-cyan-100 dark:bg-cyan/10 border border-cyan-200 dark:border-cyan/30 flex items-center justify-center text-cyan-700 dark:text-cyan font-display font-bold text-xl mb-4 group-hover:scale-105 transition-transform">
-                  {m.name.charAt(0)}
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${m.gradient || "from-cyan-500 to-blue-600"} text-white flex items-center justify-center font-display font-extrabold text-lg mb-4 group-hover:scale-105 transition-transform shadow-sm`}>
+                  {m.initials || m.name.split(" ").map((n) => n[0]).join("")}
                 </div>
                 <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 font-display">{m.name}</h3>
                 <span className="text-xs text-cyan-700 dark:text-cyan font-mono block mt-0.5 font-semibold">{m.role}</span>

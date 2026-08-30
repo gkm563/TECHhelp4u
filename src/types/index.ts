@@ -120,7 +120,9 @@ export interface TeamMember {
   tier: TeamTier;
   department: string;
   bio: string;
-  avatar: string;
+  avatar?: string;
+  initials?: string;
+  gradient?: string;
   skills: string[];
   linkedin?: string;
   github?: string;
