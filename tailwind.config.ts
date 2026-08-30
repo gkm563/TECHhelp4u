@@ -49,8 +49,8 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "Inter", "system-ui", "-apple-system", "sans-serif"],
-        display: ["var(--font-display)", "Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        sans: ["var(--font-sans)", "Manrope", "Inter", "system-ui", "-apple-system", "sans-serif"],
+        display: ["var(--font-display)", "Outfit", "Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
         mono: ["var(--font-mono)", "JetBrains Mono", "monospace"],
       },
       animation: {
