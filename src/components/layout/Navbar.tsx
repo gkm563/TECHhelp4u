@@ -28,14 +28,14 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 25) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -60,17 +60,24 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed left-0 right-0 z-50 transition-all duration-300 flex justify-center",
           isScrolled
-            ? "py-3 bg-white/90 dark:bg-navy-950/85 backdrop-blur-2xl border-b border-slate-200/80 dark:border-white/[0.08] shadow-sm"
-            : "py-5 bg-transparent"
+            ? "top-2 sm:top-4 px-3 sm:px-6"
+            : "top-0 w-full px-4 sm:px-6 lg:px-8 py-5 bg-transparent"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div
+          className={cn(
+            "w-full flex items-center justify-between transition-all duration-300",
+            isScrolled
+              ? "max-w-6xl py-2.5 px-4 sm:px-6 rounded-full bg-white/90 dark:bg-navy-950/85 backdrop-blur-2xl border border-slate-200/90 dark:border-white/[0.12] shadow-lg dark:shadow-[0_10px_35px_rgba(0,0,0,0.5)]"
+              : "max-w-7xl mx-auto"
+          )}
+        >
           {/* Logo with official emblem image */}
           <Link
             href="/"
-            className="group flex items-center gap-3 focus:outline-none"
+            className="group flex items-center gap-3 focus:outline-none shrink-0"
             aria-label="TECHhelp4U Home"
           >
             <div className="w-10 h-10 rounded-2xl bg-white dark:bg-navy-950/80 border border-slate-200 dark:border-white/[0.15] flex items-center justify-center relative overflow-hidden group-hover:border-cyan-500/60 dark:group-hover:border-cyan/60 transition-all duration-300 shadow-sm">
@@ -88,14 +95,14 @@ export function Navbar() {
                 TECH<span className="text-cyan-700 dark:text-cyan font-mono">help4U</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan animate-pulse" />
               </span>
-              <span className="text-[9px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 font-medium">
+              <span className="text-[9px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">
                 Student Tech Community
               </span>
             </div>
           </Link>
 
           {/* Desktop Frosted Glass Navigation Pill */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/80 dark:bg-white/[0.04] backdrop-blur-2xl px-4 py-1.5 rounded-full border border-slate-200/80 dark:border-white/[0.09] shadow-sm">
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/80 dark:bg-white/[0.04] backdrop-blur-2xl px-3.5 py-1.5 rounded-full border border-slate-200/90 dark:border-white/[0.09] shadow-sm">
             {desktopNavItems.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -106,13 +113,13 @@ export function Navbar() {
                     "px-3.5 py-1.5 rounded-full text-xs font-medium transition-all relative",
                     isActive
                       ? "text-navy-900 font-bold"
-                      : "text-slate-700 dark:text-slate-300 hover:text-cyan-700 dark:hover:text-cyan hover:bg-slate-100/80 dark:hover:bg-white/[0.05]"
+                      : "text-slate-700 dark:text-slate-300 hover:text-cyan-700 dark:hover:text-cyan hover:bg-slate-200/60 dark:hover:bg-white/[0.05]"
                   )}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="navPill"
-                      className="absolute inset-0 bg-gradient-to-r from-cyan to-electric-blue rounded-full shadow-[0_0_20px_rgba(0,229,255,0.4)]"
+                      className="absolute inset-0 bg-cyan rounded-full shadow-[0_0_15px_rgba(0,229,255,0.4)]"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -130,7 +137,7 @@ export function Navbar() {
           </nav>
 
           {/* Right Action CTAs & Theme Toggle */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             <ThemeToggle />
             <Button
               href="https://linktr.ee/techhelpu"
@@ -158,7 +165,7 @@ export function Navbar() {
             </Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-2xl bg-white/80 dark:bg-white/[0.05] backdrop-blur-xl border border-slate-200 dark:border-white/[0.1] text-slate-700 dark:text-slate-200 hover:text-cyan focus:outline-none shadow-sm"
+              className="p-2.5 rounded-2xl bg-white/90 dark:bg-white/[0.05] backdrop-blur-xl border border-slate-200 dark:border-white/[0.1] text-slate-700 dark:text-slate-200 hover:text-cyan focus:outline-none shadow-sm"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >

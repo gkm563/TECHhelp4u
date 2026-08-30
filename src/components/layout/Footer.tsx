@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Phone, MapPin, Mail, MessageSquare } from "lucide-react";
+import { ArrowUpRight, Phone, MapPin, Mail, MessageSquare, Heart } from "lucide-react";
 import { navItems, socialLinks } from "@/data/navigation";
 
 export function Footer() {
@@ -155,9 +155,25 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 mt-8 border-t border-slate-200 dark:border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400 font-mono">
+        {/* Bottom Bar with GKM Credits */}
+        <div className="pt-8 mt-8 border-t border-slate-200 dark:border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400 font-mono">
           <p>© {new Date().getFullYear()} TECHhelp4U Community. Built by Students, For Students.</p>
+          
+          <div className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-300">
+            <span>Crafted & Designed with</span>
+            <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline animate-pulse" />
+            <span>by</span>
+            <a
+              href="https://www.linkedin.com/in/gkm563"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-1 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-700 dark:text-cyan font-bold hover:bg-cyan-500/20 transition-all inline-flex items-center gap-1 shadow-sm group"
+            >
+              <span>GKM</span>
+              <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+          </div>
+
           <div className="flex items-center gap-3 text-slate-500 dark:text-slate-400">
             <Link href="/contact" className="hover:text-cyan transition-colors">
               Privacy Policy
@@ -165,10 +181,6 @@ export function Footer() {
             <span>•</span>
             <Link href="/contact" className="hover:text-cyan transition-colors">
               Terms of Service
-            </Link>
-            <span>•</span>
-            <Link href="/contact" className="hover:text-cyan transition-colors">
-              Community Guidelines
             </Link>
           </div>
         </div>
